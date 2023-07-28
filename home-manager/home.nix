@@ -57,6 +57,19 @@
   	prismlauncher
   	
   ];
+  
+  services.mpd = {
+      enable = true;
+      musicDirectory = "~/Music";
+      extraConfig = '' 
+        audio_output {  
+          type	"pipewire" #
+          name  "Pipewire"  #
+          dsd         "yes"  #
+        }
+     '';    
+  };
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
