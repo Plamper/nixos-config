@@ -72,6 +72,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  
   security.apparmor.enable = true;
   
   boot.plymouth.enable = true;
@@ -98,6 +100,9 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
+  
+  # steam doesn't work with home manager it seems
+  programs.steam.enable = true;
 
   # TODO: Set your hostname
   networking.hostName = "pc";
