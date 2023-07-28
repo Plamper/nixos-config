@@ -6,10 +6,13 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
-
+    
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    
+    # import lanzaboote
+    lanzaboote.nixosModules.lanzaboote
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -84,8 +87,13 @@
   networking.hostName = "pc";
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot";
+  };
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
