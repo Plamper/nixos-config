@@ -55,7 +55,7 @@
   	bottles
   	heroic
   	prismlauncher
-  	
+  	discord
   ];
   
   services.mpd = {
