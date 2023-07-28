@@ -70,6 +70,9 @@
      '';    
   };
 
+  # Override Pipewire default rates
+  home.file.".config/pipewire/pipewire.conf.d/10-default.clock.allowed-rates.conf"
+  .source = ./dotfiles/pipewire/10-default.clock.allowed-rates.conf;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
