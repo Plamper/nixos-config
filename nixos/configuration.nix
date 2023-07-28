@@ -77,7 +77,7 @@
      	wget
      	curl
      	git
-     	
+     	sbctl
   ];
 
   # TODO: Set your hostname
