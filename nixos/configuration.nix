@@ -72,11 +72,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "amd_pstate=active" ];
   
   security.apparmor.enable = true;
-  
-  boot.plymouth.enable = true;
   
   time.timeZone = "Europe/Berlin";
   
@@ -100,10 +99,17 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
+  environment.etc."pipewire/pipewire.conf.d/10-default.clock.allowed-rates.conf".text = ''
+    context.properties = {
+      default.clock.allowed-rates = [ 44100 48000 88200 96000 176400 192000 352800 384000 705600 768000 ]
+    }
+  '';
   
   # steam doesn't work with home manager it seems
   programs.steam.enable = true;
-
+  programs.gamemode.enable = true;
+  services.flatpak.enable = true;
+  
   # TODO: Set your hostname
   networking.hostName = "pc";
 
@@ -115,6 +121,8 @@
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
+  
+  boot.initrd.systemd.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

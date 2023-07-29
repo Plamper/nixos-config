@@ -52,12 +52,21 @@
   home.packages = with pkgs; [ 
   	# steam
   	brave
-  	bottles
-  	heroic
   	prismlauncher
-  	discord
   	gnome-extension-manager
+  	mangohud
+  	gamescope
+  	celluloid
+  	mpdevil
+  	amberol
+  	nautilus-open-any-terminal
+  	blackbox-terminal
+  	gnome.dconf-editor
+  	gnome.gnome-tweaks
+  	tutanota-desktop
+  	unstable.thunderbird
   ];
+
   
   services.mpd = {
       enable = true;
@@ -70,10 +79,7 @@
         }
      '';    
   };
-
-  # Override Pipewire default rates
-  home.file.".config/pipewire/pipewire.conf.d/10-default.clock.allowed-rates.conf"
-  .source = ./dotfiles/pipewire/10-default.clock.allowed-rates.conf;
+  services.mpd-mpris.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
