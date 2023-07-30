@@ -72,9 +72,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "amd_pstate=active" ];
-  
   security.apparmor.enable = true;
   
   time.timeZone = "Europe/Berlin";
@@ -85,6 +82,7 @@
      	curl
      	git
      	sbctl
+     	piper
   ];
   
   # Pipewire Setup
@@ -108,12 +106,15 @@
   # steam doesn't work with home manager it seems
   programs.steam.enable = true;
   programs.gamemode.enable = true;
+
+  # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
+  services.ratbagd.enable = true;
   
   # TODO: Set your hostname
   networking.hostName = "pc";
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
+  # Change Bootloader to Lanzaboote for Secureboot
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.efi.canTouchEfiVariables = true;
   
@@ -123,6 +124,17 @@
   };
   
   boot.initrd.systemd.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelParams = [ 
+    "amd_pstate=active"
+    # "quiet"
+  ];
+  # boot.plymouth.enable = true;
+
+  # Enable Zsh systemwide Configuration is done with home manager
+  programs.zsh.enable = true;
+  environment.shells = with pkgs; [ zsh ];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -139,6 +151,7 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       description = "Felix Plamper";
+      shell = pkgs.zsh;
     };
   };
 
