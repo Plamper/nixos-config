@@ -77,7 +77,7 @@
   time.timeZone = "Europe/Berlin";
   
   environment.systemPackages = with pkgs; [
-     	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     	neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      	wget
      	curl
      	git
@@ -99,6 +99,7 @@
   };
   environment.etc."pipewire/pipewire.conf.d/10-default.clock.allowed-rates.conf".text = ''
     context.properties = {
+      default.clock.rate          = 44100
       default.clock.allowed-rates = [ 44100 48000 88200 96000 176400 192000 352800 384000 705600 768000 ]
     }
   '';
@@ -117,6 +118,8 @@
   # Change Bootloader to Lanzaboote for Secureboot
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.timeout = 0;
   
   boot.lanzaboote = {
     enable = true;
@@ -133,8 +136,14 @@
 
   # Enable Zsh systemwide Configuration is done with home manager
   programs.zsh.enable = true;
-  environment.shells = with pkgs; [ zsh ];
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ zsh fish ];
   environment.pathsToLink = [ "/share/zsh" ];
+
+  # Install android udev rules
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -151,7 +160,7 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       description = "Felix Plamper";
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
     };
   };
 

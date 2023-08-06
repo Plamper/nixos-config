@@ -12,6 +12,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./audio.nix
+    ./emacs
   ];
 
   nixpkgs = {
@@ -26,6 +28,7 @@
       # neovim-nightly-overlay.overlays.default
 
       inputs.prismlauncher.overlays.default
+      inputs.nixd.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -60,23 +63,30 @@
     celluloid
     mpdevil
     amberol
-    nautilus-open-any-terminal
-    unstable.blackbox-terminal
+    unstable.blackbox-terminal # using flatpak version for now
     gnome.dconf-editor
     gnome.gnome-tweaks
     gnome.file-roller
     tutanota-desktop
     unstable.thunderbird
     prismlauncher
+    nautilus-open-any-terminal
+    unstable.anki-bin
+    # grc
 
     # dev stuff
     gcc13
     nil
+    nixd
     nixpkgs-fmt
+    cmake
+    gnumake
+    cachix
 
     #Fonts
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerdfonts
     fira-code
+    emacs-all-the-icons-fonts
   ];
 
   home.sessionVariables = {
@@ -84,62 +94,87 @@
     NIXOS_OZONE_WL = "1";
   };
 
+
+  # Code editor Section
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       piousdeer.adwaita-theme
-      llvm-vs-code-extensions.vscode-clangd
+      # llvm-vs-code-extensions.vscode-clangd
       ms-vscode.cpptools
       jnoortheen.nix-ide
+      ms-vscode.cmake-tools
     ];
   };
 
-  services.mpd = {
-    enable = true;
-    musicDirectory = "~/Music";
-    extraConfig = '' 
-        audio_output {  
-          type	"pipewire" #
-          name  "Pipewire"  #
-          dsd         "yes"  #
-        }
-     '';
-  };
-  services.mpd-mpris.enable = true;
+  programs.bash.enable = true;
 
-  programs.bash.enable = true; 
-
-  programs.zsh = {
+  # programs.zsh = {
+  #   enable = true;
+  #   enableAutosuggestions = true;
+  #   enableCompletion = true;
+  #   # doesn't seem to work
+  #   enableVteIntegration = true;
+  #   autocd = true;
+  #   shellAliases = {
+  #     ll = "ls -l";
+  #     update-system = "cd /home/felix/Nix-Configuration && sudo nixos-rebuild switch --flake .#pc";
+  #     update-home = "cd /home/felix/Nix-Configuration && home-manager switch --flake .#felix@pc";
+  #     update-flake = "cd /home/felix/Nix-Configuration && nix flake update";
+  #   };
+  #   history = {
+  #     size = 10000;
+  #     path = "${config.xdg.dataHome}/zsh/history";
+  #   };
+  #   initExtra = ''bindkey "''${key[Up]}" up-line-or-search'';
+  # };
+  programs.fish = {
     enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    enableVteIntegration = true;
-    autocd = true;
-    shellAliases = {
-      ll = "ls -l";
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    plugins = [
+      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
+      { name = "z"; src = pkgs.fishPlugins.z.src; }
+    ];
+    shellAbbrs = {
       update-system = "cd /home/felix/Nix-Configuration && sudo nixos-rebuild switch --flake .#pc";
       update-home = "cd /home/felix/Nix-Configuration && home-manager switch --flake .#felix@pc";
       update-flake = "cd /home/felix/Nix-Configuration && nix flake update";
     };
-    history = {
-      size = 10000;
-      path = "${config.xdg.dataHome}/zsh/history";
-    };
-    initExtra = ''bindkey "''${key[Up]}" up-line-or-search'';
-    plugins = [
-      {
-      name = "spaceship";
-      file = "spaceship.zsh";
-      src = pkgs.fetchFromGitHub {
-        owner = "spaceship-prompt";
-        repo = "spaceship-prompt";
-        rev = "v4.14.0";
-        sha256 = "sha256-aoifMAjJvv1WAlINNkMwCCop6znxyivoD3vQDo/ZbfQ=";
-      };
-    }
-    ];
   };
+
   fonts.fontconfig.enable = true;
+  programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      add_newline = false;
+
+      character = {
+        success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
+      };
+      c.symbol = " ";
+      git_branch.symbol = " ";
+      package.symbol = "󰏗 ";
+      hostname.ssh_symbol = " ";
+      rust.symbol = " ";
+      directory = {
+        truncation_length = 3;
+        truncation_symbol = "…/";
+        substitutions = {
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = " ";
+          "Pictures" = " ";
+          "Nix-Configuration" = " ";
+        };
+      };
+      # package.disabled = true;
+    };
+  };
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

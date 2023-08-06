@@ -24,6 +24,8 @@
     };
 
     prismlauncher.url = "github:PrismLauncher/PrismLauncher";
+    nixd.url = "github:nix-community/nixd";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
