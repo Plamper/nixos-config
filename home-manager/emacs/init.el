@@ -304,3 +304,8 @@
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
+(use-package ivy-nixos-options
+  :ensure t
+  :config
+  (setq ivy-nixos-options-default 1)
+  :bind(("C-c C-S-n" . 'ivy-nixos-options)))
