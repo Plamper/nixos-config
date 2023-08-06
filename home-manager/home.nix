@@ -29,6 +29,7 @@
 
       inputs.prismlauncher.overlays.default
       inputs.nixd.overlays.default
+      inputs.emacs-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -138,9 +139,9 @@
       { name = "z"; src = pkgs.fishPlugins.z.src; }
     ];
     shellAbbrs = {
-      update-system = "cd /home/felix/Nix-Configuration && sudo nixos-rebuild switch --flake .#pc";
-      update-home = "cd /home/felix/Nix-Configuration && home-manager switch --flake .#felix@pc";
-      update-flake = "cd /home/felix/Nix-Configuration && nix flake update";
+      update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#pc";
+      update-home = "home-manager switch --flake /home/felix/Nix-Configuration#felix@pc";
+      update-flake = "nix flake update /home/felix/Nix-Configuration";
     };
   };
 

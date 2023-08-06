@@ -145,6 +145,9 @@
     pkgs.android-udev-rules
   ];
 
+  # For Cachix
+  nix.settings.trusted-users = [ "root" "felix" ];
+
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
