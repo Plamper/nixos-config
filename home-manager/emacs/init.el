@@ -12,7 +12,7 @@
 (global-visual-line-mode t)
 
 ;;Configure font and ligatures
-(set-face-attribute 'default nil :font "CaskaydiaCove Nerd Font" :height 128)
+(set-face-attribute 'default nil :font "CaskaydiaCove Nerd Font" :height 136)
 
 (use-package ligature
   :ensure t
@@ -127,14 +127,15 @@
 
 ;; enable smooth scrolling
 (pixel-scroll-precision-mode 1)
-(setq pixel-scroll-precision-large-scroll-height 15.0)
+(setq pixel-scroll-precision-large-scroll-height 5.0)
 
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
                 term-mode-hook
 		shell-mode-hook
                 eshell-mode-hook
-		vterm-mode-hook))
+		vterm-mode-hook
+		treemacs-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (use-package all-the-icons
@@ -254,9 +255,9 @@
   ;; For Emacs client
   (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))))
 
-(use-package neotree
-  :config
-  (eval-after-load 'neotree #'adwaita-dark-theme-neotree-configuration-enable))
+;; (use-package neotree
+;;   :config
+;;   (eval-after-load 'neotree #'adwaita-dark-theme-neotree-configuration-enable))
 
 ;; Fringe Config
 (set-fringe-mode 6)
@@ -279,20 +280,36 @@
   (add-hook 'prog-mode-hook #'yas-minor-mode))
 
 
-
-(defun open-project-dir ()
-    (interactive)
-    (counsel-find-file)
-    (neotree-show)
-    (eglot))
-
 (use-package flymake-popon
   :init
   (use-package posframe)
   (use-package popon))
 
+(use-package lsp-mode
+  :ensure t
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  :bind ("C-c l" . lsp-keymap-prefix)
+  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+         (c-mode . lsp)
+         ;; if you want which-key integration
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+(use-package lsp-nix
+  :ensure lsp-mode
+  :after (lsp-mode)
+  :demand t
+  :custom
+  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+
 ;; nix mode copied straight from the wiki
 (use-package nix-mode
+  :hook (nix-mode . lsp-deferred)
   :ensure t
   :mode ("\\.nix\\'" "\\.nix.in\\'"))
 (use-package nix-drv-mode
@@ -304,8 +321,4 @@
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
-(use-package ivy-nixos-options
-  :ensure t
-  :config
-  (setq ivy-nixos-options-default 1)
-  :bind(("C-c C-S-n" . 'ivy-nixos-options)))
+

@@ -27,7 +27,7 @@
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
-      inputs.prismlauncher.overlays.default
+      # inputs.prismlauncher.overlays.default # just using nixpkgs for now
       inputs.nixd.overlays.default
       inputs.emacs-overlay.overlays.default
 
@@ -75,6 +75,18 @@
     unstable.anki-bin
     # grc
 
+    # Gnome Extensions
+    gnomeExtensions.pano
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.bing-wallpaper-changer
+    gnomeExtensions.caffeine
+    gnomeExtensions.gsconnect
+    gnomeExtensions.appindicator
+    gnomeExtensions.rounded-window-corners
+    gnomeExtensions.tiling-assistant
+    gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
+    
     # dev stuff
     gcc13
     nil
@@ -83,11 +95,14 @@
     cmake
     gnumake
     cachix
+    ccls
+    gdb
 
     #Fonts
     nerdfonts
     fira-code
     emacs-all-the-icons-fonts
+    mono
   ];
 
   home.sessionVariables = {
@@ -175,7 +190,6 @@
       # package.disabled = true;
     };
   };
-
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

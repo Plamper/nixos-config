@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    prismlauncher.url = "github:PrismLauncher/PrismLauncher";
+    # prismlauncher.url = "github:PrismLauncher/PrismLauncher";
     nixd.url = "github:nix-community/nixd";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     # Shameless plug: looking for a way to nixify your themes and make

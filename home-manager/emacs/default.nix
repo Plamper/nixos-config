@@ -1,5 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }: 
-  with pkgs;
+{ inputs, outputs, pkgs, ... }: 
   let emacs-package = (pkgs.emacsWithPackagesFromUsePackage {
       # Your Emacs config file. Org mode babel files are also
       # supported.
