@@ -68,11 +68,12 @@
     gnome.dconf-editor
     gnome.gnome-tweaks
     gnome.file-roller
-    tutanota-desktop
+    unstable.tutanota-desktop
     unstable.thunderbird
     prismlauncher
     nautilus-open-any-terminal
     unstable.anki-bin
+    element-desktop
     # grc
 
     # Gnome Extensions

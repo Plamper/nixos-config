@@ -17,7 +17,7 @@
       #     src = ./emacs.el;
       #     inherit (config.xdg) configHome dataHome;
       #   };
-      defaultInitFile = true;
+      defaultInitFile = false;
 
       # Package is optional, defaults to pkgs.emacs
       package = pkgs.emacs-pgtk;
