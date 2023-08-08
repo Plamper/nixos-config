@@ -289,7 +289,9 @@
   :ensure t
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  :bind ("C-c l" . lsp-keymap-prefix)
+  (setq lsp-keymap-prefix "C-c l")
+  :bind-keymap
+  ("C-c l" . lsp-command-map)
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (c-mode . lsp)
          ;; if you want which-key integration
@@ -307,6 +309,10 @@
   :custom
   (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
 
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
 ;; nix mode copied straight from the wiki
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
@@ -322,3 +328,7 @@
   :ensure nix-mode
   :commands (nix-repl))
 
+(use-package org-modern
+  :config
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-agenda-finalize-hook #'org-modern-agenda))

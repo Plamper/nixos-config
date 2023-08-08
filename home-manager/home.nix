@@ -86,7 +86,7 @@
     gnomeExtensions.tiling-assistant
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
-    
+
     # dev stuff
     gcc13
     nil
