@@ -161,6 +161,10 @@
   };
 
   fonts.fontconfig.enable = true;
+  home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
+    source = ./fonts/FiraCodeNerdFont-Retina_freeze.ttf;
+  };
+
   programs.starship = {
     enable = true;
     # Configuration written to ~/.config/starship.toml
@@ -194,6 +198,12 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+
+  # Enable Syncthing
+  services.syncthing = {
+    enable = true;
+    tray.enable = true;
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

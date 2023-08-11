@@ -24,7 +24,7 @@
   ;; `variable-pitch' face supports it
   (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
   ;; Enable all Cascadia and Fira Code ligatures in programming modes
-  (ligature-set-ligatures 'prog-mode
+  (ligature-set-ligatures 't
                         '(;; == === ==== => =| =>>=>=|=>==>> ==< =/=//=// =~
                           ;; =:= =!=
                           ("=" (rx (+ (or ">" "<" "|" "/" "~" ":" "!" "="))))
