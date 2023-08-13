@@ -365,7 +365,7 @@ I can't get clangd to work on NixOS so I am using ccls now. It needs an extra pa
 
 Makes Org look a little bit nicer.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle yes
 
   (use-package org-modern
     :config
