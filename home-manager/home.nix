@@ -102,6 +102,7 @@
     #Fonts
     nerdfonts
     fira-code
+    fira
     emacs-all-the-icons-fonts
     mono
   ];
@@ -204,6 +205,15 @@
   services.syncthing = {
     enable = true;
     tray.enable = true;
+  };
+
+  # The syncthing tray complains about tray.target
+  # so we just pretend its there
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
   };
 
   # Nicely reload system units when changing configs
