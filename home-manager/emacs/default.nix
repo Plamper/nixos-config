@@ -56,11 +56,12 @@ let
     # ];
 
     # Optionally override derivations.
-    #override = final: prev: {
-    #  weechat = prev.melpaPackages.weechat.overrideAttrs(old: {
-    #    patches = [ ./weechat-el.patch ];
-    #  });
-    #};
+    override = epkgs: epkgs // {
+        org-modern-indent = pkgs.callPackage ./packages/org-modern-indent.nix {
+          inherit (pkgs) fetchFromGitHub;
+          inherit (epkgs) trivialBuild org-modern;
+        };
+      };
   });
 in
 {
