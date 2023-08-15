@@ -61,6 +61,10 @@ let
           inherit (pkgs) fetchFromGitHub;
           inherit (epkgs) trivialBuild org-modern;
         };
+        org-inline-image-fix = pkgs.callPackage ./packages/org-inline-image-fix.nix {
+          inherit (pkgs) fetchFromGitHub;
+          inherit (epkgs) trivialBuild;
+        };
       };
   });
 in

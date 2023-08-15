@@ -8,6 +8,7 @@ This Config does only work when used with the [[https://github.com/nix-community
 Here are lie all my basic configurations.
 
 **  Emacs Base UI Settings
+
 Here I configure everything UI 
 
 #+begin_src emacs-lisp :tangle yes
@@ -452,8 +453,17 @@ This centers Org Mode Buffers.
     :hook (org-mode . plamper/org-mode-setup)
     :config
     (setq org-ellipsis " ▾")
-
+    (setq org-image-actual-width nil)
 
     (plamper/org-font-setup))
+
+#+end_src
+
+**  Org-Inline-Image-Fix
+I found this cool package on [[https://github.com/misohena/org-inline-image-fix][Github]] which fixes some Problems with org-inline-image-mode. Since it's not in any Repository I tried to package it myself. See [[file:packages/org-inline-image-fix.nix][org-inline-image.nix]] for more Details.
+
+#+begin_src emacs-lisp :tangle yes
+
+  (use-package org-inline-image-fix)
 
 #+end_src
