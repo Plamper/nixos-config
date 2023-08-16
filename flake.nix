@@ -76,6 +76,13 @@
             ./nixos/pc
           ];
         };
+        notebook = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/notebook
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -83,6 +90,14 @@
       homeConfigurations = {
         # FIXME replace with your username@hostname
         "felix@pc" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/home.nix
+          ];
+        };
+        "felix@notebook" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [

@@ -58,7 +58,6 @@
   home.packages = with pkgs; [
     # steam
     imagemagick
-    brave
     gnome-extension-manager
     mangohud
     gamescope
@@ -76,6 +75,7 @@
     unstable.anki-bin
     element-desktop
     pika-backup
+    adw-gtk3
     # grc
 
     # Gnome Extensions
@@ -112,6 +112,14 @@
   home.sessionVariables = {
     QT_STYLE_OVERRIDE = "adwaita-dark";
     NIXOS_OZONE_WL = "1";
+  };
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    commandLineArgs = [
+      "--enable-features=TouchpadOverscrollHistoryNavigation"
+    ];
   };
 
 
@@ -158,8 +166,8 @@
       { name = "z"; src = pkgs.fishPlugins.z.src; }
     ];
     shellAbbrs = {
-      update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#pc";
-      update-home = "home-manager switch --flake /home/felix/Nix-Configuration#felix@pc";
+      update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname)";
+      update-home = "home-manager switch --flake /home/felix/Nix-Configuration#(echo $USER)@(echo $hostname)";
       update-flake = "nix flake update /home/felix/Nix-Configuration";
     };
   };
@@ -217,6 +225,14 @@
       Requires = [ "graphical-session-pre.target" ];
     };
   };
+
+  # To set Blackbox as the default terminal we need to change a dconf setting
+  # dconf.settings."com/github/stunkeymonkey/nautilus-open-any-terminal" = {
+  #   flatpak = "off";
+  #   keybindings = "<Ctrl><Alt>t";
+  #   new-tab = false;
+  #   terminal = "blackbox";
+  # };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
