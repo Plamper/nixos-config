@@ -48,4 +48,6 @@
   
   # For Cachix
   nix.settings.trusted-users = [ "root" "felix" ];
+
+  zramSwap.enable = true;
 }
