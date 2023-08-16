@@ -57,6 +57,7 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # steam
+    imagemagick
     brave
     gnome-extension-manager
     mangohud
@@ -74,6 +75,7 @@
     nautilus-open-any-terminal
     unstable.anki-bin
     element-desktop
+    pika-backup
     # grc
 
     # Gnome Extensions
