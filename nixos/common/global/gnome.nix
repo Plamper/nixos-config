@@ -5,5 +5,8 @@
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
     gnome-console
+    gnome.totem
+    gnome.gnome-music
+    gnome-tour
   ]);
 }
