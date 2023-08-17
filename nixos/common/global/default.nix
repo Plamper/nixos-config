@@ -45,6 +45,8 @@
     pkgs.android-udev-rules
   ];
 
+  # For firmware updates
+  services.fwupd.enable = true;
   
   # For Cachix
   nix.settings.trusted-users = [ "root" "felix" ];

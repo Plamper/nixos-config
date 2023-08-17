@@ -20,6 +20,7 @@
     ./hardware-configuration.nix
     ../common/global
     ../common/users/felix.nix
+    ../common/optional/lanzaboote.nix
   ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
