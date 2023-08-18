@@ -109,9 +109,12 @@
     mono
   ];
 
+  # Environment
   home.sessionVariables = {
     QT_STYLE_OVERRIDE = "adwaita-dark";
     NIXOS_OZONE_WL = "1";
+    BROWSER = "brave";
+    TERMINAL = "blackbox";
   };
 
   programs.chromium = {
