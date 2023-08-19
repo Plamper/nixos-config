@@ -59,8 +59,6 @@
     # steam
     imagemagick
     gnome-extension-manager
-    mangohud
-    gamescope
     celluloid
     mpdevil
     amberol
@@ -70,7 +68,6 @@
     gnome.file-roller
     unstable.tutanota-desktop
     unstable.thunderbird
-    prismlauncher
     nautilus-open-any-terminal
     unstable.anki-bin
     element-desktop

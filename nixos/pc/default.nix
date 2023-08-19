@@ -17,7 +17,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ../common/global
-    ../common/optional/steam.nix
+    ../common/optional/gaming.nix
     ../common/optional/lanzaboote.nix
     ../common/users/felix.nix
   ];
