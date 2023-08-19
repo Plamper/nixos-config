@@ -371,6 +371,19 @@ I can't get clangd to work on NixOS so I am using ccls now. It needs an extra pa
 
 #+end_src
 
+*** Magit
+
+Magit is nice to control git from inside of Emacs.
+
+#+begin_src emacs-lisp :tangle yes
+
+  (use-package magit
+    :commands magit-status
+    :custom
+    (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+#+end_src
+
 * Org Mode Setup
 
 ** Org-Modern
