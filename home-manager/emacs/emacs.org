@@ -371,7 +371,7 @@ I can't get clangd to work on NixOS so I am using ccls now. It needs an extra pa
 
 #+end_src
 
-*** Magit
+** Magit
 
 Magit is nice to control git from inside of Emacs.
 
@@ -381,6 +381,24 @@ Magit is nice to control git from inside of Emacs.
     :commands magit-status
     :custom
     (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+#+end_src
+
+** Projectile
+LSP-Mode pulls this as a depency but configuring keybinds seems nice.
+
+#+begin_src emacs-lisp :tangle yes
+
+  (use-package projectile
+    :diminish projectile-mode
+    :config (projectile-mode)
+    :custom ((projectile-completion-system 'ivy))
+    :bind-keymap
+    ("C-c p" . projectile-command-map))
+
+  (use-package counsel-projectile
+    :after projectile
+    :config (counsel-projectile-mode))
 
 #+end_src
 
