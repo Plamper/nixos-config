@@ -97,6 +97,11 @@
     cachix
     ccls
     gdb
+    python3
+
+    # Man Pages
+    man-pages
+    man-pages-posix
 
     #Fonts
     nerdfonts
