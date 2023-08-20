@@ -6,6 +6,7 @@
     ./gnome.nix
     ./nix.nix
     ./shells.nix
+    ./security.nix
   ];
 
   nixpkgs = {
@@ -36,8 +37,6 @@
     # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
-
-  security.apparmor.enable = true;
 
   
   # Install android udev rules
