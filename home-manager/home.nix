@@ -88,7 +88,7 @@
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
 
     # dev stuff
-    gcc13
+    (hiPrio gcc13)
     nil
     nixd
     nixpkgs-fmt
@@ -98,6 +98,7 @@
     ccls
     gdb
     python3
+    clang
 
     # Man Pages
     man-pages
