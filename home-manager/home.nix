@@ -14,6 +14,7 @@
     # ./nvim.nix
     ./audio.nix
     ./emacs
+    ./shells.nix
   ];
 
   nixpkgs = {
