@@ -73,6 +73,7 @@
     element-desktop
     pika-backup
     adw-gtk3
+    protonvpn-gui
     # grc
 
     # Gnome Extensions
