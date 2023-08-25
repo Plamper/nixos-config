@@ -20,6 +20,7 @@
     ../common/optional/gaming.nix
     ../common/optional/lanzaboote.nix
     ../common/users/felix.nix
+    ../common/optional/virt-manager.nix
   ];
 
   # FIXME: Add the rest of your current configuration
