@@ -38,6 +38,9 @@
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
 
+
+  # Be able to control wifi
+  networking.wireless.userControlled.enable = true;  
   
   # Install android udev rules
   services.udev.packages = [
