@@ -22,6 +22,7 @@
     ../common/users/felix.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/waydroid.nix
+    ../common/optional/printing.nix
   ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
