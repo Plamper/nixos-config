@@ -122,6 +122,14 @@
     TERMINAL = "blackbox";
   };
 
+  # Set Config home etc.
+  xdg.enable = true;
+
+  gtk.theme = {
+    name = "adw-gtk3-dark"; 
+    package = pkgs.adw-gtk3;
+  };
+
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
