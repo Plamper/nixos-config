@@ -40,7 +40,8 @@
 
 
   # Be able to control wifi
-  networking.wireless.userControlled.enable = true;  
+  networking.wireless.userControlled.enable = true;
+  services.tailscale.enable = true;
   
   # Install android udev rules
   services.udev.packages = [
