@@ -112,6 +112,8 @@
     fira
     emacs-all-the-icons-fonts
     mono
+    corefonts
+    vistafonts
   ];
 
   # Environment
