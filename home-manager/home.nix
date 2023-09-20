@@ -59,6 +59,8 @@
   home.packages = with pkgs; [
     # steam
     imagemagick
+    # For editing pdfs with imagemagick
+    ghostscript
     gnome-extension-manager
     celluloid
     mpdevil
@@ -75,6 +77,8 @@
     pika-backup
     adw-gtk3
     protonvpn-gui
+    gimp
+    lutris
     # grc
 
     # Gnome Extensions
