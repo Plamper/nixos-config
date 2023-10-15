@@ -7,6 +7,7 @@
     ./nix.nix
     ./shells.nix
     ./security.nix
+    ./fonts.nix
   ];
 
   nixpkgs = {

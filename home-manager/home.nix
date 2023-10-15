@@ -110,15 +110,6 @@
     # Man Pages
     man-pages
     man-pages-posix
-
-    #Fonts
-    nerdfonts
-    fira-code
-    fira
-    emacs-all-the-icons-fonts
-    mono
-    corefonts
-    vistafonts
   ];
 
   # Environment
