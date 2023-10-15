@@ -1,7 +1,7 @@
 { pkgs, config, ...}:
 {
   config = {
-    fonts.packages = with pkgs; [
+    fonts.fonts = with pkgs; [
       nerdfonts
       fira-code
       fira
