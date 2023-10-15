@@ -498,3 +498,12 @@ I found this cool package on [[https://github.com/misohena/org-inline-image-fix]
   (use-package org-inline-image-fix)
 
 #+end_src
+
+** Org Babel Languages
+
+#+begin_src emacs-lisp :tangle yes
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((C . t)))
+
+#+end_src
