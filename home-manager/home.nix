@@ -79,6 +79,7 @@
     protonvpn-gui
     gimp
     lutris
+    onlyoffice-bin_7_4
     # grc
 
     # Gnome Extensions
