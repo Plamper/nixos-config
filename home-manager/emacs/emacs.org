@@ -7,7 +7,7 @@ This Config does only work when used with the [[https://github.com/nix-community
 
 Here are lie all my basic configurations.
 
-**  Emacs Base UI Settings
+** Emacs Base UI Settings
 
 Here I configure everything UI 
 
@@ -61,7 +61,7 @@ Here I configure everything UI
 
 #+end_src
 
-**  Fonts
+** Fonts
 I use Fira Code with ligatures Setup. Most of the ligature stuff is from the packages Github. 
 
 #+BEGIN_SRC emacs-lisp :tangle yes 
@@ -414,11 +414,13 @@ Makes Org look a little bit nicer.
     :ensure t
     :hook
     (org-mode . org-modern-mode)
+    (org-present-mode . org-modern-mode)
     (org-agenda-finalize . org-modern-agenda))
 
   (use-package org-modern-indent
     :config ; add late to hook
-    (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
+    (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
+    (add-hook 'org-present-mode-hook #'org-modern-indent-mode 90))
 #+end_src
 
 ** Center Org Buffers
@@ -475,26 +477,73 @@ This centers Org Mode Buffers.
 
 #+begin_src emacs-lisp :tangle yes
 
-  (defun plamper/org-mode-setup ()
-    (org-indent-mode 1)
-    (variable-pitch-mode 1)
-    (visual-line-mode 1))
+    (defun plamper/org-mode-setup ()
+      (org-indent-mode 1)
+      (variable-pitch-mode 1)
+      (visual-line-mode 1))
 
-  (use-package org
-    :hook (org-mode . plamper/org-mode-setup)
-    :config
-    (setq org-ellipsis " ▾")
-    (setq org-image-actual-width nil)
+    (use-package org
+      :hook (org-mode . plamper/org-mode-setup)
+      :config
+      (setq org-ellipsis " ▾")
+      (setq org-image-actual-width nil)
 
-    (plamper/org-font-setup))
+      (plamper/org-font-setup)
+      )
 
 #+end_src
 
-**  Org-Inline-Image-Fix
+** Org-Inline-Image-Fix
 I found this cool package on [[https://github.com/misohena/org-inline-image-fix][Github]] which fixes some Problems with org-inline-image-mode. Since it's not in any Repository I tried to package it myself. See [[file:packages/org-inline-image-fix.nix][org-inline-image.nix]] for more Details.
 
 #+begin_src emacs-lisp :tangle yes
 
-  (use-package org-inline-image-fix)
+  ;; (use-package org-inline-image-fix)
 
 #+end_src
+
+** Org-Present
+ For the occasional presentation I use org-present. Config is mostly from System Crafters
+
+ #+begin_src emacs-lisp :tangle yes
+
+   (defun my/org-present-start ()
+     ;; Tweak font sizes
+     (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+                                        (header-line (:height 4.0) variable-pitch)
+                                        (org-document-title (:height 1.75) org-document-title)
+                                        (org-code (:height 1.55) org-code)
+                                        (org-verbatim (:height 1.55) org-verbatim)
+                                        (org-block (:height 1.25) org-block)
+                                        (org-block-begin-line (:height 0.7) org-block)))
+
+     ;; Set a blank header line string to create blank space at the top
+     (setq header-line-format " ")
+
+     ;; Display inline images automatically
+     (org-display-inline-images)
+
+     ;; Center the presentation and wrap lines
+     (visual-fill-column-mode 1)
+     (visual-line-mode 1))
+
+   (defun my/org-present-end ()
+     ;; Reset font customizations
+     (setq-local face-remapping-alist '((default variable-pitch default)))
+
+     ;; Clear the header line string so that it isn't displayed
+     (setq header-line-format nil)
+
+     ;; Stop displaying inline images
+     (org-remove-inline-images)
+
+     ;; Stop centering the document
+     (visual-fill-column-mode 0)
+     (visual-line-mode 0))
+
+   (use-package org-present)
+
+   (add-hook 'org-present-mode-hook 'my/org-present-start)
+   (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+
+ #+end_src
