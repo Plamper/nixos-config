@@ -3,4 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
+  gnuhealth-client = pkgs.callPackage ./gnuhealth-client.nix { };
 }

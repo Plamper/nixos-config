@@ -106,6 +106,10 @@
     gdb
     python3
     clang
+    
+    jetbrains.rider
+    dotnet-sdk_6
+
 
     # Man Pages
     man-pages
