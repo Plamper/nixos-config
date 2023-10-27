@@ -32,7 +32,6 @@
     ];
     shellAbbrs = {
       update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname)";
-      update-home = "home-manager switch --flake /home/felix/Nix-Configuration#(echo $USER)@(echo $hostname)";
       update-flake = "nix flake update /home/felix/Nix-Configuration";
     };
   };

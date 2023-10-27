@@ -2,10 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ inputs, outputs, config, pkgs, ... }:
 
 {
-    imports = [
+  imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
     
@@ -57,15 +57,15 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-environment.systemPackages = with pkgs; [
-     	neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     	wget
-     	curl
-     	git
-     	sbctl
-     	piper
-	gnome.nautilus-python # Needed for nautilus extensions
-	# nautilus-open-any-terminal
+  environment.systemPackages = with pkgs; [
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    git
+    sbctl
+    piper
+	  gnome.nautilus-python # Needed for nautilus extensions
+	  # nautilus-open-any-terminal
   ];
 
   # TODO: Set your hostname
