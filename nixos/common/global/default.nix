@@ -9,6 +9,7 @@
     ./shells.nix
     ./security.nix
     ./fonts.nix
+    ./flatpak-font-fix.nix
   ];
 
   nixpkgs = {
