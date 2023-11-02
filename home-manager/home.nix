@@ -63,7 +63,6 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    # steam
     imagemagick
     # For editing pdfs with imagemagick
     ghostscript
@@ -71,7 +70,7 @@
     celluloid
     mpdevil
     amberol
-    unstable.blackbox-terminal # using flatpak version for now
+    unstable.blackbox-terminal
     gnome.dconf-editor
     gnome.gnome-tweaks
     gnome.file-roller
