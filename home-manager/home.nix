@@ -45,12 +45,6 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
-
-      # Fix for Heroic
-      permittedInsecurePackages = [
-        "electron-24.8.6"
-      ];
-
     };
   };
 
@@ -85,7 +79,6 @@
     gimp
     lutris
     onlyoffice-bin_7_4
-    unstable.heroic
     # grc
 
     # Gnome Extensions
