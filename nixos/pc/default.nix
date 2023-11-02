@@ -45,7 +45,7 @@
   networking.hostName = "pc";
 
 
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.kernelParams = [ 
     "amd_pstate=active"
     # "quiet"

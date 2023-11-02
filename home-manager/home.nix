@@ -80,6 +80,7 @@
     gimp
     lutris
     onlyoffice-bin_7_4
+    unstable.heroic
     # grc
 
     # Gnome Extensions
@@ -96,7 +97,6 @@
 
     # dev stuff
     (hiPrio gcc13)
-    nil
     nixd
     nixpkgs-fmt
     cmake
@@ -109,7 +109,6 @@
     
     jetbrains.rider
     dotnet-sdk_6
-
 
     # Man Pages
     man-pages
