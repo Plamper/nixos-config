@@ -79,6 +79,7 @@
     gimp
     lutris
     onlyoffice-bin_7_4
+    signal-desktop
     # grc
 
     # Gnome Extensions
