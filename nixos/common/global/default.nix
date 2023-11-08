@@ -58,4 +58,6 @@
   nix.settings.trusted-users = [ "root" "felix" ];
 
   zramSwap.enable = true;
+
+  programs.nix-ld.enable = true;
 }
