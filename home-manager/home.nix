@@ -59,7 +59,6 @@
   home.packages = with pkgs; [
     imagemagick
     # For editing pdfs with imagemagick
-    ghostscript
     gnome-extension-manager
     celluloid
     mpdevil
@@ -80,6 +79,7 @@
     lutris
     onlyoffice-bin_7_4
     signal-desktop
+    texlive.combined.scheme-full
     # grc
 
     # Gnome Extensions

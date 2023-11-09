@@ -556,3 +556,45 @@ I found this cool package on [[https://github.com/misohena/org-inline-image-fix]
    (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
 
  #+end_src
+
+
+* AucTex
+
+For editing pure LaTex files I use AucTex
+
+#+begin_src emacs-lisp :tangle yes
+
+  (use-package auctex
+    :config
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq-default TeX-master nil))
+
+  (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+  ;;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (setq reftex-plug-into-AUCTeX t)
+
+#+end_src
+
+** Tex-Lsp integration
+
+
+#+begin_src emacs-lisp :tangle yes
+
+  (use-package auctex
+    :config
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq-default TeX-master nil))
+
+  (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (setq reftex-plug-into-AUCTeX t)
+
+#+end_src
