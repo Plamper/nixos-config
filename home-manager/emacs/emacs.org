@@ -7,6 +7,15 @@ This Config does only work when used with the [[https://github.com/nix-community
 
 Here are lie all my basic configurations.
 
+** Bind-Key
+Just to fix errors I manually request the package
+#+begin_src emacs-lisp :tangle yes
+  (use-package bind-key
+    :ensure t
+    :config
+    (add-to-list 'same-window-buffer-names "*Personal Keybindings*"))
+#+end_src
+
 ** Emacs Base UI Settings
 
 Here I configure everything UI 
@@ -272,6 +281,19 @@ Let's you see the Git diff in the Window Border. Just like in VSCode.
 #+END_SRC
 
 ** LSP-Mode
+*** Treesitter
+#+begin_src emacs-lisp :tangle yes
+  (setq major-mode-remap-alist
+        '((yaml-mode . yaml-ts-mode)
+          (bash-mode . bash-ts-mode)
+          (js2-mode . js-ts-mode)
+          (typescript-mode . typescript-ts-mode)
+          (json-mode . json-ts-mode)
+          (css-mode . css-ts-mode)
+          (python-mode . python-ts-mode)
+          (c-mode . c-ts-mode)
+          (c++-mode. c++-ts-mode)))
+#+end_src
 
 *** Company and Yasnippet
 
@@ -280,14 +302,17 @@ Company is needed for LSP-mode auto completion and Yasnippet is just nice to hav
 #+begin_src emacs-lisp :tangle yes
 
   (use-package company
-    :config
-    (add-hook 'prog-mode-hook #'company-mode))
-  (eval-after-load 'flymake #'adwaita-dark-theme-flymake-fringe-bmp-enable)
+    :hook
+    (prog-mode . company-mode))
+
+  (use-package company-box
+    :hook (company-mode . company-box-mode))
 
   (use-package yasnippet-snippets
     :config
     (yas-reload-all)
-    (add-hook 'prog-mode-hook #'yas-minor-mode))
+    :hook
+    (prog-mode . yas-minor-mode))
 
 #+end_src
 
@@ -301,6 +326,7 @@ Flymake is integrated into emacs but the popon plugin is nice.
     :init
     (use-package posframe)
     (use-package popon))
+  (eval-after-load 'flymake #'adwaita-dark-theme-flymake-fringe-bmp-enable)
 
 #+end_src
 
@@ -309,6 +335,9 @@ Flymake is integrated into emacs but the popon plugin is nice.
 Just the Base config from the Wiki.
 
 #+begin_src emacs-lisp :tangle yes
+
+  ;;For auto Brackets
+  (add-hook 'prog-mode-hook #'electric-pair-mode)
 
   (use-package lsp-mode
     :ensure t
@@ -319,6 +348,9 @@ Just the Base config from the Wiki.
     ("C-c l" . lsp-command-map)
     :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
            (c-mode . lsp)
+           (c++-mode . lsp)
+           (c-ts-mode . lsp)
+           (c++-ts-mode . lsp)
            (tex-mode . lsp)
            (latex-mode . lsp)
            ;; if you want which-key integration
@@ -368,7 +400,7 @@ I can't get clangd to work on NixOS so I am using ccls now. It needs an extra pa
 #+begin_src emacs-lisp :tangle yes
 
   (use-package ccls
-    :hook ((c-mode c++-mode objc-mode cuda-mode) .
+    :hook ((c-mode c++-mode objc-mode cuda-mode c-ts-mode c++-ts-mode) .
 	   (lambda () (require 'ccls) (lsp))))
 
 #+end_src
