@@ -304,15 +304,19 @@ Company is needed for LSP-mode auto completion and Yasnippet is just nice to hav
   (use-package company
     :hook
     (prog-mode . company-mode))
+  ;; To use lsp-mode and yasnippet
+  (setq lsp-completion-provider :none)
+  (setq company-backends '((company-capf company-yasnippet)))
 
   (use-package company-box
     :hook (company-mode . company-box-mode))
 
-  (use-package yasnippet-snippets
-    :config
-    (yas-reload-all)
+  (use-package yasnippet
     :hook
     (prog-mode . yas-minor-mode))
+  (use-package yasnippet-snippets
+    :config
+    (yas-reload-all))
 
 #+end_src
 
