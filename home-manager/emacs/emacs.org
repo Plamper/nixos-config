@@ -318,9 +318,11 @@ Just the Base config from the Wiki.
     :bind-keymap
     ("C-c l" . lsp-command-map)
     :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-	   (c-mode . lsp)
-	   ;; if you want which-key integration
-	   (lsp-mode . lsp-enable-which-key-integration))
+           (c-mode . lsp)
+           (tex-mode . lsp)
+           (latex-mode . lsp)
+           ;; if you want which-key integration
+           (lsp-mode . lsp-enable-which-key-integration))
     :commands lsp)
 
   (use-package lsp-ui :commands lsp-ui-mode)
@@ -419,8 +421,7 @@ Makes Org look a little bit nicer.
 
   (use-package org-modern-indent
     :config ; add late to hook
-    (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
-    (add-hook 'org-present-mode-hook #'org-modern-indent-mode 90))
+    (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
 #+end_src
 
 ** Center Org Buffers
@@ -534,6 +535,7 @@ I found this cool package on [[https://github.com/misohena/org-inline-image-fix]
 
      ;; Center the presentation and wrap lines
      (visual-fill-column-mode 1)
+     (org-modern-indent-mode 0)
      (visual-line-mode 1))
 
    (defun my/org-present-end ()
@@ -548,6 +550,7 @@ I found this cool package on [[https://github.com/misohena/org-inline-image-fix]
 
      ;; Stop centering the document
      (visual-fill-column-mode 0)
+     (org-modern-indent-mode 1)
      (visual-line-mode 0))
 
    (use-package org-present)
@@ -576,6 +579,7 @@ For editing pure LaTex files I use AucTex
 
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   (setq reftex-plug-into-AUCTeX t)
+  (setq-default TeX-master nil) ; Query for master file.
 
 #+end_src
 
@@ -583,18 +587,5 @@ For editing pure LaTex files I use AucTex
 
 
 #+begin_src emacs-lisp :tangle yes
-
-  (use-package auctex
-    :config
-    (setq TeX-auto-save t)
-    (setq TeX-parse-self t)
-    (setq-default TeX-master nil))
-
-  (add-hook 'LaTeX-mode-hook 'visual-line-mode)
-  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
-  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-
-  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-  (setq reftex-plug-into-AUCTeX t)
-
+  (use-package lsp-latex)
 #+end_src

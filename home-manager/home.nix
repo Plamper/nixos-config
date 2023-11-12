@@ -80,6 +80,7 @@
     onlyoffice-bin_7_4
     signal-desktop
     texlive.combined.scheme-full
+    texlab
     # grc
 
     # Gnome Extensions
