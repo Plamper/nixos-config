@@ -81,6 +81,7 @@
     signal-desktop
     texlive.combined.scheme-full
     texlab
+    pdfpc
     # grc
 
     # Gnome Extensions
@@ -107,7 +108,7 @@
     python3
     clang
     
-    jetbrains.rider
+    unstable.jetbrains.rider
     dotnet-sdk_6
 
     # Man Pages
