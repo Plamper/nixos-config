@@ -95,6 +95,7 @@
     gnomeExtensions.tiling-assistant
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
+    gnomeExtensions.syncthing-indicator
 
     # dev stuff
     (hiPrio gcc13)
@@ -152,16 +153,6 @@
   # Enable Syncthing
   services.syncthing = {
     enable = true;
-    tray.enable = true;
-  };
-
-  # The syncthing tray complains about tray.target
-  # so we just pretend its there
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
-    };
   };
 
   fonts.fontconfig.enable = true;
