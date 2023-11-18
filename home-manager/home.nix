@@ -127,7 +127,7 @@
 
   programs.chromium = {
     enable = true;
-    package = pkgs.brave;
+    package = pkgs.unstable.brave;
     commandLineArgs = [
       "--enable-features=TouchpadOverscrollHistoryNavigation"
     ];

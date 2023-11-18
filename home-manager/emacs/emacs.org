@@ -303,7 +303,8 @@ Company is needed for LSP-mode auto completion and Yasnippet is just nice to hav
 
   (use-package company
     :hook
-    (prog-mode . company-mode))
+    (prog-mode . company-mode)
+    (LaTeX-mode . company-mode))
   ;; To use lsp-mode and yasnippet
   (setq lsp-completion-provider :none)
   (setq company-backends '((company-capf company-yasnippet)))
@@ -355,8 +356,7 @@ Just the Base config from the Wiki.
            (c++-mode . lsp)
            (c-ts-mode . lsp)
            (c++-ts-mode . lsp)
-           (tex-mode . lsp)
-           (latex-mode . lsp)
+           (LaTeX-mode . lsp)
            ;; if you want which-key integration
            (lsp-mode . lsp-enable-which-key-integration))
     :commands lsp)
