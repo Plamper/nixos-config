@@ -81,7 +81,7 @@
     signal-desktop
     texlive.combined.scheme-full
     texlab
-    pdfpc
+    pympress
     # grc
 
     # Gnome Extensions
