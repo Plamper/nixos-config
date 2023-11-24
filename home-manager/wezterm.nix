@@ -50,7 +50,7 @@ config.colors = {
   },
 }
 config.font = wezterm.font {
-  family = 'FiraCode Nerd Font',
+  family = 'Fira Code',
   weight = 'Medium',
   harfbuzz_features = { 'cv02', 'ss01', 'ss03', 'ss05', 'ss07' },
 }
