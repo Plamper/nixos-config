@@ -82,6 +82,7 @@
     signal-desktop
     texlive.combined.scheme-full
     texlab
+    ltex-ls
     pympress
     # grc
 
@@ -112,6 +113,8 @@
     clang
     clang-tools 
     lldb_9
+    bear
+    unstable.gitui
     
     unstable.jetbrains.rider
     dotnet-sdk_6
