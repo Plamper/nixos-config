@@ -15,6 +15,8 @@
     ./audio.nix
     ./emacs
     ./shells.nix
+    ./helix.nix
+    ./wezterm.nix
   ];
 
   nixpkgs = {
@@ -69,7 +71,6 @@
     gnome.file-roller
     unstable.tutanota-desktop
     unstable.thunderbird
-    nautilus-open-any-terminal
     unstable.anki-bin
     element-desktop
     pika-backup
@@ -101,6 +102,7 @@
     (hiPrio gcc13)
     nixd
     nixpkgs-fmt
+    nil
     cmake
     gnumake
     cachix
@@ -108,6 +110,8 @@
     gdb
     python3
     clang
+    clang-tools 
+    lldb_9
     
     unstable.jetbrains.rider
     dotnet-sdk_6
@@ -122,7 +126,7 @@
     QT_STYLE_OVERRIDE = "adwaita-dark";
     NIXOS_OZONE_WL = "1";
     BROWSER = "brave";
-    TERMINAL = "blackbox";
+    #TERMINAL = "blackbox";
   };
 
   programs.chromium = {
