@@ -10,6 +10,7 @@
     ./security.nix
     ./fonts.nix
     ./flatpak-font-fix.nix
+    ./ibus.nix
   ];
 
   nixpkgs = {
