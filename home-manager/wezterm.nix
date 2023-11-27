@@ -1,4 +1,4 @@
-{...}:
+{ pkgs, ...}:
 {
   config = {
     programs.wezterm = {
@@ -60,8 +60,21 @@ config.font_size = 13.0;
 return config
       '';
     };
-    home.sessionVariables = {
-      TERM = "wezterm";
-    };
+   
+    home.packages = let
+      xdgTermShim = pkgs.writeShellApplication {
+  name = "xdg-terminal-exec";
+
+  runtimeInputs = [ pkgs.wezterm ];
+
+  text = ''
+    wezterm -e "$@"
+  '';
+}
+;
+    in [
+      xdgTermShim
+    ];
+    
   };
 }
