@@ -8,6 +8,9 @@
         keys.normal = {
           esc = [ "collapse_selection" "keep_primary_selection" ];
         };
+        editor.cursor-shape = {
+          insert = "bar";
+        };
       };
       languages = {
         language = [
