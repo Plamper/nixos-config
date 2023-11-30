@@ -4,7 +4,7 @@
     programs.helix = {
       enable = true;
       settings = {
-        theme = "adwaita-dark";
+        theme = "tokyonight_storm";
         keys.normal = {
           esc = [ "collapse_selection" "keep_primary_selection" ];
         };

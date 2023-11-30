@@ -17,6 +17,7 @@
     ./shells.nix
     ./helix.nix
     ./wezterm.nix
+    #./gtk.nix
   ];
 
   nixpkgs = {

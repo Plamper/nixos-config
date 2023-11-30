@@ -19,7 +19,7 @@
         -- This is where you actually apply your config choices
 
         -- For example, changing the color scheme:
-        config.color_scheme = 'adwaita-dark'
+        config.color_scheme = 'Tokyo Night Storm'
         config.enable_wayland = false
         config.window_frame = {
           -- The font used in the tab bar.
