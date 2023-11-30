@@ -11,6 +11,7 @@
     ./fonts.nix
     ./flatpak-font-fix.nix
     ./ibus.nix
+    #./distrobox.nix
   ];
 
   nixpkgs = {
@@ -38,7 +39,7 @@
     };
   };
 
-    # Enable Flatpak and Ratbagd
+  # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
 
@@ -46,7 +47,7 @@
   # Be able to control wifi
   networking.wireless.userControlled.enable = true;
   services.tailscale.enable = true;
-  
+
   # Install android udev rules
   services.udev.packages = [
     pkgs.android-udev-rules
@@ -54,7 +55,7 @@
 
   # For firmware updates
   services.fwupd.enable = true;
-  
+
   # For Cachix
   nix.settings.trusted-users = [ "root" "felix" ];
 
