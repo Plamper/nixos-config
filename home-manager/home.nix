@@ -58,72 +58,88 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [
-    imagemagick
-    # For editing pdfs with imagemagick
-    gnome-extension-manager
-    celluloid
-    mpdevil
-    amberol
-    unstable.blackbox-terminal
-    gnome.dconf-editor
-    gnome.gnome-tweaks
-    gnome.file-roller
-    unstable.tutanota-desktop
-    unstable.thunderbird
-    unstable.anki-bin
-    element-desktop
-    pika-backup
-    adw-gtk3
-    protonvpn-gui
-    gimp
-    lutris
-    onlyoffice-bin_7_4
-    signal-desktop
-    texlive.combined.scheme-full
-    texlab
-    ltex-ls
-    pympress
-    vlc
-    # grc
+  home.packages =
+    let
 
-    # Gnome Extensions
-    gnomeExtensions.pano
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.bing-wallpaper-changer
-    gnomeExtensions.caffeine
-    gnomeExtensions.gsconnect
-    gnomeExtensions.appindicator
-    gnomeExtensions.rounded-window-corners
-    gnomeExtensions.tiling-assistant
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
-    gnomeExtensions.syncthing-indicator
+      pythonWithLsp = pkgs.python3.withPackages
+        (ps: with ps; [
+          python-lsp-server
+        ]
+        ++ python-lsp-server.optional-dependencies.rope
+        ++ python-lsp-server.optional-dependencies.mccabe
+        ++ python-lsp-server.optional-dependencies.pycodestyle
+        ++ python-lsp-server.optional-dependencies.pyflakes
+        ++ python-lsp-server.optional-dependencies.yapf
+        );
+    in
+    (with pkgs; [
+      imagemagick
+      # For editing pdfs with imagemagick
+      gnome-extension-manager
+      celluloid
+      mpdevil
+      amberol
+      unstable.blackbox-terminal
+      gnome.dconf-editor
+      gnome.gnome-tweaks
+      gnome.file-roller
+      unstable.tutanota-desktop
+      unstable.thunderbird
+      unstable.anki-bin
+      element-desktop
+      pika-backup
+      adw-gtk3
+      protonvpn-gui
+      gimp
+      lutris
+      onlyoffice-bin_7_5
+      signal-desktop
+      texlive.combined.scheme-full
+      texlab
+      ltex-ls
+      pympress
+      vlc
+      eyedropper
+      unstable.panoply
+      # grc
 
-    # dev stuff
-    (hiPrio gcc13)
-    nixd
-    nixpkgs-fmt
-    nil
-    cmake
-    gnumake
-    cachix
-    ccls
-    gdb
-    python3
-    clang
-    clang-tools 
-    lldb_9
-    bear
-    unstable.gitui
-    
-    unstable.jetbrains.rider
-    dotnet-sdk_6
+      # Gnome Extensions
+      gnomeExtensions.pano
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.bing-wallpaper-changer
+      gnomeExtensions.caffeine
+      gnomeExtensions.gsconnect
+      gnomeExtensions.appindicator
+      gnomeExtensions.rounded-window-corners
+      gnomeExtensions.tiling-assistant
+      gnomeExtensions.alphabetical-app-grid
+      gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
+      gnomeExtensions.syncthing-indicator
 
-    # Man Pages
-    man-pages
-    man-pages-posix
-  ];
+      # dev stuff
+      (hiPrio gcc13)
+      nixd
+      nixpkgs-fmt
+      nil
+      cmake
+      gnumake
+      cachix
+      ccls
+      gdb
+      clang
+      clang-tools
+      lldb_9
+      bear
+      unstable.gitui
+      pythonWithLsp
+
+      unstable.jetbrains.rider
+      dotnet-sdk_6
+
+      # Man Pages
+      man-pages
+      man-pages-posix
+    ]);
 
   # Environment
   home.sessionVariables = {
@@ -153,7 +169,7 @@
       ms-vscode.cmake-tools
     ];
   };
- 
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;

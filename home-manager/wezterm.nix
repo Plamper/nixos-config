@@ -36,11 +36,11 @@
 
           -- The overall background color of the tab bar when
           -- the window is focused
-          active_titlebar_bg = '#333333',
+          active_titlebar_bg = '#303030',
 
           -- The overall background color of the tab bar when
           -- the window is not focused
-          inactive_titlebar_bg = '#333333',
+          inactive_titlebar_bg = '#242424',
         }
 
         config.colors = {
@@ -87,8 +87,8 @@
           cursor_border = "#BEAF8A";
           cursor_bg = "#C0BFBC";
           foreground = "#ffffff";
-          #selection_bg = "#444444";
-          #selection_fg = "#E9E9E9";
+          selection_bg = "#193D66";
+          selection_fg = "#C0BFBC";
         };
       };
     };

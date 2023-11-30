@@ -66,9 +66,9 @@
         # package.disabled = true;
       };
     };
-    home.packages = with pkgs;[ exa ];
+    home.packages = with pkgs;[ eza ];
     home.shellAliases = {
-      ls = "exa --icons -F -H --group-directories-first --git -1";
+      ls = "eza --icons -F -H --group-directories-first --git -1";
     };
   };
 
