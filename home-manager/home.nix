@@ -17,6 +17,11 @@
     ./shells.nix
     ./helix.nix
     ./wezterm.nix
+    ./lsp.nix
+    ./gnome-extensions.nix
+    ./python.nix
+    ./c.nix
+    ./latex.nix
     #./gtk.nix
   ];
 
@@ -59,24 +64,9 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages =
-    let
-
-      pythonWithLsp = pkgs.python3.withPackages
-        (ps: with ps; [
-          python-lsp-server
-        ]
-        ++ python-lsp-server.optional-dependencies.rope
-        ++ python-lsp-server.optional-dependencies.mccabe
-        ++ python-lsp-server.optional-dependencies.pycodestyle
-        ++ python-lsp-server.optional-dependencies.pyflakes
-        ++ python-lsp-server.optional-dependencies.yapf
-        );
-    in
-    (with pkgs; [
+  home.packages = with pkgs; [
       imagemagick
       # For editing pdfs with imagemagick
-      gnome-extension-manager
       celluloid
       mpdevil
       amberol
@@ -95,44 +85,13 @@
       lutris
       onlyoffice-bin_7_5
       signal-desktop
-      texlive.combined.scheme-full
-      texlab
-      ltex-ls
-      pympress
       vlc
       eyedropper
       unstable.panoply
-      # grc
-
-      # Gnome Extensions
-      gnomeExtensions.pano
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.bing-wallpaper-changer
-      gnomeExtensions.caffeine
-      gnomeExtensions.gsconnect
-      gnomeExtensions.appindicator
-      gnomeExtensions.rounded-window-corners
-      gnomeExtensions.tiling-assistant
-      gnomeExtensions.alphabetical-app-grid
-      gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
-      gnomeExtensions.syncthing-indicator
 
       # dev stuff
-      (hiPrio gcc13)
-      nixd
-      nixpkgs-fmt
-      nil
-      cmake
-      gnumake
       cachix
-      ccls
-      gdb
-      clang
-      clang-tools
-      lldb_9
-      bear
       unstable.gitui
-      pythonWithLsp
 
       unstable.jetbrains.rider
       dotnet-sdk_6
@@ -140,7 +99,7 @@
       # Man Pages
       man-pages
       man-pages-posix
-    ]);
+    ];
 
   # Environment
   home.sessionVariables = {
@@ -196,7 +155,7 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  # home.sessionPath = [ "$HOME/.local/bin" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
