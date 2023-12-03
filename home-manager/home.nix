@@ -95,6 +95,7 @@
 
     unstable.jetbrains.rider
     dotnet-sdk_6
+    gnome-builder
 
     nodejs
     # Man Pages

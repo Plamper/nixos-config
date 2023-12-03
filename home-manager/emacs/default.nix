@@ -77,7 +77,7 @@ in
     enable = true;
     package = emacs-package;
     client.enable = true;
-    defaultEditor = true;
+    #defaultEditor = true;
   };
 }
 
