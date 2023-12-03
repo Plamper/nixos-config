@@ -9,8 +9,19 @@
         keys.normal = {
           esc = [ "collapse_selection" "keep_primary_selection" ];
         };
-        editor.cursor-shape = {
-          insert = "bar";
+        editor = {
+          cursor-shape = {
+            insert = "bar";
+            normal = "block";
+            select = "underline";
+          };
+          statusline = {
+            mode = {
+              normal = "NORMAL";
+              insert = "INSERT";
+              select = "SELECT";
+            };
+          };
         };
       };
       languages = {
