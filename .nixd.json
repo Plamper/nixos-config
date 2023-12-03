@@ -1,0 +1,12 @@
+{
+  "options": {
+    // Disable it if you are not writting modules.
+    "enable": true,
+    "target": {
+      "args": [],
+      // Example of NixOS options.
+      "installable": ".#nixosConfigurations.\"pc\".options"
+    }
+  }
+}
+

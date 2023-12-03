@@ -15,7 +15,7 @@
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
-    
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
 
@@ -29,6 +29,14 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    nix-matlab = {
+      # Recommended if you also override the default nixpkgs flake, common among
+      # nixos-unstable users:
+      #inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:doronbehar/nix-matlab";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -84,6 +92,6 @@
           ];
         };
       };
- 
+
     };
 }

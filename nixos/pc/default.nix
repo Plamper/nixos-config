@@ -21,6 +21,7 @@
     ../common/optional/lanzaboote.nix
     ../common/users/felix.nix
     ../common/optional/virt-manager.nix
+    ../common/optional/matlab.nix
   ];
 
   # FIXME: Add the rest of your current configuration

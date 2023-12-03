@@ -16,13 +16,18 @@
         language = [
           {
             name = "nix";
-            formatter = { command = "nixpkgs-fmt"; };
+            language-servers = [ "nixd" "nil" ];
           }
           {
             name = "latex";
             language-servers = [ "texlab" "ltex-ls" ];
           }
         ];
+        language-server = {
+          nixd = {
+            command = "nixd";
+          };
+        };
       };
       package = pkgs.unstable.helix;
     };

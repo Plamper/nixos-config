@@ -105,13 +105,37 @@
     home.packages = with pkgs;[ eza bat ];
     home.shellAliases = {
       ls = "eza --icons -F -H --group-directories-first --git";
-      cat = "bat -pp --theme ansi";
+      cat = "bat -pp";
+      man = "batman";
     };
     programs.btop = {
       enable = true;
       settings = {
         color_theme = "tokyo-storm";
         vim_keys = true;
+      };
+    };
+    programs.bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff 
+        batman 
+        batgrep 
+        batwatch
+      ];
+      config = {
+        theme = "tokyonight-storm";
+      };
+      themes = {
+        tokyonight-storm = {
+          src = pkgs.fetchFromGitHub {
+            owner = "folke";
+            repo = "tokyonight.nvim";
+            rev = "f247ee700b569ed43f39320413a13ba9b0aef0db";
+            hash = "sha256-axjZVZOI+WIv85FfMG+lxftDKlDIw/HzQKyJVFkL33M=";
+          };
+          file = "extras/sublime/tokyonight_storm.tmTheme";
+        };
       };
     };
   };

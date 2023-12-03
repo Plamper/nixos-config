@@ -65,41 +65,42 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-      imagemagick
-      # For editing pdfs with imagemagick
-      celluloid
-      mpdevil
-      amberol
-      unstable.blackbox-terminal
-      gnome.dconf-editor
-      gnome.gnome-tweaks
-      gnome.file-roller
-      unstable.tutanota-desktop
-      unstable.thunderbird
-      unstable.anki-bin
-      element-desktop
-      pika-backup
-      adw-gtk3
-      protonvpn-gui
-      gimp
-      lutris
-      onlyoffice-bin_7_5
-      signal-desktop
-      vlc
-      eyedropper
-      unstable.panoply
+    imagemagick
+    # For editing pdfs with imagemagick
+    celluloid
+    mpdevil
+    amberol
+    unstable.blackbox-terminal
+    gnome.dconf-editor
+    gnome.gnome-tweaks
+    gnome.file-roller
+    unstable.tutanota-desktop
+    unstable.thunderbird
+    unstable.anki-bin
+    element-desktop
+    pika-backup
+    adw-gtk3
+    protonvpn-gui
+    gimp
+    lutris
+    onlyoffice-bin_7_5
+    signal-desktop
+    vlc
+    eyedropper
+    unstable.panoply
 
-      # dev stuff
-      cachix
-      unstable.gitui
+    # dev stuff
+    cachix
+    unstable.gitui
 
-      unstable.jetbrains.rider
-      dotnet-sdk_6
+    unstable.jetbrains.rider
+    dotnet-sdk_6
 
-      # Man Pages
-      man-pages
-      man-pages-posix
-    ];
+    nodejs
+    # Man Pages
+    man-pages
+    man-pages-posix
+  ];
 
   # Environment
   home.sessionVariables = {
@@ -155,7 +156,7 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [ "$HOME/.local/bin" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

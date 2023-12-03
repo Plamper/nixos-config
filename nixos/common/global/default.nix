@@ -11,7 +11,7 @@
     ./fonts.nix
     ./flatpak-font-fix.nix
     ./ibus.nix
-    #./distrobox.nix
+    ./distrobox.nix
   ];
 
   nixpkgs = {
