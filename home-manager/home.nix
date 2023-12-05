@@ -22,6 +22,7 @@
     ./python.nix
     ./c.nix
     ./latex.nix
+    ./direnv.nix
     #./gtk.nix
   ];
 
