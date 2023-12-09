@@ -47,6 +47,26 @@
           tab_bar = {
             -- The color of the inactive tab bar edge/divider
             inactive_tab_edge = '#575757',
+          -- The active tab is the one that has focus in the window
+            active_tab = {
+              -- The color of the background area for the tab
+              bg_color = '#444444',
+              -- The color of the text for the tab
+              fg_color = '#FFFFFF',
+            },
+            inactive_tab = {
+              -- The color of the background area for the tab
+              bg_color = '#303030',
+              -- The color of the text for the tab
+              fg_color = '#FFFFFF',
+            },
+            new_tab = {
+              bg_color = '#303030',
+              fg_color = '#FFFFFF',
+
+              -- The same options that were listed under the `active_tab` section above
+              -- can also be used for `new_tab`.
+            },
           },
         }
         config.font = wezterm.font {

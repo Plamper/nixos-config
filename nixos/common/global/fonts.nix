@@ -9,6 +9,8 @@
       mono
       corefonts
       vistafonts
+      noto-fonts-cjk-sans
+      noto-fonts
     ];
   };
 }

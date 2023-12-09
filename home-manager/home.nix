@@ -83,12 +83,18 @@
     adw-gtk3
     protonvpn-gui
     gimp
+    inkscape
     lutris
     onlyoffice-bin_7_5
     signal-desktop
     vlc
     eyedropper
     unstable.panoply
+
+    libreoffice
+    hunspell
+    hunspellDicts.en_US
+    hunspellDicts.de_DE
 
     # dev stuff
     cachix
