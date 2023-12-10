@@ -43,6 +43,29 @@
           inactive_titlebar_bg = '#242424',
         }
 
+        config.mouse_bindings = {
+          -- Change the default selection behavior so that it only selects text,
+          -- but doesn't copy it to a clipboard or open hyperlinks.
+          {
+            event={Up={streak=1, button="Left"}},
+            mods="NONE",
+            action=wezterm.action{ExtendSelectionToMouseCursor="Cell"}
+          },
+          -- Don't automatically copy the selection to the clipboard
+          -- when double clicking a word
+          {
+            event={Up={streak=2, button="Left"}},
+            mods="NONE",
+            action="Nop",
+          },
+          -- Ctrl-click will open the link under the mouse cursor
+          {
+            event={Up={streak=1, button="Left"}},
+            mods="CTRL",
+            action="OpenLinkAtMouseCursor",
+          },
+        }
+
         config.colors = {
           tab_bar = {
             -- The color of the inactive tab bar edge/divider

@@ -78,7 +78,7 @@
     gnome.file-roller
     unstable.tutanota-desktop
     unstable.thunderbird
-    unstable.anki-bin
+    unstable.anki
     element-desktop
     pika-backup
     adw-gtk3
@@ -90,6 +90,7 @@
     signal-desktop
     vlc
     eyedropper
+    nvtop-amd
 
     libreoffice
     hunspell
