@@ -22,6 +22,7 @@
     ../common/users/felix.nix
     ../common/optional/virt-manager.nix
     ../common/optional/matlab.nix
+    ../common/optional/amd-graphics.nix
   ];
 
   # FIXME: Add the rest of your current configuration

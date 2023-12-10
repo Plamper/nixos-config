@@ -8,7 +8,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
-    
+
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -24,6 +24,7 @@
     #../common/optional/waydroid.nix
     ../common/optional/printing.nix
     ../common/optional/virt-manager.nix
+    ../common/optional/amd-graphics.nix
   ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -46,7 +47,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
+
 
   # Configure keymap in X11
   services.xserver.layout = "de";
@@ -64,8 +65,8 @@
     git
     sbctl
     piper
-	  gnome.nautilus-python # Needed for nautilus extensions
-	  # nautilus-open-any-terminal
+    gnome.nautilus-python # Needed for nautilus extensions
+    # nautilus-open-any-terminal
   ];
 
   # TODO: Set your hostname
