@@ -90,7 +90,6 @@
     signal-desktop
     vlc
     eyedropper
-    unstable.panoply
 
     libreoffice
     hunspell
