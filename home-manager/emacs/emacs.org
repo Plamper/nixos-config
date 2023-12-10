@@ -31,10 +31,28 @@ Here I configure everything UI
   (menu-bar-mode -1)            ; Disable the menu bar
   (global-visual-line-mode t)
 
-  (use-package adwaita-dark-theme
-    ;; :load-path  "~/.emacs.d/adwaita-dark-theme/"
-    :ensure t)
-  (load-theme 'adwaita-dark t)
+  ;; (use-package adwaita-dark-theme
+  ;;   ;; :load-path  "~/.emacs.d/adwaita-dark-theme/"
+  ;;   :ensure t)
+  ;; (load-theme 'adwaita-dark t)
+
+  (use-package doom-themes
+    :ensure t
+    :config
+    ;; Global settings (defaults)
+    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+          doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    (load-theme 'doom-one t)
+
+    ;; Enable flashing mode-line on errors
+    (doom-themes-visual-bell-config)
+    ;; Enable custom neotree theme (all-the-icons must be installed!)
+    (doom-themes-neotree-config)
+    ;; or for treemacs users
+    (setq doom-themes-treemacs-theme "doom-tokyonight") ; use "doom-colors" for less minimal icon theme
+    (doom-themes-treemacs-config)
+    ;; Corrects (and improves) org-mode's native fontification.
+    (doom-themes-org-config))
 
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -42,8 +60,8 @@ Here I configure everything UI
   (column-number-mode)
   (global-display-line-numbers-mode t)
   (setq-default display-line-numbers-width-start t
-		display-line-numbers-width 1
-		display-line-numbers-grow-only t)
+                display-line-numbers-width 1
+                display-line-numbers-grow-only t)
 
   ;; enable smooth scrolling
   (pixel-scroll-precision-mode 1)
@@ -51,11 +69,11 @@ Here I configure everything UI
 
   ;; Disable line numbers for some modes
   (dolist (mode '(org-mode-hook
-		  term-mode-hook
-		  shell-mode-hook
-		  eshell-mode-hook
-		  vterm-mode-hook
-		  treemacs-mode-hook))
+                  term-mode-hook
+                  shell-mode-hook
+                  eshell-mode-hook
+                  vterm-mode-hook
+                  treemacs-mode-hook))
     (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
   (use-package all-the-icons
@@ -271,11 +289,11 @@ Let's you see the Git diff in the Window Border. Just like in VSCode.
 
   ;; Fringe Config
   (set-fringe-mode 6)
-  (adwaita-dark-theme-arrow-fringe-bmp-enable)
+  ;;(adwaita-dark-theme-arrow-fringe-bmp-enable)
 
   (use-package diff-hl
     :config
-    (eval-after-load 'diff-hl #'adwaita-dark-theme-diff-hl-fringe-bmp-enable)
+    ;;(eval-after-load 'diff-hl #'adwaita-dark-theme-diff-hl-fringe-bmp-enable)
     (global-diff-hl-mode))
 
 #+END_SRC
@@ -331,7 +349,7 @@ Flymake is integrated into emacs but the popon plugin is nice.
     :init
     (use-package posframe)
     (use-package popon))
-  (eval-after-load 'flymake #'adwaita-dark-theme-flymake-fringe-bmp-enable)
+  ;;(eval-after-load 'flymake #'adwaita-dark-theme-flymake-fringe-bmp-enable)
 
 #+end_src
 
