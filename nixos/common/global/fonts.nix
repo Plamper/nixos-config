@@ -1,4 +1,4 @@
-{ pkgs, config, ...}:
+{ pkgs, config, ... }:
 {
   config = {
     fonts.packages = with pkgs; [
@@ -11,6 +11,19 @@
       vistafonts
       noto-fonts-cjk-sans
       noto-fonts
+      noto-fonts-extra
+      babelstone-han
+      cantarell-fonts
+    ];
+    fonts.fontconfig.defaultFonts.sansSerif = [
+      "Cantarell"
+      "DejaVu Sans"
+      "Noto Sans"
+      "Noto Sans CJK SC"
+      "Noto Sans CJK TC"
+      "Noto Color Emoji"
+      "Noto Emoji"
+      "BabelStone Han"
     ];
   };
 }

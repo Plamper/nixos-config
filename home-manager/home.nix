@@ -23,6 +23,7 @@
     ./c.nix
     ./latex.nix
     ./direnv.nix
+    ./browsers.nix
     #./gtk.nix
   ];
 
@@ -114,18 +115,9 @@
   home.sessionVariables = {
     QT_STYLE_OVERRIDE = "adwaita-dark";
     NIXOS_OZONE_WL = "1";
-    BROWSER = "brave";
+    BROWSER = "firefox";
     #TERMINAL = "blackbox";
   };
-
-  programs.chromium = {
-    enable = true;
-    package = pkgs.unstable.brave;
-    commandLineArgs = [
-      "--enable-features=TouchpadOverscrollHistoryNavigation"
-    ];
-  };
-
 
   # Code editor Section
   programs.vscode = {

@@ -54,6 +54,16 @@
       '';
     };
 
+    programs.nushell = {
+      enable = true;
+      package = pkgs.unstable.nushell;
+    };
+
+    programs.carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
     programs.starship = {
       enable = true;
       # Configuration written to ~/.config/starship.toml
