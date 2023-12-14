@@ -85,7 +85,6 @@
     protonvpn-gui
     gimp
     inkscape
-    lutris
     onlyoffice-bin_7_5
     signal-desktop
     vlc

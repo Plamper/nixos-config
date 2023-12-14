@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   # steam doesn't work with home manager it seems
   config = {
@@ -9,6 +9,13 @@
       mangohud
       gamescope
       prismlauncher
+      (lutris.override {
+        extraPkgs = pkgs: [
+          # List package dependencies here
+          wine
+          wine-staging
+        ];
+      })
     ];
   };
 }
