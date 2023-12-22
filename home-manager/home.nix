@@ -24,6 +24,10 @@
     ./latex.nix
     ./direnv.nix
     ./browsers.nix
+    ./hyprland.nix
+    ./waybar.nix
+    ./rofi.nix
+    ./kitty.nix
     #./gtk.nix
   ];
 

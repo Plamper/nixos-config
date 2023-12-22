@@ -18,12 +18,13 @@
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Cantarell"
       "DejaVu Sans"
-      "Noto Sans"
-      "Noto Sans CJK SC"
-      "Noto Sans CJK TC"
-      "Noto Color Emoji"
-      "Noto Emoji"
-      "BabelStone Han"
+      "Ubuntu Nerd Font Regular"
+      # "Noto Sans"
+      # "Noto Sans CJK SC"
+      # "Noto Sans CJK TC"
+      # "Noto Color Emoji"
+      # "Noto Emoji"
+      # "BabelStone Han"
     ];
   };
 }
