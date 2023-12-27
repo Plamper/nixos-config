@@ -19,7 +19,7 @@
         -- This is where you actually apply your config choices
 
         -- For example, changing the color scheme:
-        config.color_scheme = 'Tokyo Night Storm'
+        config.color_scheme = 'adwaita-dark'
         config.enable_wayland = false
         config.window_frame = {
           -- The font used in the tab bar.
@@ -106,30 +106,30 @@
       colorSchemes = {
         adwaita-dark = {
           ansi = [
-            "#3d3846"
-            "#e01b24"
-            "#2ec27e"
-            "#ff7800"
-            "#1e78e4"
-            "#9841bb"
-            "#0ab9dc"
-            "#c0bfbc"
+            "#1e1e1e"
+            "#c01c28"
+            "#26a269"
+            "#a2734c"
+            "#12488b"
+            "#a347ba"
+            "#2aa1b3"
+            "#cfcfcf"
           ];
           brights = [
-            "#5e5c64"
+            "#5d5d5d"
             "#f66151"
-            "#8ff0a4"
-            "#ffbe6f"
-            "#51a1ff"
+            "#33d17a"
+            "#e9ad0c"
+            "#2a7bde"
             "#c061cb"
-            "#4fd2fd"
-            "#f6f5f4"
+            "#33c7de"
+            "#ffffff"
           ];
           background = "#1E1E1E";
           cursor_fg = "#1D1D1D";
           cursor_border = "#BEAF8A";
           cursor_bg = "#C0BFBC";
-          foreground = "#ffffff";
+          foreground = "#cfcfcf";
           selection_bg = "#193D66";
           selection_fg = "#C0BFBC";
         };
