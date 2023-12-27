@@ -2,8 +2,9 @@
 {
   config = {
     home.packages = with pkgs; [
-			wlogout
+      wlogout
       networkmanagerapplet
+      swaynotificationcenter
     ];
 
     programs.waybar = {
@@ -24,9 +25,42 @@
             "backlight"
             "pulseaudio"
             "battery"
+            "custom/notification"
             "tray"
             "custom/power"
           ];
+          "hyprland/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+              default = "";
+              active = "";
+            };
+          };
+          "hyprland/language" = {
+            format = "󰌌: {}";
+            format-en = "en";
+            format-de = "de";
+          };
+          "custom/notification" = {
+            tooltip = false;
+            format = "{icon}";
+            format-icons = {
+              notification = "<span foreground='red'><sup></sup></span>";
+              none = "";
+              dnd-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-none = "";
+              inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              inhibited-none = "";
+              dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-inhibited-none = "";
+            };
+            return-type = "json";
+            exec-if = "which swaync-client";
+            exec = "swaync-client -swb";
+            on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
+            escape = true;
+          };
           pulseaudio = {
             tooltip = true;
             scroll-step = 5;
@@ -42,8 +76,8 @@
             tooltip = false;
             format = " {}%";
             interval = 1;
-            on-scroll-up = "light -A 5";
-            on-scroll-down = "light -U 5";
+            on-scroll-up = "brightnessctl set +5%";
+            on-scroll-down = "brightnessctl set 5%-";
           };
           battery = {
             states = {
@@ -58,7 +92,7 @@
             format-icons = [ "" "" "" "" "" ];
           };
           tray = {
-						reverse = true;
+            reverse = true;
             icon-size = 18;
             spacing = 10;
           };
@@ -76,19 +110,19 @@
             max-length = 10;
           };
           "custom/launcher" = {
-						tooltip = false;
+            tooltip = false;
             format = "󱄅 ";
             on-click = "rofi -show drun";
             on-click-right = "killall rofi";
           };
           "custom/power" = {
             format = "⏻ ";
-            # on-click = "wlogout";
+            on-click = "wlogout";
           };
-          "custom/wallpaper" = {
-            format = " ";
-            on-click = "bash ~/.config/system_scripts/pkill_bc";
-          };
+          # "custom/wallpaper" = {
+          #   format = " ";
+          #   on-click = "bash ~/.config/system_scripts/pkill_bc";
+          # };
         }
       ];
       style = ''
@@ -119,7 +153,7 @@
 				background: transparent;
 			}
 
-			#network {
+			#workspaces {
 				margin-top: 6px;
 				margin-left: 8px;
 				padding-left: 10px;
@@ -263,6 +297,28 @@
 			}
 
 			#custom-wallpaper {
+				margin-top: 6px;
+				margin-left: 8px;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-bottom: 0px;
+				border-radius: 10px;
+				transition: none;
+				color: #161320;
+				background: #C9CBFF;
+			}
+			#custom-notification {
+				margin-top: 6px;
+				margin-left: 8px;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-bottom: 0px;
+				border-radius: 10px;
+				transition: none;
+				color: #161320;
+				background: #bd93f9;
+			}
+			#language {
 				margin-top: 6px;
 				margin-left: 8px;
 				padding-left: 10px;
