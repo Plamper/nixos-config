@@ -6,6 +6,7 @@
       texlab
       texlive.combined.scheme-full
       pympress
+      pandoc
     ];
   };
 }
