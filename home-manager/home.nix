@@ -90,6 +90,8 @@
     vlc
     eyedropper
     nvtop-amd
+    easyeffects
+    tidal-hifi
 
     libreoffice
     hunspell
@@ -97,6 +99,7 @@
     hunspellDicts.de_DE
 
     # dev stuff
+    just
     cachix
     unstable.gitui
 

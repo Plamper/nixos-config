@@ -31,14 +31,15 @@
 
         # For Firefox GNOME theme:
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-         "browser.tabs.drawInTitlebar" = true;
-         "svg.context-properties.content.enabled" = true;
-         # "gnomeTheme.extensions.tabCenterReborn" = true;
-         "gnomeTheme.hideWebrtcIndicator" = true;
-         "gnomeTheme.hideSingleTab" = true;
+        "browser.tabs.drawInTitlebar" = true;
+        "svg.context-properties.content.enabled" = true;
+        # "gnomeTheme.extensions.tabCenterReborn" = true;
+        "gnomeTheme.hideWebrtcIndicator" = true;
+        "gnomeTheme.hideSingleTab" = true;
         "extensions.pocket.enabled" = false;
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = true;
+        "layers.acceleration.force-enabled" = true;
       };
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";

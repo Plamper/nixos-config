@@ -34,6 +34,13 @@
             name = "latex";
             language-servers = [ "texlab" "ltex-ls" ];
           }
+          {
+            name = "markdown";
+            language-servers = [ "marksman" "ltex-ls" ];
+            soft-wrap = { enable = true; };
+            auto-format = true;
+            formatter = { command = "mdformat"; args = [ "--wrap" "80" "-" ]; };
+          }
         ];
         language-server = {
           nixd = {
@@ -47,5 +54,7 @@
       wl-clipboard
       wl-clipboard-x11
     ];
+
+
   };
 }
