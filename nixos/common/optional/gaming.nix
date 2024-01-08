@@ -12,6 +12,8 @@
       mangohud
       gamescope
       prismlauncher
+      protontricks
+      steamtinkerlaunch
       (lutris.override {
         extraPkgs = pkgs: [
           # List package dependencies here

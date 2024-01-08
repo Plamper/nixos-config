@@ -92,6 +92,7 @@
     nvtop-amd
     easyeffects
     tidal-hifi
+    discord
 
     libreoffice
     hunspell
