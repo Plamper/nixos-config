@@ -2,6 +2,9 @@
 {
   # steam doesn't work with home manager it seems
   config = {
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
     programs.steam.enable = true;
     programs.gamemode.enable = true;
 
@@ -16,6 +19,7 @@
           wine-staging
         ];
       })
+      unstable.r2modman
     ];
   };
 }

@@ -23,6 +23,7 @@
     ../common/optional/virt-manager.nix
     ../common/optional/matlab.nix
     ../common/optional/amd-graphics.nix
+    ../common/optional/disc-drive.nix
   ];
 
   # FIXME: Add the rest of your current configuration
