@@ -13,7 +13,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./audio.nix
-    ./emacs
+    # ./emacs
     ./shells.nix
     ./helix.nix
     ./wezterm.nix
@@ -93,11 +93,15 @@
     easyeffects
     tidal-hifi
     discord
+    unstable.rnote
 
     libreoffice
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
+
+    unstable.qadwaitadecorations
+    unstable.qadwaitadecorations-qt6
 
     # dev stuff
     just
@@ -116,7 +120,8 @@
 
   # Environment
   home.sessionVariables = {
-    QT_STYLE_OVERRIDE = "adwaita-dark";
+    # QT_STYLE_OVERRIDE = "adwaita-dark";
+    QT_WAYLAND_DECORATION= "adwaita";
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
     #TERMINAL = "blackbox";
