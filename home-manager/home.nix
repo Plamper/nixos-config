@@ -94,6 +94,9 @@
     tidal-hifi
     discord
     unstable.rnote
+    trayscale
+    pkgs.unstable.xwaylandvideobridge
+
 
     libreoffice
     hunspell
@@ -118,10 +121,18 @@
     man-pages-posix
   ];
 
+  xdg.configFile."autostart/xwaylandvideobridge.desktop".text = '' 
+    [Desktop Entry]
+    Type=Application
+    Path= ~
+    Exec=xwaylandvideobridge
+    Terminal=false
+  '';
+
   # Environment
   home.sessionVariables = {
     # QT_STYLE_OVERRIDE = "adwaita-dark";
-    QT_WAYLAND_DECORATION= "adwaita";
+    QT_WAYLAND_DECORATION = "adwaita";
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
     #TERMINAL = "blackbox";
@@ -164,7 +175,7 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  # home.sessionPath = [ "$HOME/.local/bin" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

@@ -14,6 +14,7 @@
       prismlauncher
       protontricks
       steamtinkerlaunch
+      unstable.heroic
       (lutris.override {
         extraPkgs = pkgs: [
           # List package dependencies here
