@@ -39,7 +39,7 @@
             language-servers = [ "marksman" "ltex-ls" ];
             soft-wrap = { enable = true; };
             auto-format = true;
-            formatter = { command = "mdformat"; args = [ "--wrap" "80" "-" ]; };
+            formatter = { command = "mdformat"; args = [ "-" ]; };
           }
         ];
         language-server = {
