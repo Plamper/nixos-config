@@ -11,6 +11,14 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+
+    # mpv blu ray support
+    mpv-unwrapped = prev.mpv-unwrapped.override {
+      libbluray = prev.libbluray.override {
+        withAACS = true;
+        withBDplus = true;
+      };
+    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

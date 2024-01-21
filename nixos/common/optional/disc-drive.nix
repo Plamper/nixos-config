@@ -3,7 +3,7 @@
   config = {
     environment.systemPackages = with pkgs;[
       makemkv
-      freac
+      # freac
       libaacs
     ];
   };
