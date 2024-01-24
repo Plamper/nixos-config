@@ -24,6 +24,7 @@
     ../common/optional/matlab.nix
     ../common/optional/amd-graphics.nix
     ../common/optional/disc-drive.nix
+    ../common/optional/ledger.nix
   ];
 
   # FIXME: Add the rest of your current configuration

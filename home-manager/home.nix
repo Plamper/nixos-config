@@ -77,7 +77,7 @@
     gnome.gnome-tweaks
     gnome.file-roller
     unstable.tutanota-desktop
-    unstable.thunderbird
+    thunderbird
     unstable.anki
     element-desktop
     pika-backup
@@ -92,9 +92,9 @@
     easyeffects
     tidal-hifi
     unstable.vesktop
+    (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
     trayscale
-    pkgs.unstable.xwaylandvideobridge
     unstable.planify
     ffmpeg-full
     handbrake
@@ -115,8 +115,6 @@
     cachix
     unstable.gitui
 
-    unstable.jetbrains.rider
-    dotnet-sdk_6
     gnome-builder
 
     nodejs
@@ -124,14 +122,6 @@
     man-pages
     man-pages-posix
   ];
-
-  xdg.configFile."autostart/xwaylandvideobridge.desktop".text = '' 
-    [Desktop Entry]
-    Type=Application
-    Path= ~
-    Exec=xwaylandvideobridge
-    Terminal=false
-  '';
 
   # Environment
   home.sessionVariables = {
