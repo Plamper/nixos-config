@@ -24,6 +24,7 @@
     ./latex.nix
     ./direnv.nix
     ./browsers.nix
+    ./rust.nix
     #./gtk.nix
   ];
 
