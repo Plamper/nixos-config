@@ -88,15 +88,19 @@
     inkscape
     onlyoffice-bin_7_5
     signal-desktop
-    vlc
     eyedropper
     nvtop-amd
     easyeffects
     tidal-hifi
-    discord
+    unstable.vesktop
     unstable.rnote
     trayscale
     pkgs.unstable.xwaylandvideobridge
+    unstable.planify
+    ffmpeg-full
+    handbrake
+    mkvtoolnix
+    subtitleedit
 
 
     libreoffice
