@@ -27,6 +27,7 @@
       # mpdIntegration.enableStats = true;
       # mpdIntegration.enableUpdate = true;
       settings = {
+        import.move = true;
         directory = "~/Music";
         library = "~/Music/musiclibrary.db";
         plugins = "chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate";
