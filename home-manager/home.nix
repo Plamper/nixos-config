@@ -101,6 +101,8 @@
     handbrake
     mkvtoolnix
     subtitleedit
+    helvum
+    qpwgraph
 
 
     libreoffice
