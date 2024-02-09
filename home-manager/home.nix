@@ -103,6 +103,7 @@
     subtitleedit
     helvum
     qpwgraph
+    jellyfin-media-player
 
 
     libreoffice
