@@ -101,6 +101,9 @@
     handbrake
     mkvtoolnix
     subtitleedit
+    helvum
+    qpwgraph
+    jellyfin-media-player
 
     inputs.mcman
     nextcloud-client
