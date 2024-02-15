@@ -102,6 +102,9 @@
     mkvtoolnix
     subtitleedit
 
+    inputs.mcman
+    nextcloud-client
+
 
     libreoffice
     hunspell

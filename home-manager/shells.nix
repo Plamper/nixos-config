@@ -10,7 +10,6 @@
       '';
       plugins = [
         { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
-        { name = "z"; src = pkgs.fishPlugins.z.src; }
       ];
       shellAbbrs = {
         update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname)";
@@ -53,6 +52,8 @@
         set -g fish_pager_color_selected_background --background=$selection
       '';
     };
+
+    programs.zoxide.enable = true;
 
     programs.nushell = {
       enable = true;

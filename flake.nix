@@ -37,6 +37,8 @@
       url = "gitlab:doronbehar/nix-matlab";
     };
 
+    mcman.url = "github:ParadigmMC/mcman";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
