@@ -104,6 +104,7 @@
     helvum
     qpwgraph
     jellyfin-media-player
+    mediainfo
 
     inputs.mcman
     nextcloud-client
