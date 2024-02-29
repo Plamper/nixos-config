@@ -10,6 +10,11 @@
       lldb_9
       bear
       clang-tools # clangd
+      ninja
+
+      # Doxygen stuff
+      doxygen
+      graphviz
     ];
   };
 }
