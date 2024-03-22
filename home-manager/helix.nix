@@ -28,7 +28,8 @@
         language = [
           {
             name = "nix";
-            language-servers = [ "nixd" "nil" ];
+            # language-servers = [ "nixd" "nil" ];
+            formatter = { command = "nixpkgs-fmt"; };
           }
           {
             name = "latex";
@@ -42,11 +43,11 @@
             formatter = { command = "mdformat"; args = [ "-" ]; };
           }
         ];
-        language-server = {
-          nixd = {
-            command = "nixd";
-          };
-        };
+        # language-server = {
+        #   nixd = {
+        #     command = "nixd";
+        #   };
+        # };
       };
       package = pkgs.unstable.helix;
     };

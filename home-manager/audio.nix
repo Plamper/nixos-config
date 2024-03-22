@@ -9,6 +9,17 @@
           name  "Pipewire"  #
           dsd         "yes"  #
         }
+
+        
+        audio_output {  
+          type	"alsa" #
+          name  "Alsa"  #
+          mixer_type "hardware"
+          mixer_control "E30 "
+          mixer_device "hw:1"
+          device "hw:1"
+          replay_gain_handler "mixer"
+        }
      '';
     };
     services.mpd-mpris.enable = true;
@@ -29,10 +40,12 @@
       settings = {
         import.move = true;
         directory = "~/Music";
-        library = "~/Music/musiclibrary.db";
-        plugins = "chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate";
+        library = "~/.config/beets/musiclibrary.db";
+        plugins = "web replaygain chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate";
 
         fetchart.sources = "filesystem itunes amazon lastfm wikipedia coverart albumart";
+
+        replaygain.backend = "ffmpeg";       
 
         mpd = {
           host = "localhost";

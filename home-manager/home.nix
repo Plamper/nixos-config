@@ -25,6 +25,7 @@
     ./direnv.nix
     ./browsers.nix
     ./rust.nix
+    ./encoding.nix
     #./gtk.nix
   ];
 
@@ -40,8 +41,8 @@
       # neovim-nightly-overlay.overlays.default
 
       # inputs.prismlauncher.overlays.default # just using nixpkgs for now
-      inputs.nixd.overlays.default
-      inputs.emacs-overlay.overlays.default
+      # inputs.nixd.overlays.default
+      # inputs.emacs-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -106,7 +107,6 @@
     jellyfin-media-player
     mediainfo
 
-    inputs.mcman
     nextcloud-client
 
 
