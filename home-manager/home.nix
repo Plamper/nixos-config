@@ -25,7 +25,7 @@
     ./direnv.nix
     ./browsers.nix
     ./rust.nix
-    ./encoding.nix
+    # ./encoding.nix
     #./gtk.nix
   ];
 
@@ -99,13 +99,14 @@
     trayscale
     unstable.planify
     ffmpeg-full
-    handbrake
+    unstable.handbrake
     mkvtoolnix
     subtitleedit
     helvum
     qpwgraph
     jellyfin-media-player
     mediainfo
+    audacity
 
     nextcloud-client
 
@@ -156,10 +157,10 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Enable Syncthing
-  services.syncthing = {
-    enable = true;
-  };
+  # # Enable Syncthing
+  # services.syncthing = {
+  #   enable = true;
+  # };
 
   fonts.fontconfig.enable = true;
   home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
