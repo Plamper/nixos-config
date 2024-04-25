@@ -94,7 +94,7 @@
     easyeffects
     tidal-hifi
     unstable.vesktop
-    (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
+    # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
     trayscale
     unstable.planify
