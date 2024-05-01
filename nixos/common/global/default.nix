@@ -12,6 +12,7 @@
     ./flatpak-font-fix.nix
     ./ibus.nix
     ./distrobox.nix
+    ./locale.nix
   ];
 
   nixpkgs = {
