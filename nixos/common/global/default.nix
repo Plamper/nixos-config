@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, outputs, ... }: {
+{ pkgs, inputs, outputs, ... }: {
   imports = [
     ./home-manager.nix
     ./nix.nix
@@ -44,6 +44,7 @@
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
 
+  programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
   # Be able to control wifi
   networking.wireless.userControlled.enable = true;

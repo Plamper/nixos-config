@@ -37,10 +37,13 @@
       url = "gitlab:doronbehar/nix-matlab";
     };
 
-    vs-overlay = { 
+    vs-overlay = {
       url = "github:nix-community/vs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    programsdb.url = "github:wamserma/flake-programs-sqlite";
+    programsdb.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

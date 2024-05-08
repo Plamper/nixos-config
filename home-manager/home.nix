@@ -107,6 +107,8 @@
     jellyfin-media-player
     mediainfo
     audacity
+    unstable.mission-center
+    rclone
 
     nextcloud-client
 

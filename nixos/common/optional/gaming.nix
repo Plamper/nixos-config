@@ -40,6 +40,7 @@
         ];
       })
       unstable.r2modman
+      unstable.ludusavi
     ];
   };
 }
