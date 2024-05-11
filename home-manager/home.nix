@@ -171,7 +171,7 @@
       "workbench.tree.indent" = 12;
       "workbench.colorTheme" = "Adwaita Dark";
       "window.zoomLevel" = 1.15;
-      "editor.fontFamily" = "MonaSpiceAR Nerd Font";
+      "editor.fontFamily" = "'Monaspace Argon', 'Symbols Nerd Font'";
       "editor.fontLigatures" = "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss06', 'ss09'";
       "editor.fontWeight" = "450";
       "editor.fontSize" = 15;
