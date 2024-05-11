@@ -141,7 +141,7 @@
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
     # Vscode
-    GTK_USE_PORTAL = "1";
+    # GTK_USE_PORTAL = "1";
     #TERMINAL = "blackbox";
   };
 
@@ -158,6 +158,7 @@
       ms-python.python
       jnoortheen.nix-ide
       pkief.material-icon-theme
+      mkhl.direnv
     ];
     userSettings = {
       "window.titleBarStyle" = "custom";
