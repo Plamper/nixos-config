@@ -93,9 +93,9 @@
           },
         }
         config.font = wezterm.font {
-          family = 'Fira Code',
+          family = 'Monaspace Argon',
           weight = 'Medium',
-          harfbuzz_features = { 'cv02', 'ss01', 'ss03', 'ss05', 'ss07' },
+          harfbuzz_features = { 'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss06', 'ss09' },
         }
         config.font_size = 13.0;
 

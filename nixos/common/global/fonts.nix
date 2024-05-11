@@ -2,7 +2,7 @@
 {
   config = {
     fonts.packages = with pkgs; [
-      nerdfonts
+      unstable.nerdfonts
       fira-code
       fira
       emacs-all-the-icons-fonts
@@ -14,6 +14,8 @@
       noto-fonts-extra
       babelstone-han
       cantarell-fonts
+      unstable.geist-font
+      unstable.monaspace
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Cantarell"

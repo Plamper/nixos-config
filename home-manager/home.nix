@@ -140,19 +140,46 @@
     QT_WAYLAND_DECORATION = "adwaita";
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
+    # Vscode
+    GTK_USE_PORTAL = "1";
     #TERMINAL = "blackbox";
   };
 
   # Code editor Section
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    package = pkgs.unstable.vscode;
+    extensions = with pkgs.unstable.vscode-extensions; [
       piousdeer.adwaita-theme
-      # llvm-vs-code-extensions.vscode-clangd
+      llvm-vs-code-extensions.vscode-clangd
       ms-vscode.cpptools
-      jnoortheen.nix-ide
       ms-vscode.cmake-tools
+      ms-python.black-formatter
+      ms-python.python
+      jnoortheen.nix-ide
+      pkief.material-icon-theme
     ];
+    userSettings = {
+      "window.titleBarStyle" = "custom";
+      "window.commandCenter" = true;
+      "window.autoDetectColorScheme" = true;
+      "workbench.preferredDarkColorTheme" = "Adwaita Dark";
+      "workbench.preferredLightColorTheme" = "Adwaita Light";
+      "workbench.productIconTheme" = "adwaita";
+      "editor.renderLineHighlight" = "none";
+      "workbench.tree.indent" = 12;
+      "workbench.colorTheme" = "Adwaita Dark";
+      "window.zoomLevel" = 1.15;
+      "editor.fontFamily" = "MonaSpiceAR Nerd Font";
+      "editor.fontLigatures" = "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss06', 'ss09'";
+      "editor.fontWeight" = "450";
+      "editor.fontSize" = 15;
+      "workbench.iconTheme" = "material-icon-theme";
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil";
+      "C_Cpp.intelliSenseEngine" = "Disabled";
+    };
+    enableUpdateCheck = false;
   };
 
   # Enable home-manager and git
