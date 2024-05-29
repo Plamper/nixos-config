@@ -109,6 +109,8 @@
     audacity
     unstable.mission-center
     rclone
+    unstable.jabref
+    seafile-client
 
     nextcloud-client
 

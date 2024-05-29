@@ -46,6 +46,9 @@
         @import "firefox-gnome-theme/theme/colors/dark.css"; 
       '';
     };
+    # nativeMessagingHosts  = with pkgs; [
+    #   jabref
+    # ];
   };
 
 }
