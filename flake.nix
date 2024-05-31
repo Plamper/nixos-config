@@ -30,18 +30,6 @@
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
 
-    nix-matlab = {
-      # Recommended if you also override the default nixpkgs flake, common among
-      # nixos-unstable users:
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "gitlab:doronbehar/nix-matlab";
-    };
-
-    vs-overlay = {
-      url = "github:nix-community/vs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     programsdb.url = "github:wamserma/flake-programs-sqlite";
     programsdb.inputs.nixpkgs.follows = "nixpkgs";
   };
