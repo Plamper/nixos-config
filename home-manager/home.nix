@@ -109,6 +109,7 @@
     audacity
     unstable.mission-center
     rclone
+    lm_sensors
 
     nextcloud-client
 
@@ -156,6 +157,7 @@
       ms-vscode.cmake-tools
       ms-python.black-formatter
       ms-python.python
+      ms-python.debugpy
       jnoortheen.nix-ide
       pkief.material-icon-theme
       mkhl.direnv
