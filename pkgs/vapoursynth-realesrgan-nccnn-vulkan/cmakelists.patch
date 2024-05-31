@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 21b3708..c030c25 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -93,7 +93,7 @@ compile_shader(realesrgan_postproc_tta.comp)
+ 
+ add_custom_target(generate-spirv DEPENDS ${SHADER_SPV_HEX_FILES})
+ 
+-add_library(realesrgan main.cpp realesrgan.cpp)
++add_library(realesrgan SHARED main.cpp realesrgan.cpp)
+ add_dependencies(realesrgan generate-spirv)
+ 
+ set(REALESRGAN_LINK_LIBRARIES ncnn ${Vulkan_LIBRARY})
+@@ -145,6 +145,6 @@ elseif(WIN32)
+ endif()
+ 
+ target_include_directories(realesrgan PRIVATE ${VAPOURSYNTH_INCLUDE_DIR})
+-target_link_libraries(realesrgan ${REALESRGAN_LINK_LIBRARIES} -static-libstdc++)
++target_link_libraries(realesrgan ${REALESRGAN_LINK_LIBRARIES} )
+ 
+ install(TARGETS realesrgan LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/vapoursynth)
