@@ -110,6 +110,8 @@
     unstable.mission-center
     rclone
     lm_sensors
+    unstable.jabref
+    seafile-client
 
     nextcloud-client
 
