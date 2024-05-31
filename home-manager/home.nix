@@ -72,7 +72,7 @@
     imagemagick
     # For editing pdfs with imagemagick
     celluloid
-    mpdevil
+    plattenalbum
     amberol
     unstable.blackbox-terminal
     gnome.dconf-editor
@@ -87,7 +87,7 @@
     protonvpn-gui
     gimp
     inkscape
-    onlyoffice-bin_7_5
+    onlyoffice-bin_latest
     signal-desktop
     eyedropper
     nvtop-amd

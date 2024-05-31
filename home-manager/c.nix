@@ -7,7 +7,7 @@
       gnumake
       unstable.gdb
       clang
-      lldb_9
+      lldb
       bear
       clang-tools # clangd
       ninja
