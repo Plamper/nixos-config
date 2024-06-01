@@ -14,11 +14,11 @@
         audio_output {  
           type	"alsa" #
           name  "Alsa"  #
-          mixer_type "hardware"
-          mixer_control "E30 "
-          mixer_device "hw:1"
-          device "hw:1"
-          replay_gain_handler "mixer"
+          # mixer_type "hardware"
+          # mixer_control "E30 "
+          # mixer_device "hw:0"
+          device "hw:0,0"
+          # replay_gain_handler "mixer"
         }
      '';
     };

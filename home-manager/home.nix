@@ -19,7 +19,7 @@
     ./wezterm.nix
     ./lsp.nix
     ./gnome-extensions.nix
-    ./python.nix
+    # ./python.nix
     ./c.nix
     ./latex.nix
     ./direnv.nix
@@ -90,7 +90,7 @@
     onlyoffice-bin_latest
     signal-desktop
     eyedropper
-    nvtop-amd
+    nvtopPackages.amd
     easyeffects
     tidal-hifi
     unstable.vesktop
@@ -117,9 +117,6 @@
 
 
     libreoffice
-    hunspell
-    hunspellDicts.en_US
-    hunspellDicts.de_DE
 
     unstable.qadwaitadecorations
     unstable.qadwaitadecorations-qt6
@@ -152,39 +149,6 @@
   programs.vscode = {
     enable = true;
     package = pkgs.unstable.vscode;
-    extensions = with pkgs.unstable.vscode-extensions; [
-      piousdeer.adwaita-theme
-      llvm-vs-code-extensions.vscode-clangd
-      ms-vscode.cpptools
-      ms-vscode.cmake-tools
-      ms-python.black-formatter
-      ms-python.python
-      ms-python.debugpy
-      jnoortheen.nix-ide
-      pkief.material-icon-theme
-      mkhl.direnv
-    ];
-    userSettings = {
-      "window.titleBarStyle" = "custom";
-      "window.commandCenter" = true;
-      "window.autoDetectColorScheme" = true;
-      "workbench.preferredDarkColorTheme" = "Adwaita Dark";
-      "workbench.preferredLightColorTheme" = "Adwaita Light";
-      "workbench.productIconTheme" = "adwaita";
-      "editor.renderLineHighlight" = "none";
-      "workbench.tree.indent" = 12;
-      "workbench.colorTheme" = "Adwaita Dark";
-      "window.zoomLevel" = 1.15;
-      "editor.fontFamily" = "'Monaspace Argon', 'Symbols Nerd Font'";
-      "editor.fontLigatures" = "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss06', 'ss09'";
-      "editor.fontWeight" = "450";
-      "editor.fontSize" = 15;
-      "workbench.iconTheme" = "material-icon-theme";
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
-      "C_Cpp.intelliSenseEngine" = "Disabled";
-    };
-    enableUpdateCheck = false;
   };
 
   # Enable home-manager and git

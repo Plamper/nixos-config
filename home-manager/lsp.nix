@@ -5,8 +5,8 @@
     # a seperate language specific file
     home.packages = with pkgs;[
       marksman
-      nil
-      # nixd
+      # nil
+      nixd
       nixpkgs-fmt
     ];
   };
