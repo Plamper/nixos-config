@@ -46,12 +46,8 @@
   services.xserver.enable = true;
 
 
-  # Configure keymap in X11
-  services.xserver.layout = "de";
-  # services.xserver.xkbOptions = "eurosign:e,caps:escape";
-
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
