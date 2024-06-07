@@ -13,7 +13,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./audio.nix
-    # ./emacs
+    ./mpv.nix
     ./shells.nix
     ./helix.nix
     ./wezterm.nix
@@ -25,8 +25,6 @@
     ./direnv.nix
     ./browsers.nix
     ./rust.nix
-    # ./encoding.nix
-    #./gtk.nix
   ];
 
   nixpkgs = {
@@ -71,20 +69,13 @@
   home.packages = with pkgs; [
     imagemagick
     # For editing pdfs with imagemagick
-    celluloid
-    plattenalbum
-    amberol
-    unstable.blackbox-terminal
-    gnome.dconf-editor
-    gnome.gnome-tweaks
-    gnome.file-roller
+    cantata
     unstable.tutanota-desktop
     thunderbird
     unstable.anki
     element-desktop
     pika-backup
-    adw-gtk3
-    protonvpn-gui
+    vorta
     gimp
     inkscape
     onlyoffice-bin_latest
@@ -92,41 +83,37 @@
     eyedropper
     nvtopPackages.amd
     easyeffects
-    tidal-hifi
+    unstable.tidal-hifi
     unstable.vesktop
     # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
     trayscale
-    unstable.planify
     ffmpeg-full
     unstable.handbrake
     mkvtoolnix
     subtitleedit
-    helvum
     qpwgraph
     jellyfin-media-player
     mediainfo
     audacity
-    unstable.mission-center
     rclone
     lm_sensors
     unstable.jabref
+    
     seafile-client
-
     nextcloud-client
 
 
-    libreoffice
-
-    unstable.qadwaitadecorations
-    unstable.qadwaitadecorations-qt6
+    papirus-icon-theme
+    gnome.adwaita-icon-theme # some apps look buggy without it
+    bibata-cursors
+    libreoffice-qt
+    kde-rounded-corners
 
     # dev stuff
     just
     cachix
     unstable.gitui
-
-    gnome-builder
 
     nodejs
     # Man Pages
@@ -137,7 +124,7 @@
   # Environment
   home.sessionVariables = {
     # QT_STYLE_OVERRIDE = "adwaita-dark";
-    QT_WAYLAND_DECORATION = "adwaita";
+    # QT_WAYLAND_DECORATION = "adwaita";
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
     # Vscode
@@ -161,9 +148,9 @@
   # };
 
   fonts.fontconfig.enable = true;
-  home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
-    source = ./fonts/FiraCodeNerdFont-Retina_freeze.ttf;
-  };
+  # home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
+  #   source = ./fonts/FiraCodeNerdFont-Retina_freeze.ttf;
+  # };
 
   # To set Blackbox as the default terminal we need to change a dconf setting
   # dconf.settings."com/github/stunkeymonkey/nautilus-open-any-terminal" = {

@@ -4,13 +4,14 @@
     ./home-manager.nix
     ./nix.nix
     ./pipewire.nix
-    ./gnome.nix
+    # ./gnome.nix
+    ./kde.nix
     ./nix.nix
     ./shells.nix
     ./security.nix
     ./fonts.nix
-    ./flatpak-font-fix.nix
-    ./ibus.nix
+    # ./ibus.nix
+    ./fcitx5.nix
     ./distrobox.nix
     ./locale.nix
   ];
