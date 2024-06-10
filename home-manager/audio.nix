@@ -15,7 +15,7 @@
         # replaygain_preamp "13"
      '';
     };
-    services.mpd-mpris.enable = true;
+    # services.mpd-mpris.enable = true;
 
     programs.beets = {
       enable = true;

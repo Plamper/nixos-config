@@ -7,4 +7,6 @@
   # needed because bugged currently
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
+  networking.networkmanager.enable = true;
+  services.power-profiles-daemon.enable = true;
 }
