@@ -89,7 +89,7 @@
     unstable.rnote
     trayscale
     ffmpeg-full
-    unstable.handbrake
+    handbrake
     mkvtoolnix
     subtitleedit
     qpwgraph
