@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # You may need to comment out "services.displayManager.gdm.enable = true;"
   services.displayManager.sddm.enable = true;
@@ -9,4 +10,9 @@
   security.pam.services.sddm.enableGnomeKeyring = true;
   networking.networkmanager.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  # Install not included packages
+  environment.systemPackages = with pkgs; [
+    kdePackages.partitionmanager
+  ];
 }
