@@ -14,6 +14,7 @@
     adw-gtk3
     qadwaitadecorations
     ptyxis
+    morewaita-icon-theme
   ]) ++ (with pkgs.gnomeExtensions; [
     pano
     blur-my-shell
@@ -30,6 +31,9 @@
     QT_STYLE_OVERRIDE = "adwaita-dark";
     QT_WAYLAND_DECORATION = "adwaita";
   };
+
+  services.power-profiles-daemon.enable = true;
+  networking.networkmanager.enable = true;
 
   # Nautilus Gstreamer is broken
   # https://github.com/NixOS/nixpkgs/issues/195936#issuecomment-1278954466

@@ -93,9 +93,9 @@
           },
         }
         config.font = wezterm.font {
-          family = 'Monaspace Argon',
+          family = 'CaskaydiaCove Nerd Font',
           weight = 'Medium',
-          harfbuzz_features = { 'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss06', 'ss09' },
+          harfbuzz_features = { 'calt' },
         }
         config.font_size = 13.0;
 
