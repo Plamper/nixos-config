@@ -1,6 +1,6 @@
-{ pkgs, lib, ...}:
+{ pkgs, lib, ... }:
 {
-   # Enable the GNOME Desktop Environment.
+  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
@@ -9,6 +9,27 @@
     gnome.gnome-music
     gnome-tour
   ]);
+  environment.systemPackages = (with pkgs; [
+    gnome.gnome-tweaks
+    adw-gtk3
+    qadwaitadecorations
+    ptyxis
+  ]) ++ (with pkgs.gnomeExtensions; [
+    pano
+    blur-my-shell
+    bing-wallpaper-changer
+    caffeine
+    appindicator
+    # rounded-window-corners
+    tiling-assistant
+    alphabetical-app-grid
+    legacy-gtk3-theme-scheme-auto-switcher
+  ]);
+
+  environment.sessionVariables = {
+    QT_STYLE_OVERRIDE = "adwaita-dark";
+    QT_WAYLAND_DECORATION = "adwaita";
+  };
 
   # Nautilus Gstreamer is broken
   # https://github.com/NixOS/nixpkgs/issues/195936#issuecomment-1278954466

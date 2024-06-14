@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   config = {
     fonts.packages = with pkgs; [
@@ -20,12 +20,12 @@
       unstable.monaspace
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
+      "Cantarell"
       "Noto Sans"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"
       "Noto Color Emoji"
       "Noto Emoji"
-      "Cantarell"
       "DejaVu Sans"
     ];
     fonts.fontconfig.defaultFonts.serif = [

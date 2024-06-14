@@ -13,12 +13,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./audio.nix
-    ./mpv.nix
+    # ./mpv.nix
     ./shells.nix
     ./helix.nix
     ./wezterm.nix
     ./lsp.nix
-    ./gnome-extensions.nix
     # ./python.nix
     ./c.nix
     ./latex.nix
@@ -69,13 +68,13 @@
   home.packages = with pkgs; [
     imagemagick
     # For editing pdfs with imagemagick
-    cantata
+    plattenalbum
+    celluloid
     unstable.tutanota-desktop
     thunderbird
     unstable.anki
     element-desktop
     pika-backup
-    vorta
     gimp
     inkscape
     onlyoffice-bin_latest
@@ -92,7 +91,7 @@
     handbrake
     mkvtoolnix
     subtitleedit
-    qpwgraph
+    helvum
     jellyfin-media-player
     mediainfo
     audacity
@@ -104,11 +103,9 @@
     nextcloud-client
 
 
-    papirus-icon-theme
     gnome.adwaita-icon-theme # some apps look buggy without it
     bibata-cursors
-    libreoffice-qt
-    kde-rounded-corners
+    libreoffice
 
     # dev stuff
     just
