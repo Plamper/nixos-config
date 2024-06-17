@@ -84,6 +84,7 @@
     easyeffects
     unstable.tidal-hifi
     unstable.vesktop
+    unstable.mission-center
     # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
     trayscale
@@ -133,6 +134,18 @@
   programs.vscode = {
     enable = true;
     package = pkgs.unstable.vscode;
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-vaapi
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-vkcapture
+      obs-composite-blur
+    ];
   };
 
   # Enable home-manager and git

@@ -13,8 +13,14 @@
     gnome.gnome-tweaks
     adw-gtk3
     qadwaitadecorations
+    qadwaitadecorations-qt6
     ptyxis
     morewaita-icon-theme
+    # For better looking qt apps
+    kdePackages.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
   ]) ++ (with pkgs.gnomeExtensions; [
     pano
     blur-my-shell
@@ -28,9 +34,14 @@
   ]);
 
   environment.sessionVariables = {
-    QT_STYLE_OVERRIDE = "adwaita-dark";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_STYLE_OVERRIDE = "kvantum";
     QT_WAYLAND_DECORATION = "adwaita";
+    # Kinda bugged with qt apps this fixes it
+    XCURSOR_THEME = "Adwaita";
   };
+
+  qt.style = "kvantum";
 
   services.power-profiles-daemon.enable = true;
   networking.networkmanager.enable = true;
