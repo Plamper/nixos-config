@@ -39,6 +39,11 @@
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = true;
         "layers.acceleration.force-enabled" = true;
+        "widget.use-xdg-desktop-portal.file-picker"	= 1;
+        "widget.use-xdg-desktop-portal.location" = 1;
+        "widget.use-xdg-desktop-portal.mime-handler" = 1;
+        "widget.use-xdg-desktop-portal.open-uri" = 1;
+        "widget.use-xdg-desktop-portal.settings" = 1;
       };
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
