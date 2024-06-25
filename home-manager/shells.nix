@@ -135,7 +135,7 @@
       ls = "eza --icons -F -H --group-directories-first --git";
       cat = "bat -pp";
       man = "batman";
-      cd = "z";
+      # cd = "z";
     };
     programs.btop = {
       enable = true;
