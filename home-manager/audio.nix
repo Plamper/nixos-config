@@ -11,7 +11,7 @@
           # replay_gain_handler "mixer"
         }
 
-        # replaygain          "auto"
+        replaygain          "auto"
         # replaygain_preamp "13"
      '';
     };

@@ -21,9 +21,9 @@
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qt6ct
     libsForQt5.qt5ct
+    unstable.gnomeExtensions.blur-my-shell
   ]) ++ (with pkgs.gnomeExtensions; [
-    pano
-    blur-my-shell
+    pano 
     bing-wallpaper-changer
     caffeine
     appindicator

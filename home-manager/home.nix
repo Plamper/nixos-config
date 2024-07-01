@@ -72,7 +72,7 @@
     celluloid
     unstable.tutanota-desktop
     thunderbird
-    unstable.anki
+    anki
     element-desktop
     pika-backup
     gimp
@@ -99,6 +99,8 @@
     rclone
     lm_sensors
     unstable.jabref
+    jamesdsp
+
     
     seafile-client
     nextcloud-client
