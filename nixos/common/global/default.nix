@@ -41,6 +41,19 @@
     };
   };
 
+  # Set your time zone.
+  time.timeZone = "Europe/Berlin";
+
+  environment.systemPackages = with pkgs; [
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    git
+    sbctl
+    piper
+  ];
+
+
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
@@ -59,8 +72,7 @@
   # For firmware updates
   services.fwupd.enable = true;
 
-  # For Cachix
-  nix.settings.trusted-users = [ "root" "felix" ];
+
 
   zramSwap.enable = true;
 
