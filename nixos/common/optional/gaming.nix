@@ -2,28 +2,21 @@
 {
   # steam doesn't work with home manager it seems
   config = {
-    nixpkgs.config.permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
     programs.steam.enable = true;
-    programs.steam.package = pkgs.steam.override {
-      # Gamescope workaround
-      extraPkgs = pkgs: with pkgs;[
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
-        libpng
-        libpulseaudio
-        libvorbis
-        stdenv.cc.cc.lib
-        libkrb5
-        keyutils
-        libva
-        gamescope
-        gamemode
-      ];
-    };
+    programs.steam.extraPackages = with pkgs;[
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXinerama
+      xorg.libXScrnSaver
+      libpng
+      libpulseaudio
+      libvorbis
+      stdenv.cc.cc.lib
+      libkrb5
+      keyutils
+      libva
+    ];
+
 
     # services.hardware.openrgb = {
     #   enable = true;
@@ -36,6 +29,7 @@
     services.udev.packages = [ pkgs.via pkgs.openrgb-with-all-plugins ];
 
     programs.gamescope.enable = true;
+    # programs.gamescope.capSysNice = true;
 
     programs.gamemode.enable = true;
 
@@ -56,6 +50,7 @@
       unstable.ludusavi
       via
       openrgb-with-all-plugins
+      protonplus
     ];
   };
 }

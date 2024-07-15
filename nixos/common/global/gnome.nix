@@ -22,8 +22,9 @@
     kdePackages.qt6ct
     libsForQt5.qt5ct
     unstable.gnomeExtensions.blur-my-shell
+    gnome.nautilus-python
   ]) ++ (with pkgs.gnomeExtensions; [
-    pano 
+    pano
     bing-wallpaper-changer
     caffeine
     appindicator
