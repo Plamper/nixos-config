@@ -100,6 +100,8 @@
     lm_sensors
     unstable.jabref
     jamesdsp
+    xournalpp
+    drawio
 
     
     seafile-client

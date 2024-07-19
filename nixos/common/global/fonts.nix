@@ -2,25 +2,34 @@
 {
   config = {
     fonts.packages = with pkgs; [
-      unstable.nerdfonts
-      fira-code
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "FiraMono"
+          "CascadiaCode"
+          "CascadiaMono"
+          "Monaspace"
+          "NerdFontsSymbolsOnly"
+          "GeistMono"
+          "FantasqueSansMono"
+        ];
+      })
       fira
       julia-mono
-      emacs-all-the-icons-fonts
       mono
       corefonts
       vistafonts
       noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       noto-fonts
       noto-fonts-extra
       babelstone-han
       source-han-sans
       cantarell-fonts
-      unstable.geist-font
-      unstable.monaspace
+      inter
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
-      "Cantarell"
+      "Inter"
       "Noto Sans"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"

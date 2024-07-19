@@ -51,6 +51,7 @@
     git
     sbctl
     piper
+    gnome.nautilus-python
   ];
 
 
