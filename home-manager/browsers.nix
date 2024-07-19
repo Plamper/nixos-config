@@ -15,8 +15,8 @@
     source = pkgs.fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "v127";
-      sha256 = "sha256-ihOVmsno400zgdgSdRRxKRzmKiydH0Vux7LtSDpCyUI=";
+      rev = "v128";
+      sha256 = "sha256-zB+Zd0V0ayKP/zg9n1MQ8J/Znwa49adylRftxuc694k=";
     };
   };
 
@@ -39,7 +39,7 @@
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = true;
         "layers.acceleration.force-enabled" = true;
-        "widget.use-xdg-desktop-portal.file-picker"	= 1;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
         "widget.use-xdg-desktop-portal.location" = 1;
         "widget.use-xdg-desktop-portal.mime-handler" = 1;
         "widget.use-xdg-desktop-portal.open-uri" = 1;
@@ -54,5 +54,44 @@
       jabref
     ];
   };
+
+  # # Add Firefox GNOME theme directory
+  # home.file."thunderbird-gnome-theme" = {
+  #   target = ".thunderbird/8atw9cvi.default/chrome/thunderbird-gnome-theme";
+  #   source = pkgs.fetchFromGitHub {
+  #     owner = "rafaelmardojai";
+  #     repo = "thunderbird-gnome-theme";
+  #     rev = "main";
+  #     sha256 = "sha256-nQBz2PW3YF3+RTflPzDoAcs6vH1PTozESIYUGAwvSdA=";
+  #   };
+  # };
+
+  # programs.thunderbird = {
+  #   enable = true;
+  #   profiles.default = {
+  #     #name = "default";
+  #     isDefault = true;
+  #     # path = "eoncii00.default";
+  #     settings = {
+  #       #"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+
+  #       # For Thunderbird GNOME theme:
+  #       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+  #       "svg.context-properties.content.enabled" = true;
+  #       "media.ffmpeg.vaapi.enabled" = true;
+  #       "media.hardware-video-decoding.force-enabled" = true;
+  #       "layers.acceleration.force-enabled" = true;
+  #       "widget.use-xdg-desktop-portal.file-picker" = 1;
+  #       "widget.use-xdg-desktop-portal.location" = 1;
+  #       "widget.use-xdg-desktop-portal.mime-handler" = 1;
+  #       "widget.use-xdg-desktop-portal.open-uri" = 1;
+  #       "widget.use-xdg-desktop-portal.settings" = 1;
+  #     };
+  #     userChrome = ''
+  #       @import "thunderbird-gnome-theme/userChrome.css";
+  #       @import "thunderbird-gnome-theme/theme/colors/dark.css"; 
+  #     '';
+  #   };
+  # };
 
 }
