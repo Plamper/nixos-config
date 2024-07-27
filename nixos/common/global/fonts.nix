@@ -27,6 +27,7 @@
       source-han-sans
       cantarell-fonts
       inter
+      lmodern
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"

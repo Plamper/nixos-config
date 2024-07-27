@@ -72,7 +72,7 @@
     plattenalbum
     celluloid
     unstable.tutanota-desktop
-    thunderbird
+    thunderbird-128
     anki
     element-desktop
     pika-backup
