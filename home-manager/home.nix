@@ -72,7 +72,7 @@
     plattenalbum
     celluloid
     unstable.tutanota-desktop
-    thunderbird
+    thunderbird-128
     anki
     element-desktop
     pika-backup
@@ -101,6 +101,8 @@
     lm_sensors
     unstable.jabref
     jamesdsp
+    xournalpp
+    drawio
 
     
     seafile-client
