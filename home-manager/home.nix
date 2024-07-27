@@ -160,7 +160,7 @@
   #   enable = true;
   # };
 
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
   # home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
   #   source = ./fonts/FiraCodeNerdFont-Retina_freeze.ttf;
   # };

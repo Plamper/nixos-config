@@ -15,6 +15,8 @@
       libkrb5
       keyutils
       libva
+      noto-fonts-cjk-sans
+      noto-fonts
     ];
 
 
