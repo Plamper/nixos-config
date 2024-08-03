@@ -28,23 +28,23 @@
       cantarell-fonts
       inter
       lmodern
+      twitter-color-emoji
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"
       "Noto Sans"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"
-      "Noto Color Emoji"
-      "Noto Emoji"
       "DejaVu Sans"
     ];
     fonts.fontconfig.defaultFonts.serif = [
       "Noto Serif"
       "Noto Serif CJK SC"
       "Noto Serif CJK TC"
-      "Noto Color Emoji"
-      "Noto Emoji"
       "BabelStone Han"
+    ];
+    fonts.fontconfig.defaultFonts.emoji = [ 
+      "Twitter Color Emoji"
     ];
   };
 }

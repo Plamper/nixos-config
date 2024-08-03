@@ -84,7 +84,7 @@
     nvtopPackages.amd
     easyeffects
     unstable.tidal-hifi
-    vesktop
+    unstable.vesktop
     unstable.mission-center
     # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
