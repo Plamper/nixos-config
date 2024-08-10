@@ -16,7 +16,7 @@
     # ./mpv.nix
     ./shells.nix
     ./helix.nix
-    ./wezterm.nix
+    # ./wezterm.nix
     ./lsp.nix
     # ./python.nix
     ./c.nix

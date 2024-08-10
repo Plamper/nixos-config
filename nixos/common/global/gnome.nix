@@ -14,7 +14,6 @@
     adw-gtk3
     qadwaitadecorations
     qadwaitadecorations-qt6
-    ptyxis
     morewaita-icon-theme
     # For better looking qt apps
     kdePackages.qtstyleplugin-kvantum
@@ -24,6 +23,17 @@
     unstable.gnomeExtensions.blur-my-shell
     gnome.nautilus-python
     unstable.papers
+    unstable.nautilus-open-any-terminal
+    unstable.ptyxis
+    (pkgs.writeShellApplication {
+      name = "xdg-terminal-exec";
+
+      runtimeInputs = [ pkgs.unstable.ptyxis ];
+
+      text = ''
+        ptyxis "$@"
+      '';
+    })
   ]) ++ (with pkgs.gnomeExtensions; [
     pano
     bing-wallpaper-changer
@@ -34,6 +44,14 @@
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
   ]);
+
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [{
+      settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ptyxis";
+      lockAll = true;
+    }];
+  };
 
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
