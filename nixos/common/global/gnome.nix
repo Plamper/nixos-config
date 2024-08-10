@@ -23,6 +23,7 @@
     libsForQt5.qt5ct
     unstable.gnomeExtensions.blur-my-shell
     gnome.nautilus-python
+    unstable.papers
   ]) ++ (with pkgs.gnomeExtensions; [
     pano
     bing-wallpaper-changer

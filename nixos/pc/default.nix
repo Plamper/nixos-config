@@ -38,7 +38,7 @@
   networking.hostName = "pc";
 
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   # boot.plymouth.enable = true;
 
 

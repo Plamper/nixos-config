@@ -6,7 +6,7 @@
     home.packages = with pkgs;[
       marksman
       # nil
-      nixd
+      unstable.nixd
       nixpkgs-fmt
     ];
   };

@@ -102,7 +102,7 @@
     unstable.jabref
     jamesdsp
     xournalpp
-    drawio
+    unstable.drawio
 
     
     seafile-client
