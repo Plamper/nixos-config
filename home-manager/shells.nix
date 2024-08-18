@@ -7,12 +7,17 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+        if ! test -f /run/.toolboxenv
+          alias ls="eza"
+          alias cat="bat"
+          alias man="batman"
+        end
       '';
       plugins = [
         { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
       ];
       shellAbbrs = {
-        update-system = "sudo nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname)";
+        update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname) --use-remote-sudo";
         update-flake = "nix flake update /home/felix/Nix-Configuration";
       };
       shellInit = '' 
@@ -54,16 +59,7 @@
     };
 
     programs.zoxide.enable = true;
-
-    programs.nushell = {
-      enable = true;
-      package = pkgs.unstable.nushell;
-    };
-
-    programs.carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
+    # programs.fzf.enable = true;
 
     programs.starship = {
       enable = true;
@@ -130,11 +126,11 @@
         # package.disabled = true;
       };
     };
-    home.packages = with pkgs;[ eza unstable.inshellisense ];
+    home.packages = with pkgs;[ eza ];
     home.shellAliases = {
-      ls = "eza --icons -F -H --group-directories-first --git";
-      cat = "bat -pp";
-      man = "batman";
+      eza = "eza --icons -F -H --group-directories-first --git";
+      bat = "bat -pp";
+      # man = "batman";
       # cd = "z";
     };
     programs.btop = {
