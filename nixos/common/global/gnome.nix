@@ -25,6 +25,7 @@
     unstable.papers
     unstable.nautilus-open-any-terminal
     unstable.ptyxis
+    easyeffects
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
@@ -35,6 +36,7 @@
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
+    easyeffects-preset-selector
     pano
     bing-wallpaper-changer
     caffeine
@@ -43,6 +45,7 @@
     tiling-assistant
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
+    pkgs.unstable.gnomeExtensions.rounded-window-corners
   ]);
 
   programs.dconf = {

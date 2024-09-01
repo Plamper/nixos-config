@@ -82,7 +82,6 @@
     signal-desktop
     eyedropper
     nvtopPackages.amd
-    easyeffects
     unstable.tidal-hifi
     unstable.vesktop
     unstable.mission-center
