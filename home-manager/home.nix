@@ -78,7 +78,7 @@
     pika-backup
     gimp
     inkscape
-    onlyoffice-bin_latest
+    unstable.onlyoffice-bin
     signal-desktop
     eyedropper
     nvtopPackages.amd
