@@ -37,10 +37,10 @@
 
     environment.systemPackages = with pkgs; [
       mangohud
-      unstable.prismlauncher
+      prismlauncher
       protontricks
       steamtinkerlaunch
-      unstable.heroic
+      heroic
       (lutris.override {
         extraPkgs = pkgs: [
           # List package dependencies here

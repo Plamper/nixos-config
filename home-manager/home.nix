@@ -18,8 +18,6 @@
     ./helix.nix
     # ./wezterm.nix
     ./lsp.nix
-    # ./python.nix
-    ./c.nix
     ./latex.nix
     ./direnv.nix
     ./browsers.nix
@@ -78,7 +76,7 @@
     pika-backup
     gimp
     inkscape
-    unstable.onlyoffice-bin
+    # unstable.onlyoffice-bin
     signal-desktop
     eyedropper
     nvtopPackages.amd
@@ -98,7 +96,6 @@
     audacity
     rclone
     lm_sensors
-    unstable.jabref
     jamesdsp
     xournalpp
     unstable.drawio
