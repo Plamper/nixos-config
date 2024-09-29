@@ -20,12 +20,11 @@
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    unstable.gnomeExtensions.blur-my-shell
     gnome.nautilus-python
     unstable.papers
     unstable.nautilus-open-any-terminal
     unstable.ptyxis
-    easyeffects
+    unstable.easyeffects
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
@@ -36,16 +35,16 @@
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
-    easyeffects-preset-selector
+    pkgs.unstable.gnomeExtensions.easyeffects-preset-selector
+    pkgs.unstable.gnomeExtensions.blur-my-shell
     pano
     bing-wallpaper-changer
     caffeine
     appindicator
-    # rounded-window-corners
     tiling-assistant
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
-    pkgs.unstable.gnomeExtensions.rounded-window-corners
+    pkgs.unstable.gnomeExtensions.rounded-window-corners-reborn
   ]);
 
   programs.dconf = {
