@@ -81,7 +81,7 @@
     eyedropper
     nvtopPackages.amd
     unstable.tidal-hifi
-    unstable.vesktop
+    # vesktop
     unstable.mission-center
     # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     unstable.rnote
