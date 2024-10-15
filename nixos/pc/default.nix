@@ -32,7 +32,7 @@
   services.xserver.enable = true;
 
   
-  boot.kernelParams = [ "amd_pstate=guided" ];
+  boot.kernelParams = [ "amd_pstate=active" ];
 
   # TODO: Set your hostname
   networking.hostName = "pc";
