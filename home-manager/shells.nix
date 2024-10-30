@@ -128,7 +128,7 @@
     };
     home.packages = with pkgs;[ eza ];
     home.shellAliases = {
-      eza = "eza --icons -F -H --group-directories-first --git";
+      eza = "eza --icons -F -H --group-directories-first --git --hyperlink";
       bat = "bat -pp";
       # man = "batman";
       # cd = "z";
