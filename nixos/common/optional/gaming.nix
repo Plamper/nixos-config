@@ -8,6 +8,7 @@
       xorg.libXi
       xorg.libXinerama
       xorg.libXScrnSaver
+      xorg.xrandr
       libpng
       libpulseaudio
       libvorbis
@@ -30,10 +31,11 @@
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = [ pkgs.via pkgs.openrgb-with-all-plugins ];
 
-    programs.gamescope.enable = true;
-    # programs.gamescope.capSysNice = true;
-
-    programs.gamemode.enable = true;
+    services.ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
+    };
 
     environment.systemPackages = with pkgs; [
       mangohud
