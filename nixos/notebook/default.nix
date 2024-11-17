@@ -25,6 +25,7 @@
     ../common/optional/printing.nix
     ../common/optional/virt-manager.nix
     ../common/optional/amd-graphics.nix
+    ../common/optional/matlab.nix
   ];
 
   # networking.hostName = "nixos"; # Define your hostname.

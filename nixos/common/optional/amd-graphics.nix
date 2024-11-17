@@ -6,6 +6,7 @@
       libva
       libvdpau-va-gl
       vaapiVdpau
+      mesa # MAtlab can't find libgbm
     ];
   };
 }
