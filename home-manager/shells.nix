@@ -21,32 +21,68 @@
         update-flake = "nix flake update /home/felix/Nix-Configuration";
       };
       shellInit = '' 
-                # Adwaita Color Palette
-        set -l foreground DEDDDA
-        set -l selection 193D66
-        set -l comment 5E5C64
-        set -l red BF1C28
-        set -l orange FF7800
-        set -l yellow F8E45C
-        set -l green 5BC8AF
-        set -l purple C061CB
-        set -l cyan 33C7DE
-        set -l pink bb9af7
+        #         # Adwaita Color Palette
+        # set -l foreground DEDDDA
+        # set -l selection 193D66
+        # set -l comment 5E5C64
+        # set -l red BF1C28
+        # set -l orange FF7800
+        # set -l yellow F8E45C
+        # set -l green 5BC8AF
+        # set -l purple C061CB
+        # set -l cyan 33C7DE
+        # set -l pink bb9af7
+
+        # # Syntax Highlighting Colors
+        # set -g fish_color_normal $cyan
+        # set -g fish_color_command $foreground
+        # set -g fish_color_keyword $purple
+        # set -g fish_color_quote $green
+        # set -g fish_color_redirection $cyan
+        # set -g fish_color_end $orange
+        # set -g fish_color_error $red
+        # set -g fish_color_param $green
+        # set -g fish_color_comment $comment
+        # set -g fish_color_selection --background=$selection
+        # set -g fish_color_search_match --background=$selection
+        # set -g fish_color_operator $orange
+        # set -g fish_color_escape $purple
+        # set -g fish_color_autosuggestion $comment
+
+        # # Completion Pager Colors
+        # set -g fish_pager_color_progress $comment
+        # set -g fish_pager_color_prefix $cyan
+        # set -g fish_pager_color_completion $foreground
+        # set -g fish_pager_color_description $comment
+        # set -g fish_pager_color_selected_background --background=$selection
+
+        # TokyoNight Moon Color Palette
+        set -l foreground c8d3f5
+        set -l selection 2d3f76
+        set -l comment 636da6
+        set -l red ff757f
+        set -l orange ff966c
+        set -l yellow ffc777
+        set -l green c3e88d
+        set -l purple fca7ea
+        set -l cyan 86e1fc
+        set -l pink c099ff
 
         # Syntax Highlighting Colors
-        set -g fish_color_normal $cyan
-        set -g fish_color_command $foreground
-        set -g fish_color_keyword $purple
-        set -g fish_color_quote $green
-        set -g fish_color_redirection $cyan
+        set -g fish_color_normal $foreground
+        set -g fish_color_command $cyan
+        set -g fish_color_keyword $pink
+        set -g fish_color_quote $yellow
+        set -g fish_color_redirection $foreground
         set -g fish_color_end $orange
+        set -g fish_color_option $pink
         set -g fish_color_error $red
-        set -g fish_color_param $green
+        set -g fish_color_param $purple
         set -g fish_color_comment $comment
         set -g fish_color_selection --background=$selection
         set -g fish_color_search_match --background=$selection
-        set -g fish_color_operator $orange
-        set -g fish_color_escape $purple
+        set -g fish_color_operator $green
+        set -g fish_color_escape $pink
         set -g fish_color_autosuggestion $comment
 
         # Completion Pager Colors
@@ -149,22 +185,22 @@
         batwatch
       ];
       config = {
-        theme = "adwaita-dark";
+        theme = "tokyonight-moon";
       };
       themes = {
-        # tokyonight-storm = {
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "folke";
-        #     repo = "tokyonight.nvim";
-        #     rev = "f247ee700b569ed43f39320413a13ba9b0aef0db";
-        #     hash = "sha256-axjZVZOI+WIv85FfMG+lxftDKlDIw/HzQKyJVFkL33M=";
-        #   };
-        #   file = "extras/sublime/tokyonight_storm.tmTheme";
-        # };
-        adwaita-dark = {
-          src = ./themes;
-          file = "adwaita-dark.tmTheme";
+        tokyonight-moon = {
+          src = pkgs.fetchFromGitHub {
+            owner = "folke";
+            repo = "tokyonight.nvim";
+            rev = "9758827c3b380ba89da4a2212b6255d01afbcf08";
+            hash = "sha256-qEmfBs+rKP25RlS7VxNSw9w4GnlZiiEchs17nJg7vsE=";
+          };
+          file = "extras/sublime/tokyonight_moon.tmTheme";
         };
+        # adwaita-dark = {
+        #   src = ./themes;
+        #   file = "adwaita-dark.tmTheme";
+        # };
       };
     };
   };
