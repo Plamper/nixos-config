@@ -17,7 +17,7 @@
         { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
       ];
       shellAbbrs = {
-        update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#(echo $hostname) --use-remote-sudo";
+        update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#$hostname --use-remote-sudo";
         update-flake = "nix flake update /home/felix/Nix-Configuration";
       };
       shellInit = '' 

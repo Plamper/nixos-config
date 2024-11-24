@@ -112,7 +112,7 @@
     # dev stuff
     just
     cachix
-    unstable.gitui
+    gitui
 
     nodejs
     # Man Pages

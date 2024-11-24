@@ -31,7 +31,7 @@
       runtimeInputs = [ pkgs.unstable.ptyxis ];
 
       text = ''
-        ptyxis --new-window -x "$@"
+        ptyxis --new-window -x "$*"
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
