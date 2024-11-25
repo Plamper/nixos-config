@@ -104,6 +104,9 @@
     seafile-client
     nextcloud-client
 
+    unstable.typst
+    unstable.tinymist
+
 
     gnome.adwaita-icon-theme # some apps look buggy without it
     bibata-cursors
