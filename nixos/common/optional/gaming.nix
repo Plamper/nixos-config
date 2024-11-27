@@ -18,6 +18,7 @@
       libva
       noto-fonts-cjk-sans
       noto-fonts
+      vulkan-hdr-layer
     ];
 
 
@@ -27,6 +28,12 @@
     #   motherboard = "amd";
     # };
     # hardware.i2c.enable = true;
+
+    programs.gamescope = {
+      enable = true;
+      package = pkgs.gamescope;
+      capSysNice = false;
+    };
 
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = [ pkgs.via pkgs.openrgb-with-all-plugins ];
@@ -50,11 +57,13 @@
           wine-staging
         ];
       })
-      unstable.r2modman
-      unstable.ludusavi
+      r2modman
+      ludusavi
       via
       openrgb-with-all-plugins
       protonplus
+      vulkan-hdr-layer
+      scx.full
     ];
   };
 }

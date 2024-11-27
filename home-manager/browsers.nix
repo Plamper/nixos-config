@@ -45,10 +45,10 @@
         "widget.use-xdg-desktop-portal.open-uri" = 1;
         "widget.use-xdg-desktop-portal.settings" = 1;
       };
-      userChrome = ''
-        @import "firefox-gnome-theme/userChrome.css";
-        @import "firefox-gnome-theme/theme/colors/dark.css"; 
-      '';
+      # userChrome = ''
+      #   @import "firefox-gnome-theme/userChrome.css";
+      #   @import "firefox-gnome-theme/theme/colors/dark.css"; 
+      # '';
     };
     nativeMessagingHosts = with pkgs; [
       jabref
