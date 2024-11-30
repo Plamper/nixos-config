@@ -3,6 +3,14 @@
   # steam doesn't work with home manager it seems
   config = {
     programs.steam.enable = true;
+    programs.steam.gamescopeSession = {
+      enable = true;
+      args = [
+        "--hdr-enabled"
+        "--hdr-itm-enable"
+        "--xwayland-count 2"
+      ];
+    };
     programs.steam.extraPackages = with pkgs;[
       xorg.libXcursor
       xorg.libXi
@@ -20,6 +28,9 @@
       noto-fonts
       vulkan-hdr-layer
     ];
+    # Steam Game transfers
+    networking.firewall.allowedTCPPorts = [ 27040 ];
+    networking.firewall.allowedUDPPortRanges = [{ from = 27031; to = 27036; }];
 
 
     # services.hardware.openrgb = {
@@ -32,7 +43,7 @@
     programs.gamescope = {
       enable = true;
       package = pkgs.gamescope;
-      capSysNice = false;
+      capSysNice = true;
     };
 
     hardware.keyboard.qmk.enable = true;
@@ -64,6 +75,7 @@
       protonplus
       vulkan-hdr-layer
       scx.full
+      gamescope-wsi
     ];
   };
 }

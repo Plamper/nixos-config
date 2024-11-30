@@ -20,10 +20,11 @@
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    gnome.nautilus-python
+    nautilus-python
     papers
     nautilus-open-any-terminal
     ptyxis
+    pika-backup
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 

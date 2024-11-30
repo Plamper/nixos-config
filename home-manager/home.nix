@@ -22,7 +22,7 @@
     ./direnv.nix
     ./browsers.nix
     ./rust.nix
-    ./mangohud.nix
+    # ./mangohud.nix
   ];
 
   nixpkgs = {
@@ -73,7 +73,6 @@
     thunderbird-128
     anki
     element-desktop
-    pika-backup
     gimp
     inkscape
     # unstable.onlyoffice-bin
@@ -102,6 +101,7 @@
     mpv
     easyeffects
     jellyfin-mpv-shim
+
 
     
     seafile-client
@@ -137,7 +137,7 @@
   # Code editor Section
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.vscode.fhs;
   };
 
   programs.obs-studio = {

@@ -15,6 +15,8 @@
         ];
       })
       fira
+      fira-code
+      fira-math
       julia-mono
       mono
       corefonts
@@ -32,6 +34,7 @@
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"
+      "Twitter Color Emoji"
       "Noto Sans"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"
@@ -39,9 +42,9 @@
     ];
     fonts.fontconfig.defaultFonts.serif = [
       "Noto Serif"
+      "Twitter Color Emoji"
       "Noto Serif CJK SC"
       "Noto Serif CJK TC"
-      "BabelStone Han"
     ];
     fonts.fontconfig.defaultFonts.emoji = [ 
       "Twitter Color Emoji"
