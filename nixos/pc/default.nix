@@ -24,6 +24,9 @@
     ../common/optional/amd-graphics.nix
     ../common/optional/disc-drive.nix
     ../common/optional/ledger.nix
+    ../common/optional/matlab.nix
+    ../common/optional/kde.nix
+    ../common/optional/fcitx5.nix
   ];
 
   # FIXME: Add the rest of your current configuration
@@ -38,7 +41,7 @@
   networking.hostName = "pc";
 
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.plymouth.enable = true;
 
 

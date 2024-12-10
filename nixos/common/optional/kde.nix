@@ -10,9 +10,11 @@
   # security.pam.services.sddm.enableGnomeKeyring = true;
   networking.networkmanager.enable = true;
   services.power-profiles-daemon.enable = true;
+  xdg.portal = { enable = true; xdgOpenUsePortal = true; };
 
   # Install not included packages
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
+    vorta
   ];
 }

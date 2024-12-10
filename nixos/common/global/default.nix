@@ -4,13 +4,13 @@
     ./home-manager.nix
     ./nix.nix
     ./pipewire.nix
-    ./gnome.nix
+    # ./gnome.nix
     # ./kde.nix
     ./nix.nix
     ./shells.nix
     ./security.nix
     ./fonts.nix
-    ./ibus.nix
+    # ./ibus.nix
     #./fcitx5.nix
     ./distrobox.nix
     ./locale.nix
@@ -51,7 +51,6 @@
     git
     sbctl
     piper
-    gnome.nautilus-python
   ];
 
 
@@ -78,4 +77,18 @@
   zramSwap.enable = true;
 
   programs.nix-ld.enable = true;
+
+  services.btrfs.autoScrub.enable = true;
+  services.fstrim.enable = true;
+
+
+  # FPGA UDev Rules
+  services.udev.extraRules = ''
+    # USB Blaster
+    SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666"
+
+    # FTDI Bridge
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6015", MODE="0666"
+  '';
+
 }

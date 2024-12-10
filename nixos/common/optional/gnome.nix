@@ -5,8 +5,8 @@
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
     gnome-console
-    gnome.totem
-    gnome.gnome-music
+    totem
+    gnome-music
     gnome-tour
   ]);
   environment.systemPackages = (with pkgs; [
@@ -20,23 +20,23 @@
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    gnome.nautilus-python
-    unstable.papers
-    unstable.nautilus-open-any-terminal
-    unstable.ptyxis
-    unstable.easyeffects
+    nautilus-python
+    papers
+    nautilus-open-any-terminal
+    ptyxis
+    pika-backup
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
-      runtimeInputs = [ pkgs.unstable.ptyxis ];
+      runtimeInputs = [ pkgs.ptyxis ];
 
       text = ''
         ptyxis --new-window -x "$*"
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
-    pkgs.unstable.gnomeExtensions.easyeffects-preset-selector
-    pkgs.unstable.gnomeExtensions.blur-my-shell
+    pkgs.gnomeExtensions.easyeffects-preset-selector
+    pkgs.gnomeExtensions.blur-my-shell
     pano
     bing-wallpaper-changer
     caffeine
@@ -44,7 +44,7 @@
     tiling-assistant
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
-    pkgs.unstable.gnomeExtensions.rounded-window-corners-reborn
+    pkgs.gnomeExtensions.rounded-window-corners-reborn
   ]);
 
   programs.dconf = {

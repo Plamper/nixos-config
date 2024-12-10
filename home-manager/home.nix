@@ -22,7 +22,7 @@
     ./direnv.nix
     ./browsers.nix
     ./rust.nix
-    ./mangohud.nix
+    # ./mangohud.nix
   ];
 
   nixpkgs = {
@@ -69,22 +69,21 @@
     # For editing pdfs with imagemagick
     plattenalbum
     celluloid
-    unstable.tutanota-desktop
+    tutanota-desktop
     thunderbird-128
     anki
     element-desktop
-    pika-backup
     gimp
     inkscape
     # unstable.onlyoffice-bin
     signal-desktop
     eyedropper
     nvtopPackages.amd
-    unstable.tidal-hifi
+    tidal-hifi
     # vesktop
-    unstable.mission-center
+    mission-center
     # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
-    unstable.rnote
+    rnote
     trayscale
     ffmpeg-full
     handbrake
@@ -98,7 +97,11 @@
     lm_sensors
     jamesdsp
     xournalpp
-    unstable.drawio
+    drawio
+    mpv
+    easyeffects
+    jellyfin-mpv-shim
+
 
     
     seafile-client
@@ -108,7 +111,7 @@
     unstable.tinymist
 
 
-    gnome.adwaita-icon-theme # some apps look buggy without it
+    adwaita-icon-theme # some apps look buggy without it
     bibata-cursors
     libreoffice
 
@@ -137,7 +140,7 @@
   # Code editor Section
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.vscode.fhs;
   };
 
   programs.obs-studio = {

@@ -18,7 +18,7 @@
       ];
       shellAbbrs = {
         update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#$hostname --use-remote-sudo";
-        update-flake = "nix flake update /home/felix/Nix-Configuration";
+        update-flake = "nix flake update --flake /home/felix/Nix-Configuration";
       };
       shellInit = '' 
         #         # Adwaita Color Palette
