@@ -107,8 +107,8 @@
     seafile-client
     nextcloud-client
 
-    unstable.typst
-    unstable.tinymist
+    typst
+    tinymist
 
 
     adwaita-icon-theme # some apps look buggy without it

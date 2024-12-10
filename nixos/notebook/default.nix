@@ -23,7 +23,7 @@
     ../common/optional/lanzaboote.nix
     #../common/optional/waydroid.nix
     ../common/optional/printing.nix
-    ../common/optional/virt-manager.nix
+    # ../common/optional/virt-manager.nix
     ../common/optional/amd-graphics.nix
     ../common/optional/matlab.nix
     ../common/optional/gnome.nix
@@ -36,7 +36,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # active has some brightness issues somehow
-  boot.kernelParams = [ "amd_pstate=guided" ];
+  boot.kernelParams = [ "amd_pstate=active" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
