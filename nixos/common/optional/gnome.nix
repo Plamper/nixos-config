@@ -25,6 +25,8 @@
     nautilus-open-any-terminal
     ptyxis
     pika-backup
+    celluloid
+    libreoffice
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
@@ -67,6 +69,7 @@
 
   services.power-profiles-daemon.enable = true;
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true;
 
   # Nautilus Gstreamer is broken
   # https://github.com/NixOS/nixpkgs/issues/195936#issuecomment-1278954466

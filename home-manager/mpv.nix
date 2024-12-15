@@ -5,7 +5,7 @@
     scripts = with pkgs.mpvScripts; [
       sponsorblock
       quality-menu
-      uosc
+      modernx-zydezu
       thumbfast
     ];
     config = {

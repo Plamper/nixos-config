@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   # You may need to comment out "services.displayManager.gdm.enable = true;"
   services.displayManager.sddm.enable = true;
@@ -16,5 +16,8 @@
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
     vorta
+    libreoffice-qt
+    kdePackages.kio-fuse #to mount remote filesystems via FUSE
+    kdePackages.kio-extras #extra protocols support (sftp, fish and more)
   ];
 }

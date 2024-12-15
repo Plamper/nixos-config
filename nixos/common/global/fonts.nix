@@ -12,6 +12,7 @@
           "NerdFontsSymbolsOnly"
           "GeistMono"
           "FantasqueSansMono"
+          "IBMPlexMono"
         ];
       })
       fira
@@ -31,6 +32,7 @@
       inter
       lmodern
       twitter-color-emoji
+      ibm-plex
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"

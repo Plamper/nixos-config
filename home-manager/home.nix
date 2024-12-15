@@ -13,7 +13,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./audio.nix
-    # ./mpv.nix
+    ./mpv.nix
     ./shells.nix
     ./helix.nix
     # ./wezterm.nix
@@ -68,14 +68,13 @@
     imagemagick
     # For editing pdfs with imagemagick
     plattenalbum
-    celluloid
     tutanota-desktop
     thunderbird-128
     anki
     element-desktop
     gimp
     inkscape
-    # unstable.onlyoffice-bin
+    onlyoffice-desktopeditors
     signal-desktop
     eyedropper
     nvtopPackages.amd
@@ -98,12 +97,11 @@
     jamesdsp
     xournalpp
     drawio
-    mpv
     easyeffects
     jellyfin-mpv-shim
+    darktable
+    kdenlive
 
-
-    
     seafile-client
     nextcloud-client
 
@@ -140,7 +138,7 @@
   # Code editor Section
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhs;
+    package = pkgs.vscode;
   };
 
   programs.obs-studio = {
