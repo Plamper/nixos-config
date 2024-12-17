@@ -53,7 +53,7 @@
   networking.hostName = "notebook";
 
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   #boot.plymouth.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

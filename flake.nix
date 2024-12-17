@@ -23,21 +23,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # prismlauncher.url = "github:PrismLauncher/PrismLauncher";
-    # nixd.url = "github:nix-community/nixd";
-    # emacs-overlay.url = "github:nix-community/emacs-overlay";
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    # nix-colors.url = "github:misterio77/nix-colors";
-
-    programsdb.url = "github:wamserma/flake-programs-sqlite";
-    programsdb.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:doronbehar/nix-matlab";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

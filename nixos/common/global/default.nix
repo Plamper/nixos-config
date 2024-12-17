@@ -14,6 +14,7 @@
     #./fcitx5.nix
     ./distrobox.nix
     ./locale.nix
+    ./nix-index.nix
   ];
 
   nixpkgs = {
@@ -57,8 +58,6 @@
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
-
-  programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
   # Be able to control wifi
   networking.wireless.userControlled.enable = true;
