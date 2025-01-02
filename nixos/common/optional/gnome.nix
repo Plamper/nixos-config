@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 {
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -10,7 +10,7 @@
     gnome-tour
   ]);
   environment.systemPackages = (with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     adw-gtk3
     qadwaitadecorations
     qadwaitadecorations-qt6
@@ -27,6 +27,7 @@
     pika-backup
     celluloid
     libreoffice
+    inputs.ghostty.packages.x86_64-linux.default
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 

@@ -157,28 +157,8 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # # Enable Syncthing
-  # services.syncthing = {
-  #   enable = true;
-  # };
-
-  # fonts.fontconfig.enable = true;
-  # home.file.".local/share/fonts/FiraCodeNerdFont-Retina_freeze.ttf" = {
-  #   source = ./fonts/FiraCodeNerdFont-Retina_freeze.ttf;
-  # };
-
-  # To set Blackbox as the default terminal we need to change a dconf setting
-  # dconf.settings."com/github/stunkeymonkey/nautilus-open-any-terminal" = {
-  #   flatpak = "off";
-  #   keybindings = "<Ctrl><Alt>t";
-  #   new-tab = false;
-  #   terminal = "blackbox";
-  # };
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # home.sessionPath = [ "$HOME/.local/bin" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

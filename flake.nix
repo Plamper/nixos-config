@@ -13,9 +13,6 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
-
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
 
@@ -25,19 +22,16 @@
 
     # prismlauncher.url = "github:PrismLauncher/PrismLauncher";
     # nixd.url = "github:nix-community/nixd";
-    # emacs-overlay.url = "github:nix-community/emacs-overlay";
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    # nix-colors.url = "github:misterio77/nix-colors";
 
     programsdb.url = "github:wamserma/flake-programs-sqlite";
     programsdb.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "gitlab:doronbehar/nix-matlab";
+      url = "gitlab:doronbehar/nix-matlab/nixpkgs-bubblewrap";
     };
 
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

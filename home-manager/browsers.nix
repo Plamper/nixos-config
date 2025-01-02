@@ -10,15 +10,15 @@
   };
 
   # Add Firefox GNOME theme directory
-  home.file."firefox-gnome-theme" = {
-    target = ".mozilla/firefox/8atw9cvi.default/chrome/firefox-gnome-theme";
-    source = pkgs.fetchFromGitHub {
-      owner = "rafaelmardojai";
-      repo = "firefox-gnome-theme";
-      rev = "v132";
-      sha256 = "sha256-lf9MQs8+NUvQd8b5t+7c4kLqUQixGO9WwWcLa1XYuiQ=";
-    };
-  };
+  # home.file."firefox-gnome-theme" = {
+  #   target = ".mozilla/firefox/8atw9cvi.default/chrome/firefox-gnome-theme";
+  #   source = pkgs.fetchFromGitHub {
+  #     owner = "rafaelmardojai";
+  #     repo = "firefox-gnome-theme";
+  #     rev = "v132";
+  #     sha256 = "sha256-lf9MQs8+NUvQd8b5t+7c4kLqUQixGO9WwWcLa1XYuiQ=";
+  #   };
+  # };
 
   programs.firefox = {
     enable = true;
