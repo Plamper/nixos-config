@@ -20,18 +20,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # prismlauncher.url = "github:PrismLauncher/PrismLauncher";
-    # nixd.url = "github:nix-community/nixd";
-
-    programsdb.url = "github:wamserma/flake-programs-sqlite";
-    programsdb.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:doronbehar/nix-matlab/nixpkgs-bubblewrap";
     };
 
     ghostty.url = "github:ghostty-org/ghostty";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
