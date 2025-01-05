@@ -34,7 +34,7 @@
       runtimeInputs = [ pkgs.ptyxis ];
 
       text = ''
-        ptyxis --new-window -x "$*"
+        ghostty -e "$*"
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
@@ -53,7 +53,7 @@
   programs.dconf = {
     enable = true;
     profiles.user.databases = [{
-      settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ptyxis";
+      settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ghostty";
       lockAll = true;
     }];
   };

@@ -14,7 +14,8 @@
     #./fcitx5.nix
     ./distrobox.nix
     ./locale.nix
-    ./nix-index.nix
+    ./nix-index.nix#
+    ./programs.nix
   ];
 
   nixpkgs = {

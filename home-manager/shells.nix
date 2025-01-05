@@ -144,7 +144,7 @@
         nix_shell = {
           # format = "[[ $symbol $state( \($name\))](fg:#a0a9cb bg:#1d2230)]($style)"; 
           # style = "bg:#1d2230";
-          heuristic = true;
+          heuristic = false;
           symbol = " ";
         };
         directory = {

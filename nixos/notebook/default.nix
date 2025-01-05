@@ -36,7 +36,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # active has some brightness issues somehow
-  boot.kernelParams = [ "amd_pstate=active" ];
+  boot.kernelParams = [ "amd_pstate=passive" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -53,7 +53,7 @@
   networking.hostName = "notebook";
 
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.plymouth.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
