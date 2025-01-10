@@ -22,7 +22,7 @@
 
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "gitlab:doronbehar/nix-matlab/nixpkgs-bubblewrap";
+      url = "gitlab:doronbehar/nix-matlab";
     };
 
     ghostty.url = "github:ghostty-org/ghostty";
