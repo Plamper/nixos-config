@@ -36,7 +36,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # active has some brightness issues somehow
-  boot.kernelParams = [ "amd_pstate=passive" ];
+  boot.kernelParams = [ "amd_pstate=disable" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
