@@ -27,6 +27,7 @@
     ../common/optional/matlab.nix
     ../common/optional/kde.nix
     ../common/optional/fcitx5.nix
+    ../common/optional/waydroid.nix
   ];
 
   # FIXME: Add the rest of your current configuration
