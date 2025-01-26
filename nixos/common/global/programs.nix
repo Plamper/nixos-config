@@ -15,9 +15,9 @@
     eyedropper
     nvtopPackages.amd
     tidal-hifi
-    # vesktop
+    discord
+    (pkgs.makeAutostartItem { name = "discord"; package = pkgs.discord; })
     mission-center
-    # (pkgs.makeAutostartItem { name = "vesktop"; package = pkgs.unstable.vesktop; })
     rnote
     trayscale
     ffmpeg-full

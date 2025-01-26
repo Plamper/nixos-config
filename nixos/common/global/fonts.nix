@@ -51,5 +51,6 @@
     fonts.fontconfig.defaultFonts.emoji = [ 
       "Twitter Color Emoji"
     ];
+    fonts.fontconfig.subpixel.rgba = "rgb";
   };
 }

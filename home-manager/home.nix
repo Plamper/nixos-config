@@ -23,6 +23,7 @@
     ./browsers.nix
     ./rust.nix
     # ./mangohud.nix
+    ./kitty.nix
   ];
 
   nixpkgs = {
