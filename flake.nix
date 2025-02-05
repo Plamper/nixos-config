@@ -25,7 +25,6 @@
       url = "gitlab:doronbehar/nix-matlab";
     };
 
-    ghostty.url = "github:ghostty-org/ghostty";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

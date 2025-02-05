@@ -4,7 +4,7 @@
     imagemagick
     # For editing pdfs with imagemagick
     plattenalbum
-    tutanota-desktop
+    unstable.tutanota-desktop
     thunderbird-128
     anki-bin
     element-desktop
@@ -36,7 +36,8 @@
     easyeffects
     jellyfin-mpv-shim
     darktable
-    kdenlive
+    # kdenlive
+    unstable.portfolio
 
     seafile-client
     nextcloud-client

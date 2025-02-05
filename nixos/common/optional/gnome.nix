@@ -2,7 +2,14 @@
 {
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverridePackages = [ pkgs.mutter ];
+    extraGSettingsOverrides = ''
+      [org.gnome.mutter]
+      experimental-features=['scale-monitor-framebuffer']
+    '';
+  };
   environment.gnome.excludePackages = (with pkgs; [
     gnome-console
     totem
@@ -14,7 +21,7 @@
     adw-gtk3
     qadwaitadecorations
     qadwaitadecorations-qt6
-    morewaita-icon-theme
+    unstable.morewaita-icon-theme
     # For better looking qt apps
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
@@ -27,7 +34,7 @@
     pika-backup
     celluloid
     libreoffice
-    inputs.ghostty.packages.x86_64-linux.default
+    ghostty
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
