@@ -45,8 +45,8 @@
       '';
     })
   ]) ++ (with pkgs.gnomeExtensions; [
-    pkgs.gnomeExtensions.easyeffects-preset-selector
-    pkgs.gnomeExtensions.blur-my-shell
+    easyeffects-preset-selector
+    blur-my-shell
     pano
     bing-wallpaper-changer
     caffeine
@@ -54,7 +54,7 @@
     tiling-assistant
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
-    pkgs.gnomeExtensions.rounded-window-corners-reborn
+    rounded-window-corners-reborn
   ]);
 
   programs.dconf = {

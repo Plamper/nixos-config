@@ -20,6 +20,16 @@
         update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#$hostname --use-remote-sudo";
         update-flake = "nix flake update --flake /home/felix/Nix-Configuration";
       };
+      functions = {
+        ssh-copy-terminfo = ''
+          if test (count $argv) -ne 1
+              echo "Usage: ssh-copy-terminfo SERVER"
+              return 1
+          end
+          set SERVER $argv[1]
+          infocmp -x | ssh $SERVER -- tic -x -
+        '';
+      };
       shellInit = '' 
         #         # Adwaita Color Palette
         # set -l foreground DEDDDA

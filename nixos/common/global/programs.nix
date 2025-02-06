@@ -36,7 +36,8 @@
     easyeffects
     jellyfin-mpv-shim
     darktable
-    # kdenlive
+    kdenlive
+    frei0r
     unstable.portfolio
 
     seafile-client
