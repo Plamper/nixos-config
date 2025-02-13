@@ -50,6 +50,7 @@
     adwaita-icon-theme # some apps look buggy without it
     bibata-cursors
     libreoffice
+    zotero
 
     # dev stuff
     just

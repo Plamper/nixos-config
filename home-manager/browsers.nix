@@ -51,7 +51,7 @@
       # '';
     };
     nativeMessagingHosts = with pkgs; [
-      jabref
+      zotero
     ];
   };
 
