@@ -32,31 +32,47 @@
           {
             name = "nix";
             # language-servers = [ "nixd" "nil" ];
-            formatter = { command = "nixpkgs-fmt"; };
+            formatter = { command = "nixfmt"; };
           }
           {
             name = "latex";
-            language-servers = [ "texlab" "ltex-ls" ];
+            language-servers = [ "texlab" "harper-ls" ];
           }
           {
             name = "markdown";
-            language-servers = [ "marksman" "ltex-ls" ];
+            language-servers = [ "marksman" "harper-ls" ];
             soft-wrap = { enable = true; };
-            auto-format = true;
-            formatter = { command = "mdformat"; args = [ "-" ]; };
+            formatter = {
+              command = "prettier";
+              args = [
+                "--parser"
+                "markdown"
+                "--prose-wrap"
+                "never"
+              ];
+            };
           }
         ];
-        # language-server = {
-        #   nixd = {
-        #     command = "nixd";
-        #   };
-        # };
+        language-server = {
+          harper-ls = {
+            command = "harper-ls";
+            args = [ "--stdio" ];
+          };
+        };
       };
       package = pkgs.unstable.helix;
     };
     home.packages = with pkgs; [
       wl-clipboard
       wl-clipboard-x11
+      # LSP and tools that I want always available
+      marksman
+      texlab
+      unstable.harper
+      nil
+      nixd
+      nixfmt
+      nodePackages.prettier
     ];
 
 

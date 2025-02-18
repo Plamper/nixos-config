@@ -45,6 +45,7 @@
 
     typst
     tinymist
+    typstyle
 
 
     adwaita-icon-theme # some apps look buggy without it

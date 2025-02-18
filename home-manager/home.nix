@@ -17,7 +17,6 @@
     ./shells.nix
     ./helix.nix
     # ./wezterm.nix
-    ./lsp.nix
     ./latex.nix
     ./direnv.nix
     ./browsers.nix
