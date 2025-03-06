@@ -1,4 +1,4 @@
-{ inputs, lib, ...}:
+{ inputs, lib, ... }:
 {
   imports = [
     # import lanzaboote
@@ -11,14 +11,14 @@
   # Fix resolution for console
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.timeout = 0;
-  
+
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
-  
+
   # Plymouth Fixes
   boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;
-  boot.kernelParams = [ "quiet"];
+  boot.kernelParams = [ "quiet" ];
 }

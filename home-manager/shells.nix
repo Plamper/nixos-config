@@ -14,7 +14,10 @@
         end
       '';
       plugins = [
-        { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
+        {
+          name = "sponge";
+          src = pkgs.fishPlugins.sponge.src;
+        }
       ];
       shellAbbrs = {
         update-system = "nixos-rebuild switch --flake /home/felix/Nix-Configuration#$hostname --use-remote-sudo";
@@ -30,7 +33,7 @@
           infocmp -x | ssh $SERVER -- tic -x -
         '';
       };
-      shellInit = '' 
+      shellInit = ''
         #         # Adwaita Color Palette
         # set -l foreground DEDDDA
         # set -l selection 193D66
@@ -119,46 +122,46 @@
         };
         c = {
           symbol = " ";
-          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"; 
+          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
           # style = "bg:#212736";
         };
         package = {
           symbol = "󰏗 ";
-          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"; 
+          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
           # style = "bg:#212736";
         };
         rust = {
-          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"; 
+          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
           # style = "bg:#212736";
           symbol = " ";
         };
         git_branch = {
           # format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
-          # style = "bg:#394260"; 
+          # style = "bg:#394260";
           symbol = " ";
         };
         # git_status = {
-        #   format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)"; 
+        #   format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
         #   style = "bg:#394260";
         # };
         nodejs = {
-          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"; 
-          # style = "bg:#212736"; 
+          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+          # style = "bg:#212736";
           symbol = " ";
         };
         golang = {
-          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"; 
-          # style = "bg:#212736"; 
+          # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+          # style = "bg:#212736";
           symbol = " ";
         };
         nix_shell = {
-          # format = "[[ $symbol $state( \($name\))](fg:#a0a9cb bg:#1d2230)]($style)"; 
+          # format = "[[ $symbol $state( \($name\))](fg:#a0a9cb bg:#1d2230)]($style)";
           # style = "bg:#1d2230";
           heuristic = false;
           symbol = " ";
         };
         directory = {
-          # format = "[ $path ]($style)"; 
+          # format = "[ $path ]($style)";
           # style = "fg:#e3e5e5 bg:#769ff0";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -172,7 +175,7 @@
         # package.disabled = true;
       };
     };
-    home.packages = with pkgs;[ eza ];
+    home.packages = with pkgs; [ eza ];
     home.shellAliases = {
       eza = "eza --icons -F -H --group-directories-first --git --hyperlink";
       bat = "bat -pp";

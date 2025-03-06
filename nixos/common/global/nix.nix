@@ -1,4 +1,10 @@
-{ inputs, lib, config, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
   # Taken from nix starter configs
   nix =
     let
@@ -8,7 +14,10 @@
       settings = {
 
         # For Cachix
-        trusted-users = [ "root" "felix" ];
+        trusted-users = [
+          "root"
+          "felix"
+        ];
 
         # Enable flakes and new 'nix' command
         experimental-features = "nix-command flakes";

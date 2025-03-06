@@ -1,7 +1,8 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -35,16 +36,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
   boot.kernelParams = [ "amd_pstate=active" ];
 
   # TODO: Set your hostname
   networking.hostName = "pc";
 
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.plymouth.enable = true;
-
 
   fileSystems."/home/felix/Music" = {
     device = "//192.168.1.196/Music";
@@ -73,7 +71,6 @@
     # see comment in include/linux/mm.h in the kernel tree.
     "vm.max_map_count" = 2147483642;
   };
-  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

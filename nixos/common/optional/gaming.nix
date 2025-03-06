@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   # steam doesn't work with home manager it seems
   config = {
@@ -11,7 +16,7 @@
         "--xwayland-count 2"
       ];
     };
-    programs.steam.extraPackages = with pkgs;[
+    programs.steam.extraPackages = with pkgs; [
       xorg.libXcursor
       xorg.libXi
       xorg.libXinerama
@@ -30,8 +35,12 @@
     ];
     # Steam Game transfers
     networking.firewall.allowedTCPPorts = [ 27040 ];
-    networking.firewall.allowedUDPPortRanges = [{ from = 27031; to = 27036; }];
-
+    networking.firewall.allowedUDPPortRanges = [
+      {
+        from = 27031;
+        to = 27036;
+      }
+    ];
 
     # services.hardware.openrgb = {
     #   enable = true;
@@ -47,7 +56,10 @@
     };
 
     hardware.keyboard.qmk.enable = true;
-    services.udev.packages = [ pkgs.via pkgs.openrgb-with-all-plugins ];
+    services.udev.packages = [
+      pkgs.via
+      pkgs.openrgb-with-all-plugins
+    ];
 
     services.ananicy = {
       enable = true;

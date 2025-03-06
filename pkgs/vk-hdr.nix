@@ -1,19 +1,20 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, pkg-config
-, vulkan-loader
-, ninja
-, writeText
-, vulkan-headers
-, vulkan-utility-libraries
-, jq
-, libX11
-, libXrandr
-, libxcb
-, wayland
-, wayland-scanner
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  pkg-config,
+  vulkan-loader,
+  ninja,
+  writeText,
+  vulkan-headers,
+  vulkan-utility-libraries,
+  jq,
+  libX11,
+  libXrandr,
+  libxcb,
+  wayland,
+  wayland-scanner,
 }:
 
 stdenv.mkDerivation rec {
@@ -28,9 +29,24 @@ stdenv.mkDerivation rec {
     hash = "sha256-MsvqxRYJO6eR7+Ntds8t6pb+XFEjfT8S6rq+Wha/FHk=";
   };
 
-  nativeBuildInputs = [ vulkan-headers meson ninja pkg-config jq ];
+  nativeBuildInputs = [
+    vulkan-headers
+    meson
+    ninja
+    pkg-config
+    jq
+  ];
 
-  buildInputs = [ vulkan-headers vulkan-loader vulkan-utility-libraries libX11 libXrandr libxcb wayland wayland-scanner ];
+  buildInputs = [
+    vulkan-headers
+    vulkan-loader
+    vulkan-utility-libraries
+    libX11
+    libXrandr
+    libxcb
+    wayland
+    wayland-scanner
+  ];
 
   # Help vulkan-loader find the validation layers
   setupHook = writeText "setup-hook" ''

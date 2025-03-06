@@ -1,9 +1,17 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   config = {
     services.mpd = {
       enable = true;
       musicDirectory = "~/Music";
-      extraConfig = '' 
+      extraConfig = ''
         audio_output {  
           type	"pipewire" #
           name  "Pipewire"  #
@@ -13,7 +21,7 @@
 
         replaygain          "auto"
         # replaygain_preamp "13"
-     '';
+      '';
     };
     # services.mpd-mpris.enable = true;
 
@@ -38,7 +46,7 @@
 
         fetchart.sources = "filesystem itunes amazon lastfm wikipedia coverart albumart";
 
-        replaygain.backend = "ffmpeg";       
+        replaygain.backend = "ffmpeg";
 
         mpd = {
           host = "localhost";

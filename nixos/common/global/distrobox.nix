@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   config = {
-    environment.systemPackages = with pkgs;[
+    environment.systemPackages = with pkgs; [
       distrobox
       podman-compose
     ];

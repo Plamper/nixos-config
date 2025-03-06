@@ -10,11 +10,11 @@
     ];
     config = {
       border = false;
-      autofit= "40%";
-      vo= "gpu-next";
-      target-colorspace-hint= true;
-      gpu-api= "vulkan";
-      gpu-context= "waylandvk";
+      autofit = "40%";
+      vo = "gpu-next";
+      target-colorspace-hint = true;
+      gpu-api = "vulkan";
+      gpu-context = "waylandvk";
       keep-open = true;
     };
   };

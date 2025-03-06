@@ -1,5 +1,11 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, inputs, outputs, ... }: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}:
+{
   imports = [
     ./home-manager.nix
     ./nix.nix
@@ -14,7 +20,7 @@
     #./fcitx5.nix
     ./distrobox.nix
     ./locale.nix
-    ./nix-index.nix#
+    ./nix-index.nix
     ./programs.nix
   ];
 
@@ -55,7 +61,6 @@
     piper
   ];
 
-
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
@@ -72,15 +77,12 @@
   # For firmware updates
   services.fwupd.enable = true;
 
-
-
   zramSwap.enable = true;
 
   programs.nix-ld.enable = true;
 
   services.btrfs.autoScrub.enable = true;
   services.fstrim.enable = true;
-
 
   # FPGA UDev Rules
   services.udev.extraRules = ''
