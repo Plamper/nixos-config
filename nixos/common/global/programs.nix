@@ -16,7 +16,10 @@
     nvtopPackages.amd
     tidal-hifi
     discord
-    (pkgs.makeAutostartItem { name = "discord"; package = pkgs.discord; })
+    (pkgs.makeAutostartItem {
+      name = "discord";
+      package = pkgs.discord;
+    })
     mission-center
     rnote
     trayscale

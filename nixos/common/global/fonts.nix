@@ -33,6 +33,8 @@
       lmodern
       twitter-color-emoji
       ibm-plex
+      libertine
+      libertine-g
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"

@@ -7,6 +7,7 @@
       libva
       libvdpau-va-gl
       vaapiVdpau
+      rocmPackages.clr.icd
       # mesa # MAtlab can't find libgbm
     ];
   };
