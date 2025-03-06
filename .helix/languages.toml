@@ -1,0 +1,10 @@
+[[language]]
+name = "nix"
+language-servers = ["nixd"]
+
+
+[language-server.nixd.config.nixd]
+nixpkgs.expr = "import (builtins.getFlake \"/home/felix/Nix-Configuration\").inputs.nixpkgs { } "
+formatting.command = "nixfmt"
+options.nixos.expr = "(builtins.getFlake \"/home/felix/Nix-Configuration\").nixosConfigurations.notebook.options"
+options.home-manager.expr = "(builtins.getFlake \"/home/felix/Nix-Configuration\").homeConfigurations.\"felix@notebook\".options"
