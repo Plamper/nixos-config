@@ -52,6 +52,7 @@
     };
     nativeMessagingHosts = with pkgs; [
       zotero
+      bitwarden-desktop
     ];
   };
 

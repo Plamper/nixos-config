@@ -19,6 +19,28 @@
         withBDplus = true;
       };
     };
+
+    libfprint = prev.libfprint.overrideAttrs (oldAttrs: rec {
+      version = "1.94.9";
+      src = prev.fetchFromGitLab {
+        domain = "gitlab.freedesktop.org";
+        owner = "libfprint";
+        repo = "libfprint";
+        tag = "v1.94.9";
+        hash = "sha256-UiUdZokgi27LlyO419dd+NIcQD2RSUfdsC08sW3qzko=";
+      };
+      buildInputs = with prev; [
+        openssl
+        gusb
+        pixman
+        glib
+        nss
+        cairo
+        libgudev
+      ];
+    });
+
+    bitwarden-desktop = inputs.nixpkgs-bitwarden.legacyPackages.${prev.system}.bitwarden-desktop;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

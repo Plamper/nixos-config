@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ inputs, outputs, config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -22,21 +28,18 @@
     ../common/users/felix.nix
     ../common/optional/lanzaboote.nix
     #../common/optional/waydroid.nix
-    ../common/optional/printing.nix
+    # ../common/optional/printing.nix
     # ../common/optional/virt-manager.nix
-    ../common/optional/amd-graphics.nix
-    ../common/optional/matlab.nix
+    ../common/optional/intel-graphics.nix
+    # ../common/optional/matlab.nix
     ../common/optional/gnome.nix
     ../common/optional/ibus.nix
+    ../common/optional/gaming.nix
   ];
 
-  # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # active has some brightness issues somehow
-  boot.kernelParams = [ "amd_pstate=disable" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,13 +48,20 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  powerManagement.enable = true;
+  services.logind.lidSwitch = "suspend-then-hibernate";
 
+  services.fprintd.enable = true;
+  security.polkit.enable = true;
+
+  hardware.sensor.iio.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  hardware.enableAllFirmware = true;
+
   # TODO: Set your hostname
   networking.hostName = "notebook";
-
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.plymouth.enable = true;
@@ -59,4 +69,3 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 }
-
