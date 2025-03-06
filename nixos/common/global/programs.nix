@@ -42,6 +42,9 @@
     kdenlive
     frei0r
     unstable.portfolio
+    bitwarden-desktop
+    firefox
+    unstable.alpaca
 
     seafile-client
     nextcloud-client
@@ -49,7 +52,6 @@
     typst
     tinymist
     typstyle
-
 
     adwaita-icon-theme # some apps look buggy without it
     bibata-cursors

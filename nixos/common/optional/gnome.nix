@@ -7,7 +7,7 @@
     extraGSettingsOverridePackages = [ pkgs.mutter ];
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
-      experimental-features=['scale-monitor-framebuffer']
+      experimental-features=['scale-monitor-framebuffer', 'variable-refresh-rate']
     '';
   };
   environment.gnome.excludePackages = (with pkgs; [
@@ -29,7 +29,7 @@
     libsForQt5.qt5ct
     nautilus-python
     papers
-    nautilus-open-any-terminal
+    # nautilus-open-any-terminal
     ptyxis
     pika-backup
     celluloid
@@ -38,7 +38,7 @@
     (pkgs.writeShellApplication {
       name = "xdg-terminal-exec";
 
-      runtimeInputs = [ pkgs.ptyxis ];
+      runtimeInputs = [ pkgs.ghostty ];
 
       text = ''
         ghostty -e "$*"
@@ -55,15 +55,16 @@
     alphabetical-app-grid
     legacy-gtk3-theme-scheme-auto-switcher
     rounded-window-corners-reborn
+    hibernate-status-button
   ]);
 
-  programs.dconf = {
-    enable = true;
-    profiles.user.databases = [{
-      settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ghostty";
-      lockAll = true;
-    }];
-  };
+  # programs.dconf = {
+  #   enable = true;
+  #   profiles.user.databases = [{
+  #     settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ghostty";
+  #     lockAll = true;
+  #   }];
+  # };
 
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";

@@ -31,6 +31,8 @@
       cantarell-fonts
       inter
       lmodern
+      stix-two
+      xits-math
       twitter-color-emoji
       ibm-plex
       libertine
