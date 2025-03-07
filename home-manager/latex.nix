@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   config = {
-    home.packages = with pkgs;[
+    home.packages = with pkgs; [
       ltex-ls
       texlab
       texlive.combined.scheme-full

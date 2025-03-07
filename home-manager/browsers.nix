@@ -47,7 +47,7 @@
       };
       # userChrome = ''
       #   @import "firefox-gnome-theme/userChrome.css";
-      #   @import "firefox-gnome-theme/theme/colors/dark.css"; 
+      #   @import "firefox-gnome-theme/theme/colors/dark.css";
       # '';
     };
     nativeMessagingHosts = with pkgs; [
@@ -90,7 +90,7 @@
   #     };
   #     userChrome = ''
   #       @import "thunderbird-gnome-theme/userChrome.css";
-  #       @import "thunderbird-gnome-theme/theme/colors/dark.css"; 
+  #       @import "thunderbird-gnome-theme/theme/colors/dark.css";
   #     '';
   #   };
   # };

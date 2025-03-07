@@ -35,6 +35,8 @@
       xits-math
       twitter-color-emoji
       ibm-plex
+      libertine
+      libertine-g
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"
@@ -50,7 +52,7 @@
       "Noto Serif CJK SC"
       "Noto Serif CJK TC"
     ];
-    fonts.fontconfig.defaultFonts.emoji = [ 
+    fonts.fontconfig.defaultFonts.emoji = [
       "Twitter Color Emoji"
     ];
     fonts.fontconfig.subpixel.rgba = "rgb";

@@ -10,15 +10,18 @@
   # security.pam.services.sddm.enableGnomeKeyring = true;
   networking.networkmanager.enable = true;
   services.power-profiles-daemon.enable = true;
-  xdg.portal = { enable = true; xdgOpenUsePortal = true; };
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
 
   # Install not included packages
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
     vorta
     libreoffice-qt
-    kdePackages.kio-fuse #to mount remote filesystems via FUSE
-    kdePackages.kio-extras #extra protocols support (sftp, fish and more)
+    kdePackages.kio-fuse # to mount remote filesystems via FUSE
+    kdePackages.kio-extras # extra protocols support (sftp, fish and more)
     kitty
   ];
 }

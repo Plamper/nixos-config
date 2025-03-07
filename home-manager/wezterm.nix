@@ -146,8 +146,7 @@
           text = ''
             wezterm -e "$@"
           '';
-        }
-        ;
+        };
       in
       [
         xdgTermShim
