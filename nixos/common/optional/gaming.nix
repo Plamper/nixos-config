@@ -49,11 +49,13 @@
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = [ pkgs.via pkgs.openrgb-with-all-plugins ];
 
-    services.ananicy = {
-      enable = true;
-      package = pkgs.ananicy-cpp;
-      rulesProvider = pkgs.ananicy-rules-cachyos;
-    };
+    # services.ananicy = {
+    #   enable = true;
+    #   package = pkgs.ananicy-cpp;
+    #   rulesProvider = pkgs.ananicy-rules-cachyos;
+    # };
+
+    programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
       mangohud
