@@ -45,12 +45,13 @@
     bitwarden-desktop
     firefox
     unstable.alpaca
+    fractal
 
     seafile-client
     nextcloud-client
 
     typst
-    tinymist
+    unstable.tinymist
     typstyle
 
     adwaita-icon-theme # some apps look buggy without it

@@ -50,6 +50,8 @@
 
   powerManagement.enable = true;
   services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.suspendKey = "suspend-then-hibernate";
+  systemd.sleep.extraConfig = "HibernateDelaySec=2h";
 
   services.fprintd.enable = true;
   security.polkit.enable = true;
