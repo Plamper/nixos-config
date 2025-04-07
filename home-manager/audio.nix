@@ -27,7 +27,7 @@
 
     programs.beets = {
       enable = true;
-      package = pkgs.beets.override {
+      package = pkgs.unstable.beets.override {
         pluginOverrides = {
           # Copied from https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/tools/audio/beets/default.nix
           alternatives = {

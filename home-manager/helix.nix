@@ -85,5 +85,6 @@
     nixd
     nixfmt-rfc-style
     nodePackages.prettier
+    yazi
   ];
 }

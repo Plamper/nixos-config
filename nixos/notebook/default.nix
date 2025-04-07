@@ -28,7 +28,7 @@
     ../common/users/felix.nix
     ../common/optional/lanzaboote.nix
     #../common/optional/waydroid.nix
-    # ../common/optional/printing.nix
+    ../common/optional/printing.nix
     # ../common/optional/virt-manager.nix
     ../common/optional/intel-graphics.nix
     # ../common/optional/matlab.nix
@@ -54,6 +54,7 @@
   systemd.sleep.extraConfig = "HibernateDelaySec=2h";
 
   services.fprintd.enable = true;
+  services.fprintd.package = pkgs.unstable.fprintd;
   security.polkit.enable = true;
 
   hardware.sensor.iio.enable = true;
