@@ -18,4 +18,5 @@
       ];
     };
   };
+  environment.variables.GTK_IM_MODULE = lib.mkForce "";
 }

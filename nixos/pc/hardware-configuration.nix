@@ -40,8 +40,11 @@
     ];
   };
 
-  boot.initrd.luks.devices."luks-b4bc9ade-4587-4eeb-bc30-67dc80cf417d".device =
-    "/dev/disk/by-uuid/b4bc9ade-4587-4eeb-bc30-67dc80cf417d";
+  boot.initrd.luks.devices."luks-b4bc9ade-4587-4eeb-bc30-67dc80cf417d" = {
+    device = "/dev/disk/by-uuid/b4bc9ade-4587-4eeb-bc30-67dc80cf417d";
+    bypassWorkqueues = true;
+    allowDiscards = true;
+  };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/71d04fb4-9e47-476a-9a35-3ce6345a944b";
