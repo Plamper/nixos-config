@@ -46,6 +46,7 @@
     firefox
     unstable.alpaca
     fractal
+    unstable.ausweisapp
 
     seafile-client
     nextcloud-client

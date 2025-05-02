@@ -31,7 +31,7 @@
     ../common/optional/printing.nix
     # ../common/optional/virt-manager.nix
     ../common/optional/intel-graphics.nix
-    # ../common/optional/matlab.nix
+    ../common/optional/matlab.nix
     ../common/optional/gnome.nix
     ../common/optional/ibus.nix
     ../common/optional/gaming.nix
