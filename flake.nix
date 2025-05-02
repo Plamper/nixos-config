@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "My NixOS config";
 
   inputs = {
     # Nixpkgs
@@ -20,10 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-matlab = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "gitlab:doronbehar/nix-matlab";
-    };
+    nix-matlab.url = "gitlab:doronbehar/nix-matlab";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

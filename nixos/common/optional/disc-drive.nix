@@ -2,7 +2,7 @@
 {
   config = {
     environment.systemPackages = with pkgs; [
-      makemkv
+      unstable.makemkv
       # freac
       libaacs
     ];
