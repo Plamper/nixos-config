@@ -10,10 +10,11 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
     extraConfig.pipewire."10-clock-rate"."context.properties" = {
-      "default.clock.rate" = 192000;
+      "default.clock.rate" = 48000;
       "default.clock.allowed-rates" = [
         44100
         48000
+        # expedition 33 bug
         88200
         96000
         176400
