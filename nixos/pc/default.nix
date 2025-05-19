@@ -21,14 +21,13 @@
     ../common/optional/gaming.nix
     ../common/optional/lanzaboote.nix
     ../common/users/felix.nix
-    ../common/optional/virt-manager.nix
+    # ../common/optional/virt-manager.nix
     ../common/optional/amd-graphics.nix
     ../common/optional/disc-drive.nix
     ../common/optional/ledger.nix
     ../common/optional/matlab.nix
-    ../common/optional/kde.nix
-    ../common/optional/fcitx5.nix
-    ../common/optional/waydroid.nix
+    ../common/optional/gnome.nix
+    ../common/optional/ibus.nix
   ];
 
   # FIXME: Add the rest of your current configuration

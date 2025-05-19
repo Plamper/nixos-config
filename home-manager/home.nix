@@ -30,7 +30,7 @@
     ./browsers.nix
     ./rust.nix
     # ./mangohud.nix
-    ./kitty.nix
+    ./ghostty.nix
   ];
 
   nixpkgs = {
