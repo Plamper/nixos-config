@@ -72,7 +72,7 @@
         };
       };
     };
-    package = pkgs.unstable.helix;
+    package = pkgs.helix;
   };
   home.packages = with pkgs; [
     wl-clipboard
@@ -80,11 +80,12 @@
     # LSP and tools that I want always available
     marksman
     texlab
-    unstable.harper
+    harper
     nil
     nixd
     nixfmt-rfc-style
     nodePackages.prettier
     yazi
+    lazygit
   ];
 }

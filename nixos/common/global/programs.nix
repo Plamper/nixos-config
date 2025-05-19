@@ -39,7 +39,7 @@
     easyeffects
     jellyfin-mpv-shim
     darktable
-    kdenlive
+    kdePackages.kdenlive
     frei0r
     unstable.portfolio
     bitwarden-desktop
@@ -57,7 +57,6 @@
 
     adwaita-icon-theme # some apps look buggy without it
     bibata-cursors
-    libreoffice
     zotero
 
     # dev stuff

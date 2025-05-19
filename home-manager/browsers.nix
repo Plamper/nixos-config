@@ -34,7 +34,7 @@
         "svg.context-properties.content.enabled" = true;
         # "gnomeTheme.extensions.tabCenterReborn" = true;
         "gnomeTheme.hideWebrtcIndicator" = true;
-        "gnomeTheme.hideSingleTab" = true;
+        # "gnomeTheme.hideSingleTab" = true;
         "extensions.pocket.enabled" = false;
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = true;
