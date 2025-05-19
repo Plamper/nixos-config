@@ -24,9 +24,9 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "Zamundaaa";
     repo = "VK_hdr_layer";
-    rev = "2799ab320b6d4cd43a493c2f3a6c4670d647171c";
+    rev = "3b276e68136eb10825aa7cabd06abb324897f0e8";
     fetchSubmodules = true;
-    hash = "sha256-MsvqxRYJO6eR7+Ntds8t6pb+XFEjfT8S6rq+Wha/FHk=";
+    hash = "sha256-c3OLT2qMKAQnQYrTVhrs3BEVS55HoaeBijgzygz6zgs=";
   };
 
   nativeBuildInputs = [

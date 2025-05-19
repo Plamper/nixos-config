@@ -54,7 +54,7 @@
   systemd.sleep.extraConfig = "HibernateDelaySec=2h";
 
   services.fprintd.enable = true;
-  services.fprintd.package = pkgs.unstable.fprintd;
+  services.fprintd.package = pkgs.fprintd;
   security.polkit.enable = true;
 
   hardware.sensor.iio.enable = true;
@@ -71,4 +71,6 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
+
+  services.input-remapper.enable = true;
 }

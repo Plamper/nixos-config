@@ -26,11 +26,12 @@
   );
   environment.systemPackages =
     (with pkgs; [
-      gnome-tweaks
+      refine
       adw-gtk3
       qadwaitadecorations
       qadwaitadecorations-qt6
-      unstable.morewaita-icon-theme
+      decibels
+      morewaita-icon-theme
       # For better looking qt apps
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
@@ -42,7 +43,7 @@
       ptyxis
       pika-backup
       celluloid
-      libreoffice
+      # libreoffice
       ghostty
       (pkgs.writeShellApplication {
         name = "xdg-terminal-exec";

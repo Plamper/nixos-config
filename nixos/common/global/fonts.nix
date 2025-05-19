@@ -1,20 +1,7 @@
 { pkgs, ... }:
 {
   config = {
-    fonts.packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "FiraMono"
-          "CascadiaCode"
-          "CascadiaMono"
-          "Monaspace"
-          "NerdFontsSymbolsOnly"
-          "GeistMono"
-          "FantasqueSansMono"
-          "IBMPlexMono"
-        ];
-      })
+    fonts.packages = ((with pkgs; [
       fira
       fira-code
       fira-math
@@ -37,7 +24,15 @@
       ibm-plex
       libertine
       libertine-g
-    ];
+    ]) ++ (with pkgs.nerd-fonts; [
+      fira-code
+      fira-mono
+      caskaydia-cove
+      caskaydia-mono
+      monaspace
+      symbols-only
+      geist-mono
+    ]));
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Inter"
       "Twitter Color Emoji"
