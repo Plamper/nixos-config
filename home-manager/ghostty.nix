@@ -5,7 +5,7 @@
     settings = {
       theme = "tokyonight_moon";
       font-size = 14;
-      font-family = "CaskaydiaCove Nerd Font";
+      font-family = "0xProto Nerd Font";
       window-theme = "ghostty";
       gtk-custom-css= "custom.css";
     };

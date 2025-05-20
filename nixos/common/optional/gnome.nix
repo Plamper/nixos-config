@@ -44,7 +44,7 @@
       pika-backup
       celluloid
       # libreoffice
-      ghostty
+      # ghostty
       (pkgs.writeShellApplication {
         name = "xdg-terminal-exec";
 

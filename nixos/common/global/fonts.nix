@@ -32,9 +32,10 @@
       monaspace
       symbols-only
       geist-mono
+      _0xproto
     ]));
     fonts.fontconfig.defaultFonts.sansSerif = [
-      "Inter"
+      "Adwaita Sans"
       "Twitter Color Emoji"
       "Noto Sans"
       "Noto Sans CJK SC"
