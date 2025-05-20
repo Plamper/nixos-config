@@ -5,10 +5,10 @@
     # For editing pdfs with imagemagick
     plattenalbum
     unstable.tutanota-desktop
-    thunderbird-128
+    thunderbird
     anki-bin
     element-desktop
-    gimp
+    gimp3
     inkscape
     onlyoffice-desktopeditors
     signal-desktop

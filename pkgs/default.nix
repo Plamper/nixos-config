@@ -6,5 +6,4 @@
 }:
 {
   # example = pkgs.callPackage ./example { };
-  vulkan-hdr-layer = pkgs.callPackage ./vk-hdr.nix { };
 }

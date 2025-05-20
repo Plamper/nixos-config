@@ -5,17 +5,16 @@
   ...
 }:
 {
-  # steam doesn't work with home manager it seems
   config = {
     programs.steam.enable = true;
-    programs.steam.gamescopeSession = {
-      enable = true;
-      args = [
-        "--hdr-enabled"
-        "--hdr-itm-enable"
-        "--xwayland-count 2"
-      ];
-    };
+    # programs.steam.gamescopeSession = {
+    #   enable = true;
+    #   args = [
+    #     "--hdr-enabled"
+    #     "--hdr-itm-enable"
+    #     "--xwayland-count 2"
+    #   ];
+    # };
     programs.steam.extraPackages = with pkgs; [
       xorg.libXcursor
       xorg.libXi
@@ -31,7 +30,7 @@
       libva
       noto-fonts-cjk-sans
       noto-fonts
-      vulkan-hdr-layer
+      vulkan-hdr-layer-kwin6
     ];
     # Steam Game transfers
     networking.firewall.allowedTCPPorts = [ 27040 ];
@@ -61,13 +60,13 @@
       pkgs.openrgb-with-all-plugins
     ];
 
-    # services.ananicy = {
-    #   enable = true;
-    #   package = pkgs.ananicy-cpp;
-    #   rulesProvider = pkgs.ananicy-rules-cachyos;
-    # };
+    services.ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
+    };
 
-    programs.gamemode.enable = true;
+    # programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
       mangohud
@@ -75,13 +74,13 @@
       protontricks
       steamtinkerlaunch
       heroic
-      (lutris.override {
-        extraPkgs = pkgs: [
-          # List package dependencies here
-          wine
-          wine-staging
-        ];
-      })
+      # (lutris.override {
+      #   extraPkgs = pkgs: [
+      #     # List package dependencies here
+      #     wine
+      #     wine-staging
+      #   ];
+      # })
       r2modman
       ludusavi
       via
