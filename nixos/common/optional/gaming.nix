@@ -7,14 +7,14 @@
 {
   config = {
     programs.steam.enable = true;
-    # programs.steam.gamescopeSession = {
-    #   enable = true;
-    #   args = [
-    #     "--hdr-enabled"
-    #     "--hdr-itm-enable"
-    #     "--xwayland-count 2"
-    #   ];
-    # };
+    programs.steam.gamescopeSession = {
+      enable = true;
+      args = [
+        "--hdr-enabled"
+        "--hdr-itm-enable"
+        "--xwayland-count 2"
+      ];
+    };
     programs.steam.extraPackages = with pkgs; [
       xorg.libXcursor
       xorg.libXi
@@ -86,7 +86,8 @@
       via
       openrgb-with-all-plugins
       protonplus
-      vulkan-hdr-layer
+      # remove after mesa 25.1.1
+      vulkan-hdr-layer-kwin6
       scx.full
       gamescope-wsi
     ];
