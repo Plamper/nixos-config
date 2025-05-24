@@ -44,7 +44,7 @@
     "swap" = {
       device = "/dev/disk/by-uuid/82e4290b-3abc-4fae-a1e3-560bb589ccef";
       bypassWorkqueues = true;
-      allowDiscards = true;
+      allowDiscards = false;
     };
   };
   fileSystems."/home" = {

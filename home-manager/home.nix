@@ -28,7 +28,6 @@
     ./latex.nix
     ./direnv.nix
     ./browsers.nix
-    ./rust.nix
     # ./mangohud.nix
     ./ghostty.nix
   ];

@@ -86,7 +86,7 @@
       via
       openrgb-with-all-plugins
       protonplus
-      vulkan-hdr-layer
+      vulkan-hdr-layer-kwin6
       scx.full
       gamescope-wsi
     ];
