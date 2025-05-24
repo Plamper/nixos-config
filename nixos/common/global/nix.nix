@@ -32,6 +32,14 @@
       # Opinionated: make flake registry and nix path match flake inputs
       registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+
     };
+
+  programs.nh = {
+    enable = true;
+    flake = "/home/felix/Nix-Configuration";
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+  };
 
 }
