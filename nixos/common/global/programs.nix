@@ -4,7 +4,7 @@
     imagemagick
     # For editing pdfs with imagemagick
     plattenalbum
-    unstable.tutanota-desktop
+    tutanota-desktop
     thunderbird
     anki-bin
     element-desktop
@@ -41,18 +41,18 @@
     darktable
     kdePackages.kdenlive
     frei0r
-    unstable.portfolio
+    # portfolio
     bitwarden-desktop
     firefox
-    unstable.alpaca
+    # unstable.alpaca
     fractal
-    unstable.ausweisapp
+    ausweisapp
 
     seafile-client
     nextcloud-client
 
     typst
-    unstable.tinymist
+    tinymist
     typstyle
 
     adwaita-icon-theme # some apps look buggy without it

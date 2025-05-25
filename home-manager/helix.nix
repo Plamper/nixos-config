@@ -11,6 +11,7 @@
           "collapse_selection"
           "keep_primary_selection"
         ];
+        X = [ "extend_line_above" ];
       };
       editor = {
         cursor-shape = {

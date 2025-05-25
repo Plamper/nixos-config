@@ -36,9 +36,9 @@
         "gnomeTheme.hideWebrtcIndicator" = true;
         # "gnomeTheme.hideSingleTab" = true;
         "extensions.pocket.enabled" = false;
-        "media.ffmpeg.vaapi.enabled" = true;
-        "media.hardware-video-decoding.force-enabled" = true;
-        "layers.acceleration.force-enabled" = true;
+        # "media.ffmpeg.vaapi.enabled" = true;
+        # "media.hardware-video-decoding.force-enabled" = true;
+        # "layers.acceleration.force-enabled" = true;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
         "widget.use-xdg-desktop-portal.location" = 1;
         "widget.use-xdg-desktop-portal.mime-handler" = 1;
