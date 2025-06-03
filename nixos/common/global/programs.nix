@@ -64,7 +64,6 @@
     cachix
     gitui
 
-    nodejs
     # Man Pages
     man-pages
     man-pages-posix
