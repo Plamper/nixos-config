@@ -51,7 +51,8 @@
         runtimeInputs = [ pkgs.ghostty ];
 
         text = ''
-          ghostty -e "$*"
+          args=$(printf '%q ' "$@")
+          ghostty -e "$args"
         '';
       })
     ])
