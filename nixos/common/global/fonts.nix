@@ -13,6 +13,7 @@
       noto-fonts-cjk-serif
       noto-fonts
       noto-fonts-extra
+      noto-fonts-color-emoji
       babelstone-han
       source-han-sans
       cantarell-fonts
@@ -36,7 +37,7 @@
     ]));
     fonts.fontconfig.defaultFonts.sansSerif = [
       "Adwaita Sans"
-      "Twitter Color Emoji"
+      "Noto Color Emoji"
       "Noto Sans"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"
@@ -44,12 +45,12 @@
     ];
     fonts.fontconfig.defaultFonts.serif = [
       "Noto Serif"
-      "Twitter Color Emoji"
+      "Noto Color Emoji"
       "Noto Serif CJK SC"
       "Noto Serif CJK TC"
     ];
     fonts.fontconfig.defaultFonts.emoji = [
-      "Twitter Color Emoji"
+      "Noto Color Emoji"
     ];
     fonts.fontconfig.subpixel.rgba = "rgb";
   };
