@@ -47,8 +47,9 @@
     # unstable.alpaca
     fractal
     ausweisapp
+    high-tide
+    packet
 
-    seafile-client
     nextcloud-client
 
     typst
