@@ -49,6 +49,7 @@
     ausweisapp
     high-tide
     packet
+    zed-editor
 
     nextcloud-client
 
@@ -64,6 +65,7 @@
     just
     cachix
     gitui
+    jujutsu
 
     # Man Pages
     man-pages

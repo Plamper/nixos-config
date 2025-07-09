@@ -43,6 +43,7 @@
       ptyxis
       pika-backup
       celluloid
+      gnome-frog
       # libreoffice
       # ghostty
       (pkgs.writeShellApplication {

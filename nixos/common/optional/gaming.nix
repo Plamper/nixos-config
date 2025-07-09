@@ -30,7 +30,6 @@
       libva
       noto-fonts-cjk-sans
       noto-fonts
-      vulkan-hdr-layer-kwin6
     ];
     # Steam Game transfers
     networking.firewall.allowedTCPPorts = [ 27040 ];
@@ -86,8 +85,6 @@
       via
       openrgb-with-all-plugins
       protonplus
-      # remove after mesa 25.1.1
-      vulkan-hdr-layer-kwin6
       scx.full
       gamescope-wsi
     ];
