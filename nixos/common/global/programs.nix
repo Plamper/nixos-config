@@ -14,7 +14,7 @@
     signal-desktop
     eyedropper
     nvtopPackages.amd
-    tidal-hifi
+    # tidal-hifi
     discord
     (pkgs.makeAutostartItem {
       name = "discord";
@@ -38,7 +38,7 @@
     drawio
     easyeffects
     jellyfin-mpv-shim
-    darktable
+    # darktable
     kdePackages.kdenlive
     frei0r
     # portfolio

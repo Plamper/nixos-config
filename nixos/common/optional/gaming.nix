@@ -85,7 +85,7 @@
       via
       openrgb-with-all-plugins
       protonplus
-      scx.full
+      # scx.rustscheds
       gamescope-wsi
     ];
   };

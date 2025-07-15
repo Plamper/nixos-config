@@ -16,6 +16,13 @@
       noto-fonts-color-emoji
       babelstone-han
       source-han-sans
+      source-sans
+      source-serif
+      cabin
+      crimson-pro
+      garamond-libre
+      alegreya
+      alegreya-sans
       cantarell-fonts
       inter
       lmodern

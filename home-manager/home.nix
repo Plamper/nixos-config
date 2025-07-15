@@ -25,7 +25,7 @@
     ./shells.nix
     ./helix.nix
     # ./wezterm.nix
-    ./latex.nix
+    # ./latex.nix
     ./direnv.nix
     ./browsers.nix
     # ./mangohud.nix
