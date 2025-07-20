@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs-bitwarden.url = "github:nyawox/nixpkgs/bitwarden-desktop-proxy";
+    nixpkgs-bitwarden.url = "github:alexyao2015/nixpkgs/fix/bitwarden-auth";
   };
 
   outputs =
