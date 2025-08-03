@@ -69,6 +69,12 @@
   networking.wireless.userControlled.enable = true;
   services.tailscale.enable = true;
 
+
+  networking.networkmanager.plugins = with pkgs;[
+    networkmanager-openvpn
+    networkmanager-openconnect
+  ];
+
   # Install android udev rules
   services.udev.packages = [
     pkgs.android-udev-rules
