@@ -43,8 +43,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.plymouth.enable = true;
 
-  fileSystems."/home/felix/Music" = {
-    device = "//192.168.1.196/Music";
+  fileSystems."/mnt/Music" = {
+    device = "//nix-nas/Music";
     fsType = "cifs";
     options =
       let

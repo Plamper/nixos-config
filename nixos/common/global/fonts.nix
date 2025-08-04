@@ -23,6 +23,7 @@
       garamond-libre
       alegreya
       alegreya-sans
+      gyre-fonts
       cantarell-fonts
       inter
       lmodern
