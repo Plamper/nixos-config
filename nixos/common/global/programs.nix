@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     imagemagick
-    # For editing pdfs with imagemagick
     plattenalbum
     tutanota-desktop
     thunderbird
@@ -13,7 +12,6 @@
     onlyoffice-desktopeditors
     signal-desktop
     eyedropper
-    nvtopPackages.amd
     # tidal-hifi
     discord
     (pkgs.makeAutostartItem {
@@ -33,7 +31,6 @@
     audacity
     rclone
     lm_sensors
-    jamesdsp
     xournalpp
     drawio
     easyeffects
@@ -44,12 +41,12 @@
     # portfolio
     bitwarden-desktop
     firefox
-    # unstable.alpaca
     fractal
     ausweisapp
     high-tide
     packet
     zed-editor
+    planify
 
     nextcloud-client
 
@@ -58,14 +55,11 @@
     typstyle
 
     adwaita-icon-theme # some apps look buggy without it
-    bibata-cursors
     zotero
 
-    # dev stuff
     just
     cachix
     gitui
-    jujutsu
 
     # Man Pages
     man-pages

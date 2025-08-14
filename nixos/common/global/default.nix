@@ -61,6 +61,9 @@
     piper
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.preferStaticEmulators = true;
+
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
   services.ratbagd.enable = true;
