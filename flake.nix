@@ -26,8 +26,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpkgs-bitwarden.url = "github:alexyao2015/nixpkgs/fix/bitwarden-auth";
   };
 
   outputs =

@@ -19,8 +19,6 @@
         withBDplus = true;
       };
     };
-
-    bitwarden-desktop = inputs.nixpkgs-bitwarden.legacyPackages.${prev.system}.bitwarden-desktop;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

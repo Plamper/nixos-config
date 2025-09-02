@@ -9,8 +9,9 @@
       vaapiVdpau
       intel-vaapi-driver
       intel-media-driver
+      intel-compute-runtime
       vpl-gpu-rt
-      mesa
+      # mesa
     ];
   };
 }

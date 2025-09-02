@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+
+  # Jellyfin media client
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebengine-5.15.19"
+  ];
+
   environment.systemPackages = with pkgs; [
     imagemagick
     plattenalbum
