@@ -44,7 +44,7 @@
     "swap" = {
       device = "/dev/disk/by-uuid/82e4290b-3abc-4fae-a1e3-560bb589ccef";
       bypassWorkqueues = true;
-      allowDiscards = false;
+      allowDiscards = true;
     };
   };
   fileSystems."/home" = {
@@ -79,6 +79,7 @@
     {
       device = "/dev/disk/by-uuid/aa390474-f83c-41d9-b275-33c1ac651cbf";
       priority = 1;
+      options = [ "discard" ];
     }
   ];
 

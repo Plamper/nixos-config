@@ -49,8 +49,8 @@
   services.xserver.enable = true;
 
   powerManagement.enable = true;
-  services.logind.lidSwitch = "suspend-then-hibernate";
-  services.logind.suspendKey = "suspend-then-hibernate";
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+  services.logind.settings.Login.HandleSuspendKey = "suspend-then-hibernate";
   systemd.sleep.extraConfig = "HibernateDelaySec=2h";
 
   services.fprintd.enable = true;
@@ -71,6 +71,4 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
-
-  services.input-remapper.enable = true;
 }

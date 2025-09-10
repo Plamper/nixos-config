@@ -16,6 +16,7 @@
     gimp3
     inkscape
     onlyoffice-desktopeditors
+    libreoffice
     signal-desktop
     eyedropper
     # tidal-hifi
@@ -27,6 +28,12 @@
     mission-center
     rnote
     trayscale
+    (pkgs.makeAutostartItem {
+      name = "Trayscale";
+      package = pkgs.trayscale;
+      appendExtraArgs = [ "--hide-window" ];
+      srcPrefix = "dev.deedles.";
+    })
     ffmpeg-full
     handbrake
     mkvtoolnix
@@ -41,7 +48,7 @@
     drawio
     easyeffects
     jellyfin-mpv-shim
-    # darktable
+    darktable
     kdePackages.kdenlive
     frei0r
     # portfolio

@@ -53,12 +53,10 @@
   # time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
     git
     sbctl
-    piper
   ];
 
   # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
@@ -66,7 +64,6 @@
 
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
-  services.ratbagd.enable = true;
 
   # Be able to control wifi
   networking.wireless.userControlled.enable = true;
