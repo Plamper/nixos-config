@@ -22,6 +22,7 @@
     ./locale.nix
     ./nix-index.nix
     ./programs.nix
+    ./gst.nix
   ];
 
   nixpkgs = {
@@ -73,11 +74,6 @@
   networking.networkmanager.plugins = with pkgs;[
     networkmanager-openvpn
     networkmanager-openconnect
-  ];
-
-  # Install android udev rules
-  services.udev.packages = [
-    pkgs.android-udev-rules
   ];
 
   # For firmware updates

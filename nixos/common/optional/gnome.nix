@@ -45,17 +45,6 @@
       celluloid
       gnome-frog
       # libreoffice
-      # ghostty
-      (pkgs.writeShellApplication {
-        name = "xdg-terminal-exec";
-
-        runtimeInputs = [ pkgs.ghostty ];
-
-        text = ''
-          args=$(printf '%q ' "$@")
-          ghostty -e "$args"
-        '';
-      })
     ])
     ++ (with pkgs.gnomeExtensions; [
       easyeffects-preset-selector

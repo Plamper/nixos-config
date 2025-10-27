@@ -16,7 +16,8 @@
     gimp3
     inkscape
     onlyoffice-desktopeditors
-    libreoffice
+    libreoffice-fresh
+    rclone
     signal-desktop
     eyedropper
     # tidal-hifi
@@ -24,6 +25,7 @@
     (pkgs.makeAutostartItem {
       name = "discord";
       package = pkgs.discord;
+      appendExtraArgs = [ "--start-minimized" ];
     })
     mission-center
     rnote
@@ -39,7 +41,7 @@
     mkvtoolnix
     subtitleedit
     helvum
-    jellyfin-media-player
+    # jellyfin-media-player
     mediainfo
     audacity
     rclone
@@ -48,9 +50,9 @@
     drawio
     easyeffects
     jellyfin-mpv-shim
-    darktable
     kdePackages.kdenlive
     frei0r
+    komikku
     # portfolio
     bitwarden-desktop
     firefox
@@ -78,5 +80,14 @@
     man-pages
     man-pages-posix
     tldr
+
+
+    # Modern Images
+    libheif
+    libheif.out
+    libavif
+    libavif.out
   ];
+  # For image thumbnails
+  environment.pathsToLink = [ "share/thumbnailers" ];
 }

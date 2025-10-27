@@ -3,11 +3,11 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      theme = "tokyonight_moon";
+      theme = "TokyoNight Moon";
       font-size = 14;
       font-family = "0xProto Nerd Font";
       window-theme = "ghostty";
-      gtk-custom-css= "custom.css";
+      gtk-custom-css = "custom.css";
     };
   };
   home.file.".config/ghostty/custom.css".text =
@@ -32,4 +32,10 @@
         --dialog-bg-color: #272B47; 
       }
     '';
+  xdg.terminal-exec = {
+    enable = true;
+    settings.default = [
+      "com.mitchellh.ghostty.desktop"
+    ];
+  };
 }

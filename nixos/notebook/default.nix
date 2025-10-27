@@ -63,6 +63,10 @@
 
   hardware.enableAllFirmware = true;
 
+  hardware.cpu.intel.npu.enable = true;
+  # XE Driver
+  # boot.kernelParams = [ "i915.force_probe=!7d55" "xe.force_probe=7d55" ];
+
   # TODO: Set your hostname
   networking.hostName = "notebook";
 
