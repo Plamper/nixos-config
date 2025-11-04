@@ -13,11 +13,19 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
 
       # limit the size system closure.
       inputs.nixpkgs.follows = "nixpkgs";
+
+      # remove when fix is in lanzaboote
+      inputs.rust-overlay.follows = "rust-overlay";
     };
 
     nix-matlab.url = "gitlab:doronbehar/nix-matlab";

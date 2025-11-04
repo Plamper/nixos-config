@@ -62,6 +62,7 @@
     packet
     zed-editor
     planify
+    solaar
 
     nextcloud-client
 

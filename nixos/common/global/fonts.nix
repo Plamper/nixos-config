@@ -9,13 +9,12 @@
         julia-mono
         mono
         corefonts
-        vistafonts
+        vista-fonts
         vista-fonts-cht
         vista-fonts-chs
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts
-        noto-fonts-extra
         noto-fonts-color-emoji
         babelstone-han
         source-han-sans

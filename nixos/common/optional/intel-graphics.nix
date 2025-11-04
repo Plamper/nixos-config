@@ -6,7 +6,7 @@
     extraPackages = with pkgs; [
       libva
       libvdpau-va-gl
-      vaapiVdpau
+      libva-vdpau-driver
       intel-vaapi-driver
       intel-media-driver
       intel-compute-runtime
