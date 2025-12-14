@@ -12,7 +12,6 @@
     tutanota-desktop
     thunderbird
     anki-bin
-    element-desktop
     gimp3
     inkscape
     onlyoffice-desktopeditors
@@ -21,12 +20,13 @@
     signal-desktop
     eyedropper
     # tidal-hifi
-    discord
-    (pkgs.makeAutostartItem {
-      name = "discord";
-      package = pkgs.discord;
-      appendExtraArgs = [ "--start-minimized" ];
-    })
+    # discord
+    # (pkgs.makeAutostartItem {
+    #   name = "discord";
+    #   package = pkgs.discord;
+    #   appendExtraArgs = [ "--start-minimized" ];
+    # })
+    parabolic
     mission-center
     rnote
     trayscale
@@ -55,6 +55,10 @@
     komikku
     # portfolio
     bitwarden-desktop
+    (pkgs.makeAutostartItem {
+      name = "bitwarden";
+      package = pkgs.bitwarden-desktop;
+    })
     firefox
     fractal
     ausweisapp
@@ -81,6 +85,9 @@
     man-pages
     man-pages-posix
     tldr
+
+    # LDAC codec
+    pulseaudioFull
 
 
     # Modern Images

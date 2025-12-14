@@ -18,6 +18,7 @@
         noto-fonts-color-emoji
         babelstone-han
         source-han-sans
+        source-han-serif
         source-sans
         source-serif
         cabin

@@ -31,7 +31,7 @@
     ../common/optional/printing.nix
     # ../common/optional/virt-manager.nix
     ../common/optional/intel-graphics.nix
-    ../common/optional/matlab.nix
+    # ../common/optional/matlab.nix
     ../common/optional/gnome.nix
     ../common/optional/ibus.nix
     ../common/optional/gaming.nix
@@ -63,7 +63,9 @@
 
   hardware.enableAllFirmware = true;
 
-  hardware.cpu.intel.npu.enable = true;
+  # hardware.cpu.intel.npu.enable = true;
+
+  hardware.cpu.intel.updateMicrocode = true;
   # XE Driver
   # boot.kernelParams = [ "i915.force_probe=!7d55" "xe.force_probe=7d55" ];
 
