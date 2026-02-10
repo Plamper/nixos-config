@@ -22,11 +22,6 @@
 
     # nix-matlab.url = "gitlab:doronbehar/nix-matlab";
 
-    intel-npu-driver = {
-      url = "github:intel/linux-npu-driver";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -94,7 +89,6 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/notebook
-            inputs.intel-npu-driver.nixosModules.default
           ];
         };
         # Just for nixd

@@ -22,6 +22,7 @@
       totem
       gnome-music
       gnome-tour
+      gnome-software
     ]
   );
   environment.systemPackages =
@@ -32,6 +33,7 @@
       qadwaitadecorations-qt6
       decibels
       morewaita-icon-theme
+      gnome-boxes
       # For better looking qt apps
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
