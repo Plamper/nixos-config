@@ -15,19 +15,23 @@
         "--xwayland-count 2"
       ];
     };
-    programs.steam.extraPackages = with pkgs; [
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXinerama
-      xorg.libXScrnSaver
-      xorg.xrandr
-      libpng
-      libpulseaudio
-      libvorbis
-      stdenv.cc.cc.lib
-      libkrb5
-      keyutils
-      libva
+    # programs.steam.extraPackages = with pkgs; [
+    #   xorg.libXcursor
+    #   xorg.libXi
+    #   xorg.libXinerama
+    #   xorg.libXScrnSaver
+    #   xorg.xrandr
+    #   libpng
+    #   libpulseaudio
+    #   libvorbis
+    #   stdenv.cc.cc.lib
+    #   libkrb5
+    #   keyutils
+    #   libva
+    #   noto-fonts-cjk-sans
+    #   noto-fonts
+    # ];
+    programs.steam.fontPackages = with pkgs; [
       noto-fonts-cjk-sans
       noto-fonts
     ];
@@ -40,6 +44,12 @@
       }
     ];
 
+    hardware.xpadneo.enable = true;
+    # 8bitdo controller
+    boot.extraModprobeConfig = ''
+      options hid_xpadneo quirks=E4:17:D8:xx:xx:xx+32
+    '';
+
     # services.hardware.openrgb = {
     #   enable = true;
     #   package = pkgs.openrgb-with-all-plugins;
@@ -50,7 +60,7 @@
     programs.gamescope = {
       enable = true;
       package = pkgs.gamescope;
-      capSysNice = true;
+      # capSysNice = true;
     };
 
     hardware.keyboard.qmk.enable = true;
@@ -63,9 +73,16 @@
       enable = true;
       package = pkgs.ananicy-cpp;
       rulesProvider = pkgs.ananicy-rules-cachyos;
+      extraRules = [
+        {
+          "name" = "gamescope";
+          "nice" = -20;
+        }
+      ];
     };
 
     # programs.gamemode.enable = true;
+    programs.gpu-screen-recorder.enable = true;
 
     environment.systemPackages = with pkgs; [
       mangohud
@@ -73,13 +90,8 @@
       protontricks
       steamtinkerlaunch
       heroic
-      # (lutris.override {
-      #   extraPkgs = pkgs: [
-      #     # List package dependencies here
-      #     wine
-      #     wine-staging
-      #   ];
-      # })
+      libdecor
+      gpu-screen-recorder-gtk
       r2modman
       ludusavi
       via

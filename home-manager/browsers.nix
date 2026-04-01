@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
 
   programs.chromium = {
@@ -56,6 +56,20 @@
     ];
   };
 
+  # home.nix
+  imports = [
+    inputs.zen-browser.homeModules.beta
+    # or inputs.zen-browser.homeModules.twilight
+    # or inputs.zen-browser.homeModules.twilight-official
+  ];
+
+  programs.zen-browser = {
+    enable = true;
+    nativeMessagingHosts = with pkgs; [
+      zotero
+      # bitwarden-desktop
+    ];
+  };
   # # Add Firefox GNOME theme directory
   # home.file."thunderbird-gnome-theme" = {
   #   target = ".thunderbird/8atw9cvi.default/chrome/thunderbird-gnome-theme";

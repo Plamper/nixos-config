@@ -11,6 +11,7 @@
     services.mpd = {
       enable = true;
       musicDirectory = "~/Music";
+      # playlistDirectory = "~/Music/Playlists";
       extraConfig = ''
         audio_output {  
           type	"pipewire" #
@@ -26,13 +27,12 @@
     # services.mpd-mpris.enable = true;
 
     programs.beets = {
-      enable = true;
-      package = pkgs.beets.override {
+      enable = false;
+      package = pkgs.python3.pkgs.beets.override {
         pluginOverrides = {
-          # Copied from https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/tools/audio/beets/default.nix
           alternatives = {
             enable = true;
-            propagatedBuildInputs = [ pkgs.beetsPackages.alternatives ];
+            propagatedBuildInputs = [ pkgs.python3Packages.beets-alternatives ];
           };
         };
       };
@@ -42,7 +42,7 @@
         import.move = true;
         directory = "~/Music";
         library = "~/.config/beets/musiclibrary.db";
-        plugins = "web replaygain chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate";
+        plugins = "web replaygain chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate playlist";
 
         fetchart.sources = "filesystem itunes amazon lastfm wikipedia coverart albumart";
 
@@ -53,12 +53,25 @@
           port = 6600;
         };
 
+        playlist = {
+          auto = true;
+          relative_to = "~/Music";
+          playlist_dir = "~/Music/Playlists";
+        };
+
         alternatives = {
           walkman = {
             directory = "/run/media/felix/WALKMAN";
             paths.default = "MUSIC/$albumartist/$album/$title";
             formats = "aac mp3 flac wav";
             query = "walkman:true";
+            removable = "true";
+          };
+          garmin = {
+            directory = "/run/user/1000/gvfs/mtp:host=091e_50db_0000d859b119/Internal\ Storage/Music";
+            paths.default = "MUSIC/$albumartist/$album/$title";
+            formats = "aac";
+            query = "garmin:true";
             removable = "true";
           };
         };

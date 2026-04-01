@@ -49,17 +49,21 @@
       # libreoffice
     ])
     ++ (with pkgs.gnomeExtensions; [
-      easyeffects-preset-selector
       blur-my-shell
-      pano
-      bing-wallpaper-changer
+      (copyous.overrideAttrs (old: {
+        buildInputs = [
+          pkgs.libgda5
+        ];
+        preInstall = ''
+          sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/dependencies/dependencies.js
+          sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\n" lib/misc/db.js
+        '';
+      }))
       caffeine
       appindicator
       tiling-assistant
-      alphabetical-app-grid
       legacy-gtk3-theme-scheme-auto-switcher
       rounded-window-corners-reborn
-      hibernate-status-button
     ]);
 
   # programs.dconf = {

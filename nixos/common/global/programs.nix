@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     imagemagick
-    plattenalbum
     tutanota-desktop
     thunderbird
     anki-bin
@@ -19,13 +18,6 @@
     rclone
     signal-desktop
     eyedropper
-    # tidal-hifi
-    # discord
-    # (pkgs.makeAutostartItem {
-    #   name = "discord";
-    #   package = pkgs.discord;
-    #   appendExtraArgs = [ "--start-minimized" ];
-    # })
     parabolic
     mission-center
     rnote
@@ -40,8 +32,8 @@
     handbrake
     mkvtoolnix
     subtitleedit
-    helvum
-    # jellyfin-media-player
+    crosspipe
+    jellyfin-media-player
     mediainfo
     audacity
     rclone
@@ -50,8 +42,6 @@
     drawio
     easyeffects
     jellyfin-mpv-shim
-    kdePackages.kdenlive
-    frei0r
     komikku
     # portfolio
     bitwarden-desktop
@@ -62,7 +52,6 @@
     firefox
     fractal
     ausweisapp
-    high-tide
     packet
     zed-editor
     planify
