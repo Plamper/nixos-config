@@ -9,6 +9,10 @@
     ];
   };
 
+  home.packages = with pkgs; [
+    google-chrome
+  ];
+
   # Add Firefox GNOME theme directory
   # home.file."firefox-gnome-theme" = {
   #   target = ".mozilla/firefox/8atw9cvi.default/chrome/firefox-gnome-theme";

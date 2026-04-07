@@ -60,8 +60,8 @@
     sbctl
   ];
 
-  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  # boot.binfmt.preferStaticEmulators = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.preferStaticEmulators = true;
 
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
@@ -93,6 +93,9 @@
 
     # FTDI Bridge
     SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6015", MODE="0666"
+
+    # Radiomaster TX15 as USB joystick
+    SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_JOYSTICK}=="1", ENV{ID_BUS}=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4f54", MODE="0666", TAG+="uaccess"
   '';
 
 }

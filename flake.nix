@@ -13,13 +13,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
-
-      # limit the size system closure.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # nix-matlab.url = "gitlab:doronbehar/nix-matlab";
 
     nix-index-database = {

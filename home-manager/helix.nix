@@ -95,7 +95,6 @@
     nil
     nixd
     nixfmt
-    nodePackages.prettier
     yazi
     lazygit
   ];
