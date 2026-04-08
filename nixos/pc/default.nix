@@ -19,13 +19,13 @@
     ./hardware-configuration.nix
     ../common/global
     ../common/optional/gaming.nix
-    ../common/optional/lanzaboote.nix
+    ../common/optional/secureboot.nix
     ../common/users/felix.nix
-    # ../common/optional/virt-manager.nix
+    ../common/optional/virt-manager.nix
     ../common/optional/amd-graphics.nix
-    ../common/optional/disc-drive.nix
+    # ../common/optional/disc-drive.nix
     ../common/optional/ledger.nix
-    ../common/optional/matlab.nix
+    # ../common/optional/matlab.nix
     ../common/optional/gnome.nix
     ../common/optional/ibus.nix
   ];

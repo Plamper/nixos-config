@@ -94,8 +94,7 @@
     harper
     nil
     nixd
-    nixfmt-rfc-style
-    nodePackages.prettier
+    nixfmt
     yazi
     lazygit
   ];

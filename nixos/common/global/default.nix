@@ -63,14 +63,14 @@
   ];
 
   services.usbmuxd.enable = true;
-  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  # boot.binfmt.preferStaticEmulators = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.preferStaticEmulators = true;
 
   # Enable Flatpak and Ratbagd
   services.flatpak.enable = true;
 
   # Be able to control wifi
-  networking.wireless.userControlled.enable = true;
+  networking.wireless.userControlled = true;
   services.tailscale.enable = true;
 
   networking.networkmanager.plugins = with pkgs; [
@@ -95,6 +95,9 @@
 
     # FTDI Bridge
     SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6015", MODE="0666"
+
+    # Radiomaster TX15 as USB joystick
+    SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_JOYSTICK}=="1", ENV{ID_BUS}=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4f54", MODE="0666", TAG+="uaccess"
   '';
 
 }

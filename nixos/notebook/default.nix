@@ -26,7 +26,7 @@
     ./hardware-configuration.nix
     ../common/global
     ../common/users/felix.nix
-    ../common/optional/lanzaboote.nix
+    ../common/optional/secureboot.nix
     #../common/optional/waydroid.nix
     ../common/optional/printing.nix
     # ../common/optional/virt-manager.nix

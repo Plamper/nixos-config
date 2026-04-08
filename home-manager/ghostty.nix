@@ -8,6 +8,7 @@
       font-family = "0xProto Nerd Font";
       window-theme = "ghostty";
       gtk-custom-css = "custom.css";
+      shell-integration-features = "ssh-env";
     };
   };
   home.file.".config/ghostty/custom.css".text =

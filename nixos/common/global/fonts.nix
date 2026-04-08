@@ -35,7 +35,7 @@
         twitter-color-emoji
         ibm-plex
         libertine
-        libertine-g
+        linux-libertine-g
       ])
       ++ (with pkgs.nerd-fonts; [
         fira-code

@@ -6,7 +6,7 @@
     extraPackages = with pkgs; [
       libva
       libvdpau-va-gl
-      vaapiVdpau
+      libva-vdpau-driver
       rocmPackages.clr.icd
       # mesa # MAtlab can't find libgbm
     ];
