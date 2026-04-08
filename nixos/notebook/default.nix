@@ -51,7 +51,8 @@
   powerManagement.enable = true;
   services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
   services.logind.settings.Login.HandleSuspendKey = "suspend-then-hibernate";
-  systemd.sleep.extraConfig = "HibernateDelaySec=2h";
+  systemd.sleep.settings.Sleep.HibernateDelaySec = "2h";
+
 
   services.fprintd.enable = true;
   services.fprintd.package = pkgs.fprintd;
