@@ -58,8 +58,11 @@
     curl
     git
     sbctl
+    libimobiledevice
+    ifuse # optional, to mount using 'ifuse'
   ];
 
+  services.usbmuxd.enable = true;
   # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   # boot.binfmt.preferStaticEmulators = true;
 
@@ -70,8 +73,7 @@
   networking.wireless.userControlled.enable = true;
   services.tailscale.enable = true;
 
-
-  networking.networkmanager.plugins = with pkgs;[
+  networking.networkmanager.plugins = with pkgs; [
     networkmanager-openvpn
     networkmanager-openconnect
   ];
