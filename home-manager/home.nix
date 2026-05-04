@@ -75,6 +75,7 @@
     # QT_WAYLAND_DECORATION = "adwaita";
     NIXOS_OZONE_WL = "1";
     BROWSER = "firefox";
+    SSH_AUTH_SOCK= "/home/felix/.bitwarden-ssh-agent.sock";
     # Vscode
     # GTK_USE_PORTAL = "1";
     #TERMINAL = "blackbox";
