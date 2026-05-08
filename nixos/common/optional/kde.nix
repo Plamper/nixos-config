@@ -1,27 +1,49 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 {
-  # You may need to comment out "services.displayManager.gdm.enable = true;"
-  services.displayManager.sddm.enable = true;
+  services.displayManager.plasma-login-manager.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
 
-  # needed because bugged currently
-  # services.gnome.gnome-keyring.enable = true;
-  # security.pam.services.sddm.enableGnomeKeyring = true;
+  # Force password on loginmanager
+  # Fixes kde wallet unlock
+  security.pam.services.login.fprintAuth = false;
+
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (action.id.indexOf("net.reactivated.fprint.") > -1) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
+
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true;
   services.power-profiles-daemon.enable = true;
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Install not included packages
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
-    vorta
-    libreoffice-qt
     kdePackages.kio-fuse # to mount remote filesystems via FUSE
     kdePackages.kio-extras # extra protocols support (sftp, fish and more)
-    kitty
+    maliit-keyboard
+    kara
   ];
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        qt6Packages.fcitx5-chinese-addons
+        fcitx5-table-extra
+        fcitx5-chewing
+      ];
+    };
+  };
+  environment.variables.GTK_IM_MODULE = lib.mkForce "";
 }

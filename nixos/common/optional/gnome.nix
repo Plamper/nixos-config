@@ -43,7 +43,6 @@
       papers
       # nautilus-open-any-terminal
       ptyxis
-      pika-backup
       celluloid
       gnome-frog
       # libreoffice

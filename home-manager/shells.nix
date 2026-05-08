@@ -181,12 +181,13 @@
         # package.disabled = true;
       };
     };
-    home.packages = with pkgs; [ eza ];
+    home.packages = with pkgs; [ eza gtrash ];
     home.shellAliases = {
       eza = "eza --icons -F -H --group-directories-first --git --hyperlink";
       bat = "bat -pp";
       # man = "batman";
       # cd = "z";
+      gm = "gtrash put";
     };
     programs.btop = {
       enable = true;

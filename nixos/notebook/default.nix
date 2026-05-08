@@ -32,8 +32,8 @@
     # ../common/optional/virt-manager.nix
     ../common/optional/intel-graphics.nix
     # ../common/optional/matlab.nix
-    ../common/optional/gnome.nix
-    ../common/optional/ibus.nix
+    # ../common/optional/gnome.nix
+    ../common/optional/kde.nix
     ../common/optional/gaming.nix
   ];
 
@@ -53,9 +53,8 @@
   services.logind.settings.Login.HandleSuspendKey = "suspend-then-hibernate";
   systemd.sleep.settings.Sleep.HibernateDelaySec = "2h";
 
-
   services.fprintd.enable = true;
-  services.fprintd.package = pkgs.fprintd;
+  # services.fprintd.package = pkgs.fprintd;
   security.polkit.enable = true;
 
   hardware.sensor.iio.enable = true;

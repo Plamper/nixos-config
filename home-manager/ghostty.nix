@@ -9,6 +9,8 @@
       window-theme = "ghostty";
       gtk-custom-css = "custom.css";
       shell-integration-features = "ssh-env";
+      gtk-titlebar = true;
+      window-decoration = "client";
     };
   };
   home.file.".config/ghostty/custom.css".text =
@@ -28,9 +30,9 @@
 
         /* Hamburger menu */
         --popover-bg-color: #272B47;
-        
+
         /* Close Warning */
-        --dialog-bg-color: #272B47; 
+        --dialog-bg-color: #272B47;
       }
     '';
   xdg.terminal-exec = {

@@ -7,6 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    pika-backup
     imagemagick
     tutanota-desktop
     thunderbird
