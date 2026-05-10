@@ -1,11 +1,18 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   services.displayManager.plasma-login-manager.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  systemd.services.display-manager.serviceConfig.Delegate = "yes";
+
   # Force password on loginmanager
   # Fixes kde wallet unlock
-  security.pam.services.login.fprintAuth = false;
+  # security.pam.services.login.fprintAuth = false;
 
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
@@ -21,7 +28,6 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Install not included packages
@@ -31,6 +37,12 @@
     kdePackages.kio-extras # extra protocols support (sftp, fish and more)
     maliit-keyboard
     kara
+    papirus-icon-theme
+    darkly-qt5
+    darkly
+    kdePackages.qtsensors
+    libsForQt5.qtsensors
+    libinput
   ];
 
   i18n.inputMethod = {

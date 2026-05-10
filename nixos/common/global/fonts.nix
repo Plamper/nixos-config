@@ -46,6 +46,7 @@
         symbols-only
         geist-mono
         _0xproto
+        inconsolata-lgc
       ])
     );
     fonts.fontconfig.defaultFonts.sansSerif = [

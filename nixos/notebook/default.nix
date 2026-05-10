@@ -54,8 +54,7 @@
   systemd.sleep.settings.Sleep.HibernateDelaySec = "2h";
 
   services.fprintd.enable = true;
-  # services.fprintd.package = pkgs.fprintd;
-  security.polkit.enable = true;
+  # security.polkit.enable = true;
 
   hardware.sensor.iio.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).

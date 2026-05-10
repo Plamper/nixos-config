@@ -5,7 +5,7 @@
     defaultEditor = true;
     settings = {
       # theme = "adwaita-dark";
-      theme = "tokyonight_moon";
+      theme = "kanagawa-dragon";
       keys.normal = {
         esc = [
           "collapse_selection"
