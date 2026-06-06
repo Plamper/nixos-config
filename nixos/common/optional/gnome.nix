@@ -7,14 +7,7 @@
 {
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome = {
-    enable = true;
-    extraGSettingsOverridePackages = [ pkgs.mutter ];
-    extraGSettingsOverrides = ''
-      [org.gnome.mutter]
-      experimental-features=['scale-monitor-framebuffer', 'variable-refresh-rate']
-    '';
-  };
+  services.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (
     with pkgs;
     [
@@ -45,33 +38,25 @@
       ptyxis
       celluloid
       gnome-frog
-      # libreoffice
     ])
     ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
-      (copyous.overrideAttrs (old: {
-        buildInputs = [
-          pkgs.libgda5
-        ];
-        preInstall = ''
-          sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/dependencies/dependencies.js
-          sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\n" lib/misc/db.js
-        '';
-      }))
+      # (copyous.overrideAttrs (old: {
+      #   buildInputs = [
+      #     pkgs.libgda5
+      #   ];
+      #   preInstall = ''
+      #     sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/dependencies/dependencies.js
+      #     sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\n" lib/misc/db.js
+      #   '';
+      # }))
+      copyous
       caffeine
       appindicator
       tiling-assistant
       legacy-gtk3-theme-scheme-auto-switcher
       rounded-window-corners-reborn
     ]);
-
-  # programs.dconf = {
-  #   enable = true;
-  #   profiles.user.databases = [{
-  #     settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ghostty";
-  #     lockAll = true;
-  #   }];
-  # };
 
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -97,4 +82,14 @@
         pkgs.gst_all_1.gst-plugins-ugly
         pkgs.gst_all_1.gst-libav
       ];
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+    ];
+  };
+  environment.variables.GTK_IM_MODULE = lib.mkForce "";
+
 }

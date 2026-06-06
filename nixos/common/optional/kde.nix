@@ -12,11 +12,16 @@
 
   # Force password on loginmanager
   # Fixes kde wallet unlock
-  # security.pam.services.login.fprintAuth = false;
+  security.pam.services.login.fprintAuth = false;
 
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
       if (action.id.indexOf("net.reactivated.fprint.") > -1) {
+        return polkit.Result.YES;
+      }
+    });
+    polkit.addRule(function(action, subject) {
+      if (action.id.indexOf("net.hadess.SensorProxy.") > -1) {
         return polkit.Result.YES;
       }
     });
@@ -38,7 +43,7 @@
     maliit-keyboard
     kara
     papirus-icon-theme
-    darkly-qt5
+    # darkly-qt5
     darkly
     kdePackages.qtsensors
     libsForQt5.qtsensors

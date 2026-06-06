@@ -52,6 +52,7 @@
 
   # # Set your time zone.
   # time.timeZone = "Europe/Berlin";
+  services.automatic-timezoned.enable = true;
 
   environment.systemPackages = with pkgs; [
     wget

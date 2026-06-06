@@ -73,6 +73,12 @@
       zotero
       # bitwarden-desktop
     ];
+    profiles."dp4lm8k8.Default Profile" = {
+      sine.enable = true;
+      settings = {
+        "sine.engine.auto-update" = false;
+      };
+    };
   };
   # # Add Firefox GNOME theme directory
   # home.file."thunderbird-gnome-theme" = {

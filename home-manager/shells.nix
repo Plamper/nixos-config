@@ -40,52 +40,19 @@
       shellInit =
         # fish
         ''
-          #         # Adwaita Color Palette
-          # set -l foreground DEDDDA
-          # set -l selection 193D66
-          # set -l comment 5E5C64
-          # set -l red BF1C28
-          # set -l orange FF7800
-          # set -l yellow F8E45C
-          # set -l green 5BC8AF
-          # set -l purple C061CB
-          # set -l cyan 33C7DE
-          # set -l pink bb9af7
-
-          # # Syntax Highlighting Colors
-          # set -g fish_color_normal $cyan
-          # set -g fish_color_command $foreground
-          # set -g fish_color_keyword $purple
-          # set -g fish_color_quote $green
-          # set -g fish_color_redirection $cyan
-          # set -g fish_color_end $orange
-          # set -g fish_color_error $red
-          # set -g fish_color_param $green
-          # set -g fish_color_comment $comment
-          # set -g fish_color_selection --background=$selection
-          # set -g fish_color_search_match --background=$selection
-          # set -g fish_color_operator $orange
-          # set -g fish_color_escape $purple
-          # set -g fish_color_autosuggestion $comment
-
-          # # Completion Pager Colors
-          # set -g fish_pager_color_progress $comment
-          # set -g fish_pager_color_prefix $cyan
-          # set -g fish_pager_color_completion $foreground
-          # set -g fish_pager_color_description $comment
-          # set -g fish_pager_color_selected_background --background=$selection
-
-          # TokyoNight Moon Color Palette
-          set -l foreground c8d3f5
-          set -l selection 2d3f76
-          set -l comment 636da6
-          set -l red ff757f
-          set -l orange ff966c
-          set -l yellow ffc777
-          set -l green c3e88d
-          set -l purple fca7ea
-          set -l cyan 86e1fc
-          set -l pink c099ff
+          # Kanagawa Fish shell theme
+          # A template was taken and modified from Tokyonight:
+          # https://github.com/folke/tokyonight.nvim/blob/main/extras/fish_tokyonight_night.fish
+          set -l foreground DCD7BA normal
+          set -l selection 2D4F67 brcyan
+          set -l comment 727169 brblack
+          set -l red C34043 red
+          set -l orange FF9E64 brred
+          set -l yellow C0A36E yellow
+          set -l green 76946A green
+          set -l purple 957FB8 magenta
+          set -l cyan 7AA89F cyan
+          set -l pink D27E99 brmagenta
 
           # Syntax Highlighting Colors
           set -g fish_color_normal $foreground
@@ -94,7 +61,6 @@
           set -g fish_color_quote $yellow
           set -g fish_color_redirection $foreground
           set -g fish_color_end $orange
-          set -g fish_color_option $pink
           set -g fish_color_error $red
           set -g fish_color_param $purple
           set -g fish_color_comment $comment
@@ -109,7 +75,6 @@
           set -g fish_pager_color_prefix $cyan
           set -g fish_pager_color_completion $foreground
           set -g fish_pager_color_description $comment
-          set -g fish_pager_color_selected_background --background=$selection
         '';
     };
 
@@ -205,7 +170,7 @@
         batwatch
       ];
       config = {
-        theme = "tokyonight-moon";
+        theme = "kanagawa-dragon";
       };
       themes = {
         tokyonight-moon = {
@@ -217,10 +182,15 @@
           };
           file = "extras/sublime/tokyonight_moon.tmTheme";
         };
-        # adwaita-dark = {
-        #   src = ./themes;
-        #   file = "adwaita-dark.tmTheme";
-        # };
+        kanagawa-dragon = {
+          src = pkgs.fetchFromGitHub {
+            owner = "obergodmar";
+            repo = "kanagawa.nvim";
+            rev = "extra-setup-tmTheme";
+            hash = "sha256-gqXeUxc4BE2NJGlsM1ZIsP9rwonBS388aopCLkZi8UE=";
+          };
+          file = "extras/tmTheme/kanagawa-dragon.tmTheme";
+        };
       };
     };
   };

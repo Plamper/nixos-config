@@ -32,8 +32,8 @@
     # ../common/optional/virt-manager.nix
     ../common/optional/intel-graphics.nix
     # ../common/optional/matlab.nix
-    # ../common/optional/gnome.nix
-    ../common/optional/kde.nix
+    ../common/optional/gnome.nix
+    # ../common/optional/kde.nix
     ../common/optional/gaming.nix
   ];
 

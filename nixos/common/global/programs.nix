@@ -1,12 +1,13 @@
 { pkgs, ... }:
 {
 
-  # Jellyfin media client
+  # Bitwarden desktop
   nixpkgs.config.permittedInsecurePackages = [
-    "qtwebengine-5.15.19"
+    "electron-39.8.10"
   ];
 
   environment.systemPackages = with pkgs; [
+    discord
     pika-backup
     imagemagick
     tutanota-desktop
@@ -15,19 +16,24 @@
     gimp3
     inkscape
     onlyoffice-desktopeditors
-    libreoffice-fresh
     rclone
     signal-desktop
     eyedropper
     parabolic
     mission-center
     rnote
-    trayscale
+    # trayscale
+    # (pkgs.makeAutostartItem {
+    #   name = "Trayscale";
+    #   package = pkgs.trayscale;
+    #   appendExtraArgs = [ "--hide-window" ];
+    #   srcPrefix = "dev.deedles.";
+    # })
+    ktailctl
     (pkgs.makeAutostartItem {
-      name = "Trayscale";
-      package = pkgs.trayscale;
-      appendExtraArgs = [ "--hide-window" ];
-      srcPrefix = "dev.deedles.";
+      name = "KTailctl";
+      package = pkgs.ktailctl;
+      srcPrefix = "org.fkoehler.";
     })
     ffmpeg-full
     handbrake
@@ -78,7 +84,6 @@
 
     # LDAC codec
     pulseaudioFull
-
 
     # Modern Images
     libheif

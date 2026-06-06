@@ -21,6 +21,7 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "input"
       ];
       description = "Felix Plamper";
       shell = pkgs.fish;

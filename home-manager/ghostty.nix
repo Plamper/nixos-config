@@ -11,6 +11,7 @@
       shell-integration-features = "ssh-env";
       gtk-titlebar = true;
       window-decoration = "client";
+      quit-after-last-window-closed = false;
     };
   };
   # home.file.".config/ghostty/custom.css".text =
