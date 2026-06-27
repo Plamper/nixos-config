@@ -106,15 +106,6 @@
           # style = "bg:#212736";
           symbol = " ";
         };
-        git_branch = {
-          # format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
-          # style = "bg:#394260";
-          symbol = " ";
-        };
-        # git_status = {
-        #   format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
-        #   style = "bg:#394260";
-        # };
         nodejs = {
           # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
           # style = "bg:#212736";

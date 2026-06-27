@@ -38,19 +38,24 @@
       ptyxis
       celluloid
       gnome-frog
+      cava
     ])
     ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
-      # (copyous.overrideAttrs (old: {
-      #   buildInputs = [
-      #     pkgs.libgda5
-      #   ];
-      #   preInstall = ''
-      #     sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/dependencies/dependencies.js
-      #     sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\n" lib/misc/db.js
-      #   '';
-      # }))
-      copyous
+      (copyous.overrideAttrs (old: {
+        buildInputs = [
+          pkgs.libgda5
+        ];
+        preInstall =
+          # bash
+          ''
+            sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/dependencies/dependencies.js
+            sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.libgda5}/lib/girepository-1.0');\n" lib/database/entryTracker.js
+            sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/common/sound.js
+            sed -i "1i import GIRepository from 'gi://GIRepository';\nGIRepository.Repository.dup_default().prepend_search_path('${pkgs.gsound}/lib/girepository-1.0');\n" lib/preferences/general/feedbackSettings.js
+          '';
+      }))
+      pip-on-top
       caffeine
       appindicator
       tiling-assistant

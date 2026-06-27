@@ -14,7 +14,7 @@
     # ./kde.nix
     ./nix.nix
     ./shells.nix
-    ./security.nix
+    ./firewall.nix
     ./fonts.nix
     # ./ibus.nix
     #./fcitx5.nix

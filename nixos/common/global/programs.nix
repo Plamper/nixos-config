@@ -48,7 +48,7 @@
     xournalpp
     drawio
     easyeffects
-    jellyfin-mpv-shim
+    # jellyfin-mpv-shim
     komikku
     # portfolio
     bitwarden-desktop
