@@ -20,7 +20,6 @@
     signal-desktop
     eyedropper
     parabolic
-    mission-center
     rnote
     # trayscale
     # (pkgs.makeAutostartItem {

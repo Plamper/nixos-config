@@ -1,0 +1,31 @@
+{
+  "languages": {
+    "Nix": {
+      "language_servers": [
+        "nixd"
+      ]
+    }
+  },
+  "lsp": {
+    "nixd": {
+      "initialization_options": {
+        "nixd": {
+          "nixpkgs": {
+            "expr": "import (builtins.getFlake \"/home/felix/Nix-Configuration\").inputs.nixpkgs { } "
+          },
+          "formatting": {
+            "command": [ "nixfmt" ]
+          },
+          "options": {
+            "nixos": {
+              "expr": "(builtins.getFlake \"/home/felix/Nix-Configuration\").nixosConfigurations.notebook.options"
+            },
+            "home-manager": {
+              "expr": "(builtins.getFlake \"/home/felix/Nix-Configuration\").homeConfigurations.\"felix@nixd\".options"
+            }
+          }
+        }
+      }
+    }
+  }
+}

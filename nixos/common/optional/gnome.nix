@@ -20,6 +20,8 @@
   );
   environment.systemPackages =
     (with pkgs; [
+      file-roller
+      resources
       refine
       adw-gtk3
       qadwaitadecorations
@@ -61,6 +63,8 @@
       tiling-assistant
       legacy-gtk3-theme-scheme-auto-switcher
       rounded-window-corners-reborn
+      auto-power-profile
+      power-off-options
     ]);
 
   environment.sessionVariables = {
