@@ -21,19 +21,19 @@
     eyedropper
     parabolic
     rnote
-    # trayscale
-    # (pkgs.makeAutostartItem {
-    #   name = "Trayscale";
-    #   package = pkgs.trayscale;
-    #   appendExtraArgs = [ "--hide-window" ];
-    #   srcPrefix = "dev.deedles.";
-    # })
-    ktailctl
+    trayscale
     (pkgs.makeAutostartItem {
-      name = "KTailctl";
-      package = pkgs.ktailctl;
-      srcPrefix = "org.fkoehler.";
+      name = "Trayscale";
+      package = pkgs.trayscale;
+      appendExtraArgs = [ "--hide-window" ];
+      srcPrefix = "dev.deedles.";
     })
+    # ktailctl
+    # (pkgs.makeAutostartItem {
+    #   name = "KTailctl";
+    #   package = pkgs.ktailctl;
+    #   srcPrefix = "org.fkoehler.";
+    # })
     ffmpeg-full
     handbrake
     mkvtoolnix
@@ -59,7 +59,7 @@
     fractal
     ausweisapp
     packet
-    zed-editor
+    unstable.zed-editor
     planify
     solaar
 
@@ -89,6 +89,13 @@
     libheif.out
     libavif
     libavif.out
+
+    # often used commandline tools
+    bubblewrap
+    zip
+    dig
+    openssl
+    appimage-run
   ];
   # For image thumbnails
   environment.pathsToLink = [ "share/thumbnailers" ];

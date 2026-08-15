@@ -62,7 +62,7 @@
 
   hardware.enableAllFirmware = true;
 
-  # hardware.cpu.intel.npu.enable = true;
+  hardware.cpu.intel.npu.enable = true;
 
   hardware.cpu.intel.updateMicrocode = true;
   # XE Driver

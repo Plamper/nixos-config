@@ -5,5 +5,7 @@
   pkgs ? (import ../nixpkgs.nix) { },
 }:
 {
-  # example = pkgs.callPackage ./example { };
+  pywhispercpp = pkgs.callPackage ./pywhispercpp { };
+  moonshineVoice = pkgs.callPackage ./moonshine-voice { };
+  ibus-speech-to-text = pkgs.callPackage ./ibus-speech-to-text { };
 }

@@ -73,6 +73,7 @@
   # Be able to control wifi
   networking.wireless.userControlled = true;
   services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
 
   networking.networkmanager.plugins = with pkgs; [
     networkmanager-openvpn

@@ -69,6 +69,8 @@
     homeDirectory = "/home/felix";
   };
 
+  xdg.userDirs.enable = true;
+  
   # Environment
   home.sessionVariables = {
     # QT_STYLE_OVERRIDE = "adwaita-dark";
