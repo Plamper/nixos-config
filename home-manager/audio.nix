@@ -13,7 +13,7 @@
       musicDirectory = "~/Music";
       # playlistDirectory = "~/Music/Playlists";
       extraConfig = ''
-        audio_output {  
+        audio_output {
           type	"pipewire" #
           name  "Pipewire"  #
           dsd         "yes"  #
@@ -27,7 +27,7 @@
     # services.mpd-mpris.enable = true;
 
     programs.beets = {
-      enable = false;
+      enable = true;
       package = pkgs.python3.pkgs.beets.override {
         pluginOverrides = {
           alternatives = {
@@ -42,9 +42,16 @@
         import.move = true;
         directory = "~/Music";
         library = "~/.config/beets/musiclibrary.db";
-        plugins = "web replaygain chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate playlist";
+        plugins = "web replaygain chroma fetchart embedart thumbnails edit discogs lyrics alternatives convert fish mpdstats mpdupdate playlist musicbrainz";
 
-        fetchart.sources = "filesystem itunes amazon lastfm wikipedia coverart albumart";
+        fetchart.sources = [
+          "filesystem"
+          "itunes"
+          "amazon"
+          "wikipedia"
+          "coverart"
+          "albumart"
+        ];
 
         replaygain.backend = "ffmpeg";
 

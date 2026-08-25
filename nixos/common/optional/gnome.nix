@@ -81,6 +81,8 @@
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = true;
 
+  xdg.terminal-exec.enable = true;
+
   # Nautilus Gstreamer is broken
   # https://github.com/NixOS/nixpkgs/issues/195936#issuecomment-1278954466
   environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
@@ -97,7 +99,7 @@
     type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [
       libpinyin
-      pkgs.ibus-speech-to-text
+      # pkgs.ibus-speech-to-text
     ];
   };
   environment.variables.GTK_IM_MODULE = lib.mkForce "";

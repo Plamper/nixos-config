@@ -7,7 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    discord
+    discord-krisp
     pika-backup
     imagemagick
     tutanota-desktop
@@ -75,6 +75,7 @@
     just
     cachix
     gitui
+    unstable.antigravity-cli
 
     # Man Pages
     man-pages

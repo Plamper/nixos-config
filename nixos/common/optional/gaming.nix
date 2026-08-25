@@ -57,6 +57,12 @@
     # };
     # hardware.i2c.enable = true;
 
+    services.sunshine = {
+      enable = true;
+      capSysAdmin = true;
+      autoStart = false;
+    };
+
     programs.gamescope = {
       enable = true;
       package = pkgs.gamescope;
@@ -86,6 +92,7 @@
 
     environment.systemPackages = with pkgs; [
       mangohud
+      unstable.goverlay
       prismlauncher
       protontricks
       steamtinkerlaunch

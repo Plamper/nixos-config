@@ -27,7 +27,7 @@
     ../common/optional/ledger.nix
     # ../common/optional/matlab.nix
     ../common/optional/gnome.nix
-    ../common/optional/ibus.nix
+    ./custom-edid.nix
   ];
 
   # FIXME: Add the rest of your current configuration
@@ -35,13 +35,17 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  boot.kernelParams = [ "amd_pstate=active" ];
+  boot.kernelParams = [
+    "amd_pstate=active"
+  ];
 
   # TODO: Set your hostname
   networking.hostName = "pc";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   # boot.plymouth.enable = true;
+
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   fileSystems."/mnt/Music" = {
     device = "//nix-nas/Music";

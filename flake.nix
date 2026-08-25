@@ -20,6 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
