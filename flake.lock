@@ -35,6 +35,25 @@
         "url": "https://flakehub.com/f/DeterminateSystems/flake-schemas/%3D0.5.0.tar.gz"
       }
     },
+    "helix-plugins": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1787516291,
+        "narHash": "sha256-RHdgayWT68nkvGD5hLOyWAgy3bq91ZbOq4haz9ZKt5w=",
+        "ref": "refs/heads/main",
+        "rev": "2a7fcf86114796287a6b54325a0bac9644c4fb7a",
+        "revCount": 196,
+        "type": "git",
+        "url": "https://codeberg.org/maxschipper/helix-plugins-nix.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/maxschipper/helix-plugins-nix.git"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -131,6 +150,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1784007870,
+        "narHash": "sha256-djcLt/JJphyNt4eDY9XTly+/WbCK5lqWq9lSgCmJkkQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "18b9261cb3294b6d2a06d03f96872827b8fe2698",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1787640266,
         "narHash": "sha256-MrkfE5hF5xx4L/0h5NyJ3xQkKVftwSuKSkFSrvlTxGY=",
         "owner": "nixos",
@@ -148,11 +183,27 @@
     "root": {
       "inputs": {
         "chaotic": "chaotic",
+        "helix-plugins": "helix-plugins",
         "home-manager": "home-manager_2",
         "nix-index-database": "nix-index-database",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "zen-browser": "zen-browser"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     },
     "zen-browser": {

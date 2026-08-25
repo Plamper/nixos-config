@@ -22,6 +22,8 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    helix-plugins.url = "git+https://codeberg.org/maxschipper/helix-plugins-nix.git";
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
