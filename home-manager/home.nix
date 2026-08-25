@@ -86,7 +86,7 @@
   # Code editor Section
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
   };
 
   programs.obs-studio = {
