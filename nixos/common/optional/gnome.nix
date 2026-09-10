@@ -99,7 +99,7 @@
     type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [
       libpinyin
-      # pkgs.ibus-speech-to-text
+      pkgs.ibus-speech-to-text
     ];
   };
   environment.variables.GTK_IM_MODULE = lib.mkForce "";

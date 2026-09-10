@@ -44,11 +44,11 @@
       }
     ];
 
-    hardware.xpadneo.enable = true;
-    # 8bitdo controller
-    boot.extraModprobeConfig = ''
-      options hid_xpadneo quirks=E4:17:D8:xx:xx:xx+32
-    '';
+    # hardware.xpadneo.enable = true;
+    # # 8bitdo controller
+    # boot.extraModprobeConfig = ''
+    #   options hid_xpadneo quirks=E4:17:D8:xx:xx:xx+32
+    # '';
 
     # services.hardware.openrgb = {
     #   enable = true;

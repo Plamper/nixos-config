@@ -23,6 +23,7 @@
     ../common/users/felix.nix
     ../common/optional/virt-manager.nix
     ../common/optional/amd-graphics.nix
+    ../common/optional/printing.nix
     # ../common/optional/disc-drive.nix
     ../common/optional/ledger.nix
     # ../common/optional/matlab.nix
@@ -38,6 +39,10 @@
   boot.kernelParams = [
     "amd_pstate=active"
   ];
+
+  hardware.display.outputs."DP-3" = {
+    mode = "2560x1440-24@170e";
+  };
 
   # TODO: Set your hostname
   networking.hostName = "pc";

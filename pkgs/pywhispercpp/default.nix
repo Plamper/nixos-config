@@ -6,14 +6,14 @@
 
 python3Packages.buildPythonPackage {
   pname = "pywhispercpp";
-  version = "1.5.0-unstable-2026-08-11";
+  version = "v1.5.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "absadiki";
     repo = "pywhispercpp";
-    rev = "main";
-    hash = "sha256-I0bpMQZWc+reyX5agD16ygvjKPIZFoABF2ZBHRwCefs=";
+    rev = "v1.5.1";
+    hash = "sha256-/i6zJzM0ZXBK7kNqNnaz387ugvuLuIEilURpVqYADy0=";
   };
 
   postPatch = ''

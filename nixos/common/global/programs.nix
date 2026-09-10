@@ -7,7 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    discord-krisp
+    unstable.discord
     pika-backup
     imagemagick
     tutanota-desktop
@@ -66,6 +66,7 @@
     nextcloud-client
 
     typst
+    touying
     tinymist
     typstyle
 

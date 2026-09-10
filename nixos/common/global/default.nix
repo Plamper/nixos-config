@@ -7,11 +7,11 @@
 }:
 {
   imports = [
-    
+
     inputs.chaotic.nixosModules.nyx-cache
     inputs.chaotic.nixosModules.nyx-overlay
     inputs.chaotic.nixosModules.nyx-registry
-    
+
     ./home-manager.nix
     ./nix.nix
     ./pipewire.nix
@@ -105,6 +105,13 @@
 
     # Radiomaster TX15 as USB joystick
     SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_JOYSTICK}=="1", ENV{ID_BUS}=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4f54", MODE="0666", TAG+="uaccess"
+
+    # STM32 Virtual COM Port (Normal mode)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0666", GROUP="dialout"
+    KERNEL=="ttyACM*", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0666", GROUP="dialout"
+
+    # STM32 DFU Bootloader (Flashing mode)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="0666", GROUP="dialout"
   '';
 
 }
