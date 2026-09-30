@@ -92,7 +92,7 @@
 
     environment.systemPackages = with pkgs; [
       mangohud
-      unstable.goverlay
+      # unstable.goverlay
       prismlauncher
       protontricks
       steamtinkerlaunch
