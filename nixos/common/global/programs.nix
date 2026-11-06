@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
 
-  # Bitwarden desktop
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-39.8.10"
+    # zotero 10.0.4
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
+    "firefox-esr-140-bin-140.17.0esr"
   ];
 
   environment.systemPackages = with pkgs; [
@@ -71,12 +72,15 @@
     typstyle
 
     adwaita-icon-theme # some apps look buggy without it
-    zotero
+    unstable.zotero
 
     just
     cachix
     gitui
     unstable.antigravity-cli
+    unstable.antigravity-ide
+    unstable.antigravity-hub
+    unstable.antigravity-acp
 
     # Man Pages
     man-pages
