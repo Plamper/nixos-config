@@ -16,16 +16,16 @@
     anki-bin
     gimp3
     inkscape
-    onlyoffice-desktopeditors
+    unstable.euro-office-desktopeditors
     rclone
     signal-desktop
     eyedropper
     parabolic
     rnote
-    trayscale
+    unstable.trayscale
     (pkgs.makeAutostartItem {
       name = "Trayscale";
-      package = pkgs.trayscale;
+      package = pkgs.unstable.trayscale;
       appendExtraArgs = [ "--hide-window" ];
       srcPrefix = "dev.deedles.";
     })

@@ -109,7 +109,7 @@
         nodejs = {
           # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
           # style = "bg:#212736";
-          symbol = " ";
+          symbol = "󰎙 ";
         };
         golang = {
           # format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
@@ -120,7 +120,10 @@
           # format = "[[ $symbol $state( \($name\))](fg:#a0a9cb bg:#1d2230)]($style)";
           # style = "bg:#1d2230";
           heuristic = false;
-          symbol = " ";
+          symbol = "󱄅 ";
+        };
+        python = {
+          symbol = " ";
         };
         directory = {
           # format = "[ $path ]($style)";

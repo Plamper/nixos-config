@@ -23,8 +23,8 @@
     defaultEditor = true;
     package = pkgs.unstable.steelix;
     plugins = with pkgs.helixPlugins; [
-      forest
-      trail
+      forest-hx
+      trail-hx
       splash-hx
     ];
     settings = {

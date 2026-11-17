@@ -12,6 +12,9 @@
       cups-filters
       cups-browsed
       hplip
+      brlaser
+      brgenml1lpr
+      brgenml1cupswrapper
     ];
   };
 }

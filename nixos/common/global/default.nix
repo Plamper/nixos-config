@@ -63,6 +63,7 @@
     wget
     curl
     git
+    git-lfs
     sbctl
     libimobiledevice
     ifuse # optional, to mount using 'ifuse'

@@ -70,6 +70,7 @@
   };
 
   xdg.userDirs.enable = true;
+  xdg.userDirs.setSessionVariables = true;
   
   # Environment
   home.sessionVariables = {
@@ -86,7 +87,7 @@
   # Code editor Section
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.unstable.vscode-fhs;
   };
 
   programs.obs-studio = {
